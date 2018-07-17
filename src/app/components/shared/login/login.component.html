@@ -3,6 +3,16 @@
   password, create new account. The displayed contents vary according
   to the accessed functionality.
 -->
-<p>
-  login works!
-</p>
+<form (submit)="loginUser($event)">
+<div (keyup)="0">
+  <input type="text"  #user placeholder="email adress">{{user.value}}<br>
+ 
+</div>
+<div (keyup)="0">
+  <input #pass type="password" placeholder="password">{{pass.value}}<br>
+</div>
+<div>
+  <input type="submit" value="Login">
+</div>
+</form>
+
