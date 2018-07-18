@@ -5,6 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
 import { PageHeaderComponent } from './components/shared/page-header/page-header.component';
 import { CourseComponent } from './components/admin/course/course.component';
 import { UserListComponent } from './components/admin/user-list/user-list.component';
@@ -16,6 +18,7 @@ import { ChapterListComponent } from './components/shared/chapter-list/chapter-l
 import { MyAccountComponent } from './components/shared/my-account/my-account.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChapterQuestionsComponent } from './components/shared/chapter-questions/chapter-questions.component';
+import { ApiConnectionService } from './services/api-connection/api-connection.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -48,9 +51,10 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ApiConnectionService],
   bootstrap: [AppComponent]
 })
 
