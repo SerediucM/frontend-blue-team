@@ -15,36 +15,20 @@ export class ApiConnectionService {
     private messageService: MessageService) { }
 
   private userUrl = 'http://localhost:3000/users';
-  // getUsers (): Observable<User[]> {
-  //   return this.http.get<User[]>(this.userUrl)
-  //     .pipe(
-  //       tap(heroes => this.log('fetched heroes')),
-  //       catchError(this.handleError('getHeroes', []))
-  //     );
-  // }
-
-
- getUser(id: number): Observable<User>
+ getUser(id: number): Observable<any>
  {
   const url = `${this.userUrl}`;
-  
   return this.http.get<User>(url);
-  
  }
-
   private log(message: string) {
   this.messageService.add(`HeroService: ${message}`);
 }
-
  private handleError<T> (operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {
-
     // TODO: send the error to remote logging infrastructure
     console.error(error); // log to console instead
-
     // TODO: better job of transforming error for user consumption
     this.log(`${operation} failed: ${error.message}`);
-
     // Let the app keep running by returning an empty result.
     return of(result as T);
   };

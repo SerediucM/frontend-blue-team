@@ -19,26 +19,33 @@ export class LoginComponent implements OnInit {
   ) { }
   
   ngOnInit():void {
-    this.getUser();
+    this.getUsers();
   }
   //  getUsers(): void {
   //   this.userConn.getUsers().subscribe(data => this.users = data);
   //  }
-  getUser(): void  {
-    const id = +this.router.snapshot.paramMap.get('id');
-    this.userConn.getUser(id).subscribe(data => {
-      console.log(data)
-    });
-}
   loginUser(e){
     e.preventDefault();
     console.log(e);
      var username = e.target.elements[0].value;
      var password = e.target.elements[1].value;
-    
-    if(username == "admin" && password == 'admin'){
-      console.log(username,password, "ok")
-      this.rout.navigate(['dashboard']);
-    }
+     this.getUsers().subscribe(data => {
+    //  let res =  data;
+    //  res.map(item => {
+    //   console.log(item);
+    //  });
+    //  console.log(data)
+    data.forEach(item => {
+       if(username == item.email && password == item.password){
+        console.log(username,password, "ok")
+        this.rout.navigate(['dashboard']); 
+  }  
+   });
+    });
   }
+  
+  getUsers()  {
+    const id = +this.router.snapshot.paramMap.get('id');
+    return this.userConn.getUser(id)
+  } 
 }
