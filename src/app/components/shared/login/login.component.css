@@ -1,0 +1,102 @@
+
+    body{
+        background-color: #020e30;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('../../../../assets/bg_image.png');
+        
+     }
+    
+
+.container{
+    left: -51px;
+    top: 16px;
+    width: 1589px;
+    height: 1061px;
+    opacity: 5%;
+   
+    
+}
+.bg-image {
+	height: 1055px;
+	width: 1583px;
+
+	background-color:#020e30;
+}
+.btn-reset{
+    height: 45px;
+    width: 300px;
+    position: relative;
+    left: 830px;
+    top: 380px;
+    opacity: 100%;
+    background-color: #0066ff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+}
+.reset-pass-p{
+        position: relative;
+        height: 42px;
+        width: 510px;
+        left:260px;
+        top: 480px;
+        color: #F7F7F7;
+        font-family: Roboto;
+        font-size: 34px;
+        line-height: 22px;
+        text-align: center;
+       
+    
+}
+.reset-pass-p2{
+        position: relative;
+        height: 45px;
+        width: 150px;
+        left: 447.5px;
+        top: 500px;
+        opacity: 0.5;
+        color: #F7F7F7;
+        font-family: Roboto;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+    
+}
+
+.text-1{
+    position: relative;
+    height: 45px;
+    width: 300px; 
+    left: 850px;
+    top: 345px;
+}
+.text-2{
+    position: relative;
+    height: 45px;
+    width: 300px; 
+    left: 850px;
+    top: 355px;
+}
+.terms-conditions{
+        position: relative;
+        height: 16px;
+        width: 230px;
+        left: 905px;
+        top: 554px;
+        color: #F7F7F7;
+        font-family: Roboto;
+        font-size: 14px;
+        line-height: 16px;
+}
+
+.check{
+    position: relative;
+    height: 19px;
+    width: 19px;
+    left: 880px;
+    top: 425px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    
+}
