@@ -1,0 +1,160 @@
+input {
+    display: block;
+}
+.sign-in {
+	height: 24px;
+	width: 104px;
+	color: #F7F7F7;
+	font-family: Roboto;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 24px;
+	text-align: center;
+}
+.sign-up {
+	height: 48px;
+	width: 52px;
+	color: #FFFFFF;
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 24px;
+	text-align: center;
+}
+.email-adress {
+	height: 24px;
+	width: 104px;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 18px;
+	line-height: 24px;
+}
+.rectangle-2a {
+    margin-bottom: 5px;
+    height: 45px;
+    width: 300px;
+    border: 1px solid #AEB5BB;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+.rectangle-2b {
+    height: 45px;
+    width: 300px;
+    border-radius: 5px;
+    background-color: #006FFF;
+    margin-top: 30px;
+}
+
+.login-to-your-accoun {
+    text-align: center;
+    position: relative;
+    top: -40px;
+    left: -95px;
+	height: 96px;
+	width: 400px;
+	color: white;
+	font-family: Roboto;
+	font-size: 36px;
+	line-height: 48px;
+	text-align: center;
+}
+.welcome-back {
+
+    text-align: center;
+	height: 52px;
+	width: 180px;
+	opacity: 0.5;
+	color: white;
+	font-family: Roboto;
+	font-size: 20px;
+	line-height: 26px;
+	text-align: center;
+}
+.forgot-password-res {
+	height: 19px;
+	width: 165px;
+	color: #F7F7F7;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 19px;
+}
+.don-t-have-an-accoun {
+	height: 48px;
+    width: 250px;
+    margin-right: 10px;
+	color: #F7F7F7;
+	font-family: Roboto;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+}
+.pos {
+    position: absolute;
+    top: 380px;
+    left: 950px;
+}
+.posb {
+    position: absolute;
+    top: 361px;
+    left: 950px;
+}
+.pos1 {
+    position: relative;
+    top: 450px;
+    left: 10px;
+}
+body{
+    background-color: #020e30;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-image: url('../../../../assets/bg_image.png');
+    
+ }
+ .container{
+    left: -51px;
+    top: 16px;
+    width: 1589px;
+    height: 1061px;
+    opacity: 5%;
+  }
+
+.height {
+            height: 120vh;
+    }
+    .inline
+{
+    display: inline;
+}
+
+#icon{
+        background-image:url("../../../../assets/eye.jpg"); 
+        background-repeat: no-repeat; 
+        height: 40px;
+        width: 40px;
+        background-position: 0px 0px;
+        background-size: 20px 20px;
+        z-index:1;
+        }
+
+#login {
+   display: block;
+}
+#create {
+    display: none;
+}
+.rectangle {
+	height: 33px;
+	width: 98px;
+	border-radius: 5px;
+	background-color: #006FFF;
+}
+.footer{
+    position: absolute;
+    top: 1000px;
+    left: 690px;;
+}
+
+
+
+

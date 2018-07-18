@@ -10,8 +10,9 @@ import {ApiConnectionService} from '../../../services/api-connection/api-connect
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-   @Input() users: User;
 
+   @Input() users: User;
+   isDisplayed: boolean = false;
   constructor(private router: ActivatedRoute ,
               private rout:Router,
               private location: Location,
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
   
   ngOnInit():void {
     this.getUsers();
+
   }
   //  getUsers(): void {
   //   this.userConn.getUsers().subscribe(data => this.users = data);
