@@ -1,4 +1,4 @@
-
+/* Reset css */
     body{
         background-color: #020e30;
         background-repeat: no-repeat;
@@ -15,14 +15,10 @@
     height: 1061px;
     opacity: 5%;
    
-    
 }
-.bg-image {
-	height: 1055px;
-	width: 1583px;
 
-	background-color:#020e30;
-}
+
+
 .btn-reset{
     height: 45px;
     width: 300px;
@@ -100,3 +96,39 @@
     background-color: #FFFFFF;
     
 }
+/* finish css */
+
+/* email reset */
+.email{
+    position: relative;
+    height: 45px;
+    width: 300px; 
+    left: 950px;
+    top: 545px;
+}
+.btn-send-email{
+    height: 45px;
+    width: 300px;
+    position: relative;
+    left: 950px;
+    top: 580px;
+    opacity: 100%;
+    background-color: #0066ff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+}
+.reset-email-p{
+    position: relative;
+        height: 42px;
+        width: 510px;
+        left:380px;
+        top: 465px;
+        color: #F7F7F7;
+        font-family: Roboto;
+        font-size: 34px;
+        line-height: 22px;
+        text-align: center;
+
+}
+/* email reset */
