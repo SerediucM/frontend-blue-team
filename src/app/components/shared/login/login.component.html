@@ -2,7 +2,97 @@
   This component relates to all the login screens: login, reset
   password, create new account. The displayed contents vary according
   to the accessed functionality.
+
 -->
-<p>
-  login works!
-</p>
+
+
+<div class="container-fluid maindiv" >
+     <div (submit)="loginUser($event)"   class="container show"> <div class="row">
+        <div class="col-xs-6 col-sm-6 info-position">
+           <h4 class="welcome-back">Welcome back</h4>
+           <h1 class="login-to-your-accoun">Login to your account</h1>
+        </div>
+    
+    <div  class="col-xs-6 col-sm-6 form-position">
+        <form>
+        <input class = "rectangle-2a email-adress" type ="email" placeholder="email adress">
+        <div class="inline">
+            <input class = "rectangle-2a email-adress" type="password" placeholder="password">
+        </div>
+        <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="Sign In">
+        <p class="forgot-password-res"><span>Forgot password?</span><a>Reset it</a></p>
+        </form>
+      </div> 
+      <div class="footer-position">
+                <label class="don-t-have-an-accoun" for="signup">Don't have an account?</label>
+                <button class="rectangle btn btn-primary sign-up" id="signup" ng-click="isDisplayed = !isDisplayed">Sing Up</button>
+      </div>
+        </div>
+    </div>
+
+<!-- div-ul create -->
+    <div class="container-fluid hide">
+        <div class="row height">
+            <div class="col-xs-6 col-sm-6 info-position">
+              <div class="welcome-back"> You're one step closer</div>
+              <h1 class="login-to-your-accoun">Create a new account</h1>
+            </div>
+        <div  class="col-xs-6 col-sm-6 form-position">
+            <form>
+            <input class = "rectangle-2a email-adress" type ="text" placeholder="first name">
+            <input class = "rectangle-2a email-adress" type ="text" placeholder="second name">
+            <input class = "rectangle-2a email-adress" type ="email" placeholder="email adress">
+            <input class = "rectangle-2a email-adress" type="password" placeholder="password">
+            <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="CREATE ACCOUNT">
+            <input type="checkbox" id="cb">
+            <label for="cb">I agree with Terms & Condition</label>
+            </form>
+            </div>
+            </div>
+
+    </div> 
+    <!-- resetare password -->
+    <div class="container hide" >
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 info-position">
+                <h4 class="welcome-back">Youre sorry</h4>
+                <h1 class="login-to-your-accoun">Let`s reset your password</h1>
+             </div>
+          <div  class="col-xs-6 col-sm-6 form-position">
+              <form>
+                  <input class = "rectangle-2a email-adress" type="password" placeholder="password">
+            
+              <div class="inline">
+                  <input class = "rectangle-2a email-adress" type="password" placeholder="confirm password">
+              </div>
+              <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="Reset Password">
+              </form>
+            </div>
+        </div>
+      </div> 
+
+      <!-- confirm/send email -->
+      <div class="container hide" >
+        <div class="row">
+              <div class="col-xs-6 col-sm-6 info-position">
+           
+                  <h1 class="login-to-your-accoun">Please enter your email</h1>
+               </div>
+              <div  class="col-xs-6 col-sm-6 form-position">
+                  <form>
+                      <input class = "rectangle-2a email-adress" type="email" placeholder="some@yahoo.com">
+                
+                     
+                  <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="SEND">
+                  
+                 
+                  </form>
+                </div>
+           
+        </div>
+      </div>
+</div>
+
+
+
+

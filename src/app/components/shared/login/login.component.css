@@ -1,0 +1,202 @@
+
+.maindiv{
+    background-color: #020e30;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-image: url('../../../../assets/bg_image.png');
+    width: 100vw;
+    height: 100vh; 
+    
+ }
+ 
+
+
+input {
+    display: block;
+}
+.sign-in {
+	height: 24%;
+	width: 10,4%;
+	color: #F7F7F7;
+	font-family: Roboto;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 24px;
+	text-align: center;
+}
+.sign-up {
+  
+	height: 48%;
+	width: 52%;
+	color: #FFFFFF;
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 24px;
+	text-align: center;
+}
+.email-adress {
+	height: 24%;
+	width: 34%;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 18px;
+	line-height: 24px;
+}
+.rectangle-2a {
+    margin-bottom: 5px;
+    height: 45px;
+    width: 34%;
+    border: 1px solid #AEB5BB;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+.rectangle-2b {
+    height: 45%;
+    width: 34%;
+    border-radius: 5px;
+    background-color: #006FFF;
+    margin-top: 3%;
+}
+
+.login-to-your-accoun {
+    position: relative;
+   
+    height: 9,6%;
+    width: 55%;
+    color: #F7F7F7;
+    font-family: Roboto;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+    left: 43%;
+}
+.welcome-back {
+    left: 56%;
+    position: relative;
+    text-align: center;
+
+	width: 22%;
+	opacity: 0.5;
+	color: white;
+	font-family: Roboto;
+	font-size: 20px;
+	line-height: 26px;
+    text-align: center;
+
+  
+}
+.forgot-password-res {
+	height: 19%;
+	width: 16,5%;
+	color: #F7F7F7;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 19px;
+}
+.don-t-have-an-accoun {
+    
+	height: 4,8%;
+    width: 2,5%;
+    margin-right: 0,2%;
+	color: #F7F7F7;
+	font-family: Roboto;
+	font-size: 16px;
+	line-height: 2,4%;
+	text-align: center;
+}
+.form-position{
+    position: absolute;
+    top: 42%;
+    left: 50%;
+
+
+}
+.info-position {
+    position: absolute;
+    left: 2.2%;
+    top: 43%;
+    
+ }
+ .footer-position {
+    position: absolute;
+    top:865px;
+    left: 690px;
+ }
+
+.posb {
+    position: relative;
+    top: 36,1%;
+    left: 95%;
+}
+
+.inline
+{
+display: inline;
+}
+
+
+.show {
+display: block;
+}
+.hide {
+display: none;
+}
+
+.rectangle {
+height: 33px;
+width: 98px;
+border-radius: 5px;
+background-color: #006FFF;
+}
+.footer{
+top: 1000px;
+left: 690px;;
+}
+
+.btn-reset{
+    height: 45px;
+    width: 300px;
+    position: relative;
+    left: 830px;
+    top: 380px;
+    opacity: 100%;
+    background-color: #0066ff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+}
+
+
+.terms-conditions{
+    position: relative;
+    height: 16px;
+    width: 230px;
+    left: 905px;
+    top: 554px;
+    color: #F7F7F7;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.check{
+position: relative;
+height: 19px;
+width: 19px;
+left: 880px;
+top: 425px;
+border-radius: 5px;
+background-color: #FFFFFF;
+
+}
+
+.email{
+    position: relative;
+    height: 45px;
+    width: 300px; 
+    left: 950px;
+    top: 545px;
+}
+
