@@ -50,7 +50,7 @@ input {
     text-align: center;
     position: relative;
     top: -40px;
-    left: -95px;
+    left: -50%;
 	height: 96px;
 	width: 400px;
 	color: white;
@@ -122,6 +122,9 @@ body{
 .height {
             height: 120vh;
     }
+.width {
+    width: 150vh;
+}
     .inline
 {
     display: inline;
