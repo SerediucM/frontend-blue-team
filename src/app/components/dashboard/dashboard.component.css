@@ -5,3 +5,36 @@ body{
         background-color: #F6FAFC;
     
 }
+.rectangle-7 {
+	height: 42px;
+	width: 553px;
+	border-radius: 5px;
+	background-color: #EFF1F4;
+}
+.rectangle-7-copy {
+	height: 42px;
+	width: 140px;
+	border-radius: 5px;
+	background-color: #006FFF;
+}
+.browse-through-best {
+	height: 28px;
+	width: 513px;
+	color: black;
+	font-family: Roboto;
+	font-size: 24px;
+	font-weight: bold;
+        line-height: 28px;
+        
+}
+.pick-the-one-you-lik {
+        margin: 25px;
+	height: 21px;
+	width: 350px;
+	opacity: 0.5;
+	color:black;
+	font-family: Roboto;
+	font-size: 18px;
+        line-height: 21px;
+        
+}
