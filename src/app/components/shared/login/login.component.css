@@ -1,15 +1,11 @@
 
-
-#maindiv{
+.maindiv{
     background-color: #020e30;
     background-repeat: no-repeat;
     background-position: center; 
     background-image: url('../../../../assets/bg_image.png');
     width: 100vw;
-    height: 100vh;
-   
-   
-    
+    height: 100vh; 
     
  }
  
@@ -19,8 +15,8 @@ input {
     display: block;
 }
 .sign-in {
-	height: 24px;
-	width: 104px;
+	height: 24%;
+	width: 10,4%;
 	color: #F7F7F7;
 	font-family: Roboto;
 	font-size: 18px;
@@ -30,8 +26,8 @@ input {
 }
 .sign-up {
   
-	height: 48px;
-	width: 52px;
+	height: 48%;
+	width: 52%;
 	color: #FFFFFF;
 	font-family: Roboto;
 	font-size: 16px;
@@ -40,8 +36,8 @@ input {
 	text-align: center;
 }
 .email-adress {
-	height: 24px;
-	width: 104px;
+	height: 24%;
+	width: 34%;
 	color: #AEB5BB;
 	font-family: Roboto;
 	font-size: 18px;
@@ -50,49 +46,50 @@ input {
 .rectangle-2a {
     margin-bottom: 5px;
     height: 45px;
-    width: 300px;
+    width: 34%;
     border: 1px solid #AEB5BB;
     border-radius: 5px;
     background-color: #FFFFFF;
 }
 
 .rectangle-2b {
-    height: 45px;
-    width: 300px;
+    height: 45%;
+    width: 34%;
     border-radius: 5px;
     background-color: #006FFF;
-    margin-top: 30px;
+    margin-top: 3%;
 }
 
 .login-to-your-accoun {
-    text-align: center;
     position: relative;
    
-	height: 96px;
-	width: 400px;
-	color: white;
-	font-family: Roboto;
-	font-size: 36px;
-	line-height: 48px;
-	text-align: center;
+    height: 9,6%;
+    width: 55%;
+    color: #F7F7F7;
+    font-family: Roboto;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+    left: 43%;
 }
 .welcome-back {
+    left: 56%;
     position: relative;
     text-align: center;
-	height: 52px;
-	width: 180px;
+
+	width: 22%;
 	opacity: 0.5;
 	color: white;
 	font-family: Roboto;
 	font-size: 20px;
 	line-height: 26px;
     text-align: center;
-    left: 100px;
-    top: 40px;
+
+  
 }
 .forgot-password-res {
-	height: 19px;
-	width: 165px;
+	height: 19%;
+	width: 16,5%;
 	color: #F7F7F7;
 	font-family: Roboto;
 	font-size: 12px;
@@ -100,24 +97,27 @@ input {
 }
 .don-t-have-an-accoun {
     
-	height: 48px;
-    width: 250px;
-    margin-right: 10px;
+	height: 4,8%;
+    width: 2,5%;
+    margin-right: 0,2%;
 	color: #F7F7F7;
 	font-family: Roboto;
 	font-size: 16px;
-	line-height: 24px;
+	line-height: 2,4%;
 	text-align: center;
 }
 .form-position{
-    top: 420px;
-    left: 50px;
+    position: absolute;
+    top: 42%;
+    left: 50%;
 
 
 }
 .info-position {
-   
-    top: 430px;
+    position: absolute;
+    left: 2.2%;
+    top: 43%;
+    
  }
  .footer-position {
     position: absolute;
@@ -127,51 +127,23 @@ input {
 
 .posb {
     position: relative;
-    top: 361px;
-    left: 950px;
-}
-.pos1 {
-    position: relative;
-    top: 450px;
-    left: 10px;
+    top: 36,1%;
+    left: 95%;
 }
 
- .container{
-    left: -51px;
-    top: 16px;
-    width: 100vw;
-    height: 100vh;
-  
-    
-  }
-/* .height {
-    height: auto;
-
-}
-.width {
-width: auto;
-} */
 .inline
 {
 display: inline;
 }
 
-#icon{
-background-image:url("../../../../assets/eye.jpg"); 
-background-repeat: no-repeat; 
-height: 40px;
-width: 40px;
-background-position: 0px 0px;
-background-size: 20px 20px;
-z-index:1;
-}
 
-.logind {
+.show {
 display: block;
 }
-.created {
+.hide {
 display: none;
 }
+
 .rectangle {
 height: 33px;
 width: 98px;
@@ -179,7 +151,6 @@ border-radius: 5px;
 background-color: #006FFF;
 }
 .footer{
-/* position: relative; */
 top: 1000px;
 left: 690px;;
 }
@@ -197,48 +168,6 @@ left: 690px;;
     border: none;
 }
 
-.reset-pass-p{
-    position: relative;
-    height: 42px;
-    width: 510px;
-    left:260px;
-    top: 480px;
-    color: #F7F7F7;
-    font-family: Roboto;
-    font-size: 34px;
-    line-height: 22px;
-    text-align: center;
-   
-
-}
-.reset-pass-p2{
-    position: relative;
-    height: 45px;
-    width: 150px;
-    left: 447.5px;
-    top: 500px;
-    opacity: 0.5;
-    color: #F7F7F7;
-    font-family: Roboto;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-
-}
-.text-1{
-    position: relative;
-    height: 45px;
-    width: 300px; 
-    left: 850px;
-    top: 345px;
-}
-.text-2{
-    position: relative;
-    height: 45px;
-    width: 300px; 
-    left: 850px;
-    top: 355px;
-}
 
 .terms-conditions{
     position: relative;
@@ -269,30 +198,5 @@ background-color: #FFFFFF;
     width: 300px; 
     left: 950px;
     top: 545px;
-}
-.btn-send-email{
-    height: 45px;
-    width: 300px;
-    position: relative;
-    left: 950px;
-    top: 580px;
-    opacity: 100%;
-    background-color: #0066ff;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: none;
-}
-.reset-email-p{
-    position: relative;
-        height: 42px;
-        width: 510px;
-        left:380px;
-        top: 465px;
-        color: #F7F7F7;
-        font-family: Roboto;
-        font-size: 34px;
-        line-height: 22px;
-        text-align: center;
-
 }
 
