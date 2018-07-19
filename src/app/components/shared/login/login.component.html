@@ -5,19 +5,19 @@
 -->
 
 
-<div class="container rep">
-    <!-- //login -->
-    <div (submit)="loginUser($event)"  id ="login" class="container-fluid" ng-show="isDisplayed">
-      <div class="row height">
-        <div class="col-xs-3 "></div>
-    
-        <div class="col-xs-4 pos1">
-          <div class="welcome-back"> <h4>Welcome back</h4></div>
+<div class="container-fluid" >
    
-          <h1 class="login-to-your-accoun">Login to your account</h1>
+     <!-- //login -->
+ 
+     <div (submit)="loginUser($event)"  id ="login" class="container"> <div class="row">
+        <!-- <div class="col-xs-3 "></div> -->
+    
+        <div class="col-xs-6 col-sm-6">
+           <h4 class="welcome-back">Welcome back</h4>
+           <h1 class="login-to-your-accoun">Login to your account</h1>
         </div>
     
-    <div  class="col-xs-5 pos">
+    <div  class="col-xs-6 col-sm-6">
         <form>
         <input class = "rectangle-2a email-adress" type ="email" placeholder="email adress">
       
@@ -29,19 +29,19 @@
         
         <p class="forgot-password-res"><span>Forgot password?</span><a>Reset it</a></p>
         </form>
-        </div>
+      </div>
         
-  <div class="footer">
+      <div class="footer-position">
                 <label class="don-t-have-an-accoun" for="signup">Don't have an account?</label>
                 <button class="rectangle btn btn-primary sign-up" id="signup" ng-click="isDisplayed = !isDisplayed">Sing Up</button>
       </div>
-       
+      
         </div>
-     
+    
     </div>
 
 <!-- div-ul create -->
-    <div id ="create" class="container-fluid">
+    <div class="container-fluid created">
         <div class="row height">
             <div class="col-xs-3 "></div>
         
@@ -70,7 +70,7 @@
 
     </div>
     <!-- resetare password -->
-    <div class="container " id="create">
+    <div class="container created" >
     
         <div class="row">
           <div class="col-md-12">
@@ -89,7 +89,7 @@
         </div>
       </div>
       <!-- confirm/send email -->
-      <div class="container" id="create">
+      <div class="container created" >
         <div class="row">
           <div class="col-md-12">
               <input type="email" class="form-control email" placeholder="some@gmail.com">
