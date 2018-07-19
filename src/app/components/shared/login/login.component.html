@@ -3,38 +3,105 @@
   password, create new account. The displayed contents vary according
   to the accessed functionality.
 -->
- <body>
-  <div class="container">
+
+
+<div class="container rep">
+    <!-- //login -->
+    <div (submit)="loginUser($event)"  id ="login" class="container-fluid" ng-show="isDisplayed">
+      <div class="row height">
+        <div class="col-xs-3 "></div>
     
-    <div class="row">
-      <div class="col-md-12">
-        <p class="reset-pass-p2">You’re sorry</p>
-        <p class="reset-pass-p">Let’s reset your password</p>
-        <p class="terms-conditions">I agree with Terms & Conditions</p>
+        <div class="col-xs-4 pos1">
+          <div class="welcome-back"> <h4>Welcome back</h4></div>
+   
+          <h1 class="login-to-your-accoun">Login to your account</h1>
+        </div>
+    
+    <div  class="col-xs-5 pos">
+        <form>
+        <input class = "rectangle-2a email-adress" type ="email" placeholder="email adress">
+      
+        <div class="inline">
+            <input class = "rectangle-2a email-adress" type="password" placeholder="password">
+            <!-- <div id="icon"></div> -->
+        </div>
+        <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="Sign In">
         
-        <input type="password" class="form-control text-1" placeholder="new password">
-        <input type="password" class="form-control text-2" placeholder="confirm password">
-        <input type="checkbox" class="check">
+        <p class="forgot-password-res"><span>Forgot password?</span><a>Reset it</a></p>
+        </form>
+        </div>
         
-      <button class="btn-reset btn-primary btn-lg" type="submit">Reset Password</button>
+  <div class="footer">
+                <label class="don-t-have-an-accoun" for="signup">Don't have an account?</label>
+                <button class="rectangle btn btn-primary sign-up" id="signup" ng-click="isDisplayed = !isDisplayed">Sing Up</button>
+      </div>
+       
+        </div>
      
-  
-      </div>
     </div>
-  </div>
-  
- </body> 
 
-<!-- <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-          <input type="email" class="form-control email" placeholder="some@gmail.com">
-          <button class="btn-send-email btn-primary btn-lg" type="submit">Send</button>
-          <p class="reset-email-p">Please enter your email</p>
+<!-- div-ul create -->
+    <div id ="create" class="container-fluid">
+        <div class="row height">
+            <div class="col-xs-3 "></div>
+        
+            <div class="col-xs-4 pos1">
+              <div class="welcome-back"> You're one step closer</div>
+              <!-- <h4 style="width:250px"></h4> -->
+              <h1 class="login-to-your-accoun">Create a new account</h1>
+            </div>
+        
+        <div  class="col-xs-5 posb">
+            <form>
+            <input class = "rectangle-2a email-adress" type ="text" placeholder="first name">
+            <input class = "rectangle-2a email-adress" type ="text" placeholder="second name">
+            <input class = "rectangle-2a email-adress" type ="email" placeholder="email adress">
+          
+            <div class="inline">
+                <input class = "rectangle-2a email-adress" type="password" placeholder="password">
+                <!-- <div id="icon"></div> -->
+            </div>
+            <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="CREATE ACCOUNT">
+            <input type="checkbox" id="cb">
+            <label for="cb">I agree with Terms & Condition</label>
+            </form>
+            </div>
+            </div>
 
-  
-      </div>
     </div>
-  </div>
-</body>  -->
+    <!-- resetare password -->
+    <div class="container " id="create">
+    
+        <div class="row">
+          <div class="col-md-12">
+            <p class="reset-pass-p2">You’re sorry</p>
+            <p class="reset-pass-p">Let’s reset your password</p>
+            <p class="terms-conditions">I agree with Terms & Conditions</p>
+            
+            <input type="password" class="form-control text-1" placeholder="new password">
+            <input type="password" class="form-control text-2" placeholder="confirm password">
+            <input type="checkbox" class="check">
+            
+          <button class="btn-reset btn-primary btn-lg" type="submit">Reset Password</button>
+         
+      
+          </div>
+        </div>
+      </div>
+      <!-- confirm/send email -->
+      <div class="container" id="create">
+        <div class="row">
+          <div class="col-md-12">
+              <input type="email" class="form-control email" placeholder="some@gmail.com">
+              <button class="btn-send-email btn-primary btn-lg" type="submit">Send</button>
+              <p class="reset-email-p">Please enter your email</p>
+    
+      
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+
