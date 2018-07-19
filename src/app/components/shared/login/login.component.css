@@ -5,12 +5,8 @@
     background-position: center; 
     background-image: url('../../../../assets/bg_image.png');
     width: 100vw;
-    height: 100vh; 
-    
+    height: 100vh;  
  }
- 
-
-
 input {
     display: block;
 }
@@ -25,7 +21,6 @@ input {
 	text-align: center;
 }
 .sign-up {
-  
 	height: 48%;
 	width: 52%;
 	color: #FFFFFF;
@@ -51,7 +46,6 @@ input {
     border-radius: 5px;
     background-color: #FFFFFF;
 }
-
 .rectangle-2b {
     height: 45%;
     width: 34%;
@@ -81,8 +75,10 @@ input {
 	color: white;
 	font-family: Roboto;
 	font-size: 20px;
-	line-height: 26px;
-    text-align: center;  
+	line-height: 26px;  
+}
+#ReserIt{
+    cursor: pointer;
 }
 .forgot-password-res {
 	height: 19%;
@@ -90,7 +86,8 @@ input {
 	color: #F7F7F7;
 	font-family: Roboto;
 	font-size: 12px;
-	line-height: 19px;
+    line-height: 19px;
+    
 }
 .don-t-have-an-accoun {
     
@@ -196,30 +193,3 @@ background-color: #FFFFFF;
     left: 950px;
     top: 545px;
 }
-
-#maindiv {
-    background-color: #020e30;
-    background-repeat: no-repeat;
-    background-position: center; 
-    background-image: url('../../../../assets/bg_image.png');
-    width:100%;
-    height:100%;
-}
-
-.form-position {
-    position: absolute;
-    top: 42%;
-    left: 50%;
-     
- }
- .info-position {
-     position: absolute;
-     top: 43%;
-     left : 25%;
- }
- .footer-position {
-     position: absolute;
-     bottom: 0%;
-     left: 40%;
- }
- 
