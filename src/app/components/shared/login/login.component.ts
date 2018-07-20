@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   state4:string="hide";
   state5:string="hide";
 
-   @Input() users: User;
+   @Input() users: User[];
    isDisplayed: boolean = false;
   constructor(private router: ActivatedRoute ,
               private rout:Router,
@@ -44,17 +44,26 @@ export class LoginComponent implements OnInit {
    });
     });
   }
+    // CREATE ACCOUNT
+    add(e){
+      e.preventDefault();
+      //  this.state1="hide";
+      //  this.state2 ="show";
+      // this.state3 = "hide";
+      // this.state4 = "hide";
+      var id = Math.floor(Math.random()*2)
+      var last_name =e.target.elements[0].value;
+      var name =e.target.elements[1].value;
+      var email =e.target.elements[2].value;
+      var password =e.target.elements[3].value;
+       this.userConn.addUser({id ,last_name, name, email, password, active: 1}as User).subscribe(data=>{
+        //this.users.push(data);
+       })
+    }
   // SingUp
   createCont(){ 
     this.state1 = "show";
     this.state2 = "hide";
-    this.state3 = "hide";
-    this.state4 = "hide";
-  }
-  // CREATE ACCOUNT
-  SpreLogin(){
-    this.state1="hide";
-    this.state2 ="show";
     this.state3 = "hide";
     this.state4 = "hide";
   }

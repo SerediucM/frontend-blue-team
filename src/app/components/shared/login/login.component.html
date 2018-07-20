@@ -29,7 +29,9 @@
     </div>
 
 <!-- div-ul create -->
-    <div class="container-fluid {{state1}}">
+<!-- div-ul create -->
+<!-- div-ul create -->
+    <div (submit)="add($event)" class="container-fluid {{state1}}">
         <div class="row height">
             <div class="col-xs-6 col-sm-6 info-position">
               <div class="welcome-back"> You're one step closer</div>
@@ -41,7 +43,7 @@
             <input class = "rectangle-2a email-adress" type ="text" placeholder="second name">
             <input class = "rectangle-2a email-adress" type ="email" placeholder="email adress">
             <input class = "rectangle-2a email-adress" type="password" placeholder="password">
-            <input (click)="SpreLogin()" class = "rectangle-2b btn btn-primary sign-in" type="submit"value="CREATE ACCOUNT">
+            <input  class = "rectangle-2b btn btn-primary sign-in" type="submit" value="CREATE ACCOUNT">
             <input type="checkbox" id="cb">
             <label for="cb">I agree with Terms & Condition</label>
             </form>
