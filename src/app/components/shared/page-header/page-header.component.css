@@ -1,1 +1,50 @@
 .nav-bar {	height: 100px;	width: 1440px;}
+
+.navbar-brand{
+    background-image: url('../../../../assets/logo_teachme-nav-bar.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 34%;
+   
+    
+}
+.nav.navbar-nav.navbar-right li a{
+    color: darkblue;
+}
+
+.main-user{
+    position: absolute;
+    top: 32%;
+    font-size: 120%;
+    left: 79%;
+}
+.image-user{
+    position: absolute;
+    top: 40%;
+    font-size: 120%;
+    background-color: black;
+    border-radius: 50%;
+    left: 76%;
+    width: 3%;
+
+}
+
+.user-course{
+    position: absolute;
+    top: 32%;
+    left: 44%;
+    font-size: 120%;
+    
+}
+.user-new{
+    position: absolute;
+    top: 32%;
+    left: 54%;
+    font-size: 120%;
+}
+.user-about{
+    position: absolute;
+    top: 32%;
+    left: 66%;
+    font-size: 120%;
+}
