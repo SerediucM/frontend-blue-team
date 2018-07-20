@@ -71,6 +71,35 @@
       "email": "johsdn.doe1@assist.ro",
       "password": "assistasd1",
       "active": 1
+    },
+    {
+      "id": 72,
+      "last_name": "aqwd",
+      "name": "asdASD",
+      "email": "johASDn.doe1@assist.ro",
+      "password": "assAsdist1",
+      "active": 1
+    },
+    {
+      "id": 17,
+      "last_name": "Miahela",
+      "name": "Serediuc",
+      "email": "johasdn.doe1@assist.ro",
+      "password": "assisasdt1"
+    },
+    {
+      "id": 82,
+      "last_name": "sdawqas",
+      "name": "asdas",
+      "email": "joasdhn.doe1@assist.ro",
+      "password": "assasdist1"
+    },
+    {
+      "id": 41,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": ""
     }
   ],
   "course": [

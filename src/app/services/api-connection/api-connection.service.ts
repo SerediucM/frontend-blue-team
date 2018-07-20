@@ -12,11 +12,9 @@ import { MessageService } from '../../message.service';
   providedIn: 'root'
 })
 export class ApiConnectionService {
-
+  private userUrl = 'http://localhost:3000/users';
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
-
-  private userUrl = 'http://localhost:3000/users';
   // Get: login a user
  getUser(id: number): Observable<any>
  {
