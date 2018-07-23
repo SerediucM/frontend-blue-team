@@ -22,7 +22,7 @@
     position: relative;
     height: 46px;
     width: 77,4%;
-    left: 270px;
+    left: 39%;
     top: 150px;
     color: #AEB5BB;
     font-family: Roboto;
@@ -42,23 +42,23 @@
 
 .back-g{
     position: absolute;
-    height: 1440px;
-    width: 1440px;
-    top: 440px;
+    height: 550%;
+    width: 200%;
+    top: 175%;
     background-color: #F6FAFC;
     
 }
 .account-text3{
     position: absolute;
     height: 38px;
-    width: 774px;
-    left: 270px;
+    width: 77,4%;
+    left: 19%;
     color: #4A4A4A;
     font-family: Roboto;
     font-size: 24px;
     font-weight: bold;
     line-height: 38px;
-    top: 150px;
+    top: 10%;
     
 }
 .account-img{
@@ -66,8 +66,8 @@
     height: 140px;
     width: 140px;
     border-radius: 5px;
-    left: 300px;
-    top: 648px;
+    left: 42%;
+    top: 260%;
     background-color: black;
     
 }
@@ -76,18 +76,18 @@
     position: absolute;
     height: 29px;
     width: 96px;
-    left: 323px;
-    top: 802px;
+    left: 45%;
+    top: 320%;
     border: 1px solid #006FFF;
     color: #006FFF;
 
 }
 .talk-user{
     position: absolute;
-    height: 92px;
-    width: 256px;
-    left: 460px;
-    top: 668px;
+    height: 18%;
+    width: 37%;
+    left: 65%;
+    top: 270%;
     color: #AEB5BB;
     font-family: Roboto;
     font-size: 14px;
@@ -97,10 +97,10 @@
 
 .user-name{
     position: absolute;
-    height: 45px;
-    width: 300px;
-    left: 810px;
-    top: 648px;
+    height: 18%;
+    width: 42%;
+    left: 112.5%;
+    top: 255%;
     border: 1px solid #AEB5BB;
     border-radius: 5px;
     background-color: #FFFFFF;
@@ -108,10 +108,10 @@
 }
 .user-pass{
     position: absolute;
-    height: 45px;
-    width: 300px;
-    left: 810px;
-    top: 706px;
+    height: 18%;
+    width: 42%;
+    left: 112.5%;
+    top: 280%;
     border: 1px solid #AEB5BB;
     border-radius: 5px;
     background-color: #FFFFFF;
@@ -119,10 +119,10 @@
 }
 .user-email{
     position: absolute;
-    height: 45px;
-    width: 300px;
-    left: 810px;
-    top: 764px;
+    height: 18%;
+    width: 42%;
+    left: 112.5%;
+    top: 305%;
     border: 1px solid #AEB5BB;
     border-radius: 5px;
     background-color: #FFFFFF;
@@ -132,8 +132,8 @@
     position: absolute;
     height: 29px;
     width: 58px;
-    left: 976px;
-    top: 864px;
+    left: 135%;
+    top: 342.5%;
     background-color:#006FFF;
     border: none;
     font-weight: bold;
@@ -143,8 +143,8 @@
     position: absolute;
     height: 29px;
     width: 72px;
-    left: 1041px;
-    top: 864px;
+    left: 145%;
+    top: 342.5%;
     border: 1px solid #006FFF;
     color: #006FFF;
   
@@ -153,8 +153,8 @@
 hr{
     position: absolute;
     box-sizing: border-box;
-    left: 330px;
-    top: 955px;
+    left: 45%;
+    top: 370%;
     height: 2px;
     width: 780px;
     border: 1px solid #EBECED;
@@ -165,8 +165,8 @@ hr{
     position: absolute;
     height: 38px;
     width: 774px;
-    left: 330px;
-    top: 1000px;
+    left: 46%;
+    top: 400%;
     color: #06102B;
     font-family: Roboto;
     font-size: 24px;
@@ -178,8 +178,8 @@ hr{
     position: absolute;
     height: 174px;
     width: 780px;
-    left: 330px;
-    top: 1084px;
+    left: 46%;
+    top: 430%;
     border: 1px solid #EFF1F4;
     border-radius: 5px;
     background-color: #FFFFFF;
@@ -190,7 +190,7 @@ hr{
     height: 100px;
     width: 100px;
     left: 5%;
-    top: 30px;
+    top: 16%;
     border-radius: 5px;
     background-color: black;
     
@@ -246,8 +246,8 @@ hr{
     position: absolute;
     height: 174px;
     width: 780px;
-    left: 330px;
-    top: 1302px;
+    left: 46%;
+    top: 510%;
     border: 1px solid #EFF1F4;
     border-radius: 5px;
     background-color: #FFFFFF;
@@ -257,8 +257,8 @@ hr{
     position: absolute;
     height: 174px;
     width: 780px;
-    left: 330px;
-    top: 1510px;
+    left: 46%;
+    top: 595%;
     border: 1px solid #EFF1F4;
     border-radius: 5px;
     background-color: #FFFFFF;
