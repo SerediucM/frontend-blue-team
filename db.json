@@ -1,14 +1,226 @@
 {
   "users": [
-    {"user_id": 1, "email": "john.doe1@assist.ro", "password": "assist1", "name": "John1", "last_name": "Doe1", "active": 1},
-    {"user_id": 2, "email": "john.doe2@assist.ro", "password": "assist2", "name": "John2", "last_name": "Doe2", "active": 1},
-    {"user_id": 3, "email": "john.doe3@assist.ro", "password": "assist3", "name": "John3", "last_name": "Doe3", "active": 1},
-    {"user_id": 4, "email": "john.doe4@assist.ro", "password": "assist4", "name": "John4", "last_name": "Doe4", "active": 1}
+    {
+      "user_id": 1,
+      "email": "john.doe1@assist.ro",
+      "password": "assist1",
+      "name": "John1",
+      "last_name": "Doe1",
+      "active": 1
+    },
+    {
+      "user_id": 2,
+      "email": "john.doe2@assist.ro",
+      "password": "assist2",
+      "name": "John2",
+      "last_name": "Doe2",
+      "active": 1
+    },
+    {
+      "user_id": 3,
+      "email": "john.doe3@assist.ro",
+      "password": "assist3",
+      "name": "John3",
+      "last_name": "Doe3",
+      "active": 1
+    },
+    {
+      "user_id": 4,
+      "email": "john.doe4@assist.ro",
+      "password": "assist4",
+      "name": "John4",
+      "last_name": "Doe4",
+      "active": 1
+    },
+    {
+      "id": 7,
+      "last_name": "asd",
+      "name": "aSda",
+      "email": "joasdhn.doe1@assist.ro",
+      "password": "assist1",
+      "active": 1
+    },
+    {
+      "id": 6,
+      "last_name": "wasdas",
+      "name": "asd",
+      "email": "johasdn.doe1@assist.ro",
+      "password": "assist1asd",
+      "active": 1
+    },
+    {
+      "id": 60,
+      "last_name": "asdasd",
+      "name": "asd",
+      "email": "johasdn.doe1@assist.ro",
+      "password": "assisasdt1",
+      "active": 1
+    },
+    {
+      "id": 61,
+      "last_name": "ASA",
+      "name": "SAD",
+      "email": "johASDn.doe1@assist.ro",
+      "password": "assisASDt1",
+      "active": 1
+    },
+    {
+      "id": 1,
+      "last_name": "ad",
+      "name": "asd",
+      "email": "johsdn.doe1@assist.ro",
+      "password": "assistasd1",
+      "active": 1
+    },
+    {
+      "id": 72,
+      "last_name": "aqwd",
+      "name": "asdASD",
+      "email": "johASDn.doe1@assist.ro",
+      "password": "assAsdist1",
+      "active": 1
+    },
+    {
+      "id": 17,
+      "last_name": "Miahela",
+      "name": "Serediuc",
+      "email": "johasdn.doe1@assist.ro",
+      "password": "assisasdt1"
+    },
+    {
+      "id": 82,
+      "last_name": "sdawqas",
+      "name": "asdas",
+      "email": "joasdhn.doe1@assist.ro",
+      "password": "assasdist1"
+    },
+    {
+      "id": 41,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": 43,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": 92,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": 9,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": 44,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": "dgsdgdf"
+    },
+    {
+      "id": 63,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": "zsdgdf"
+    },
+    {
+      "id": 56,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": "zsdgdf"
+    },
+    {
+      "id": 38,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": "zsdgdf"
+    },
+    {
+      "id": 99,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": "zsdgdf"
+    },
+    {
+      "id": 88,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": "asfsadf"
+    },
+    {
+      "id": 74,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": "sdgd"
+    },
+    {
+      "id": 12,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": "fyukj"
+    },
+    {
+      "id": 37,
+      "last_name": "",
+      "name": "",
+      "email": "",
+      "password": "dfgdfg"
+    },
+    {
+      "id": 62,
+      "last_name": "ergerh",
+      "name": "erhrh",
+      "email": "erer@fgd.dgh",
+      "password": "Suceav@33"
+    }
   ],
   "course": [
-    {"id": 1, "small_description": "This is one of the courses", "long_description": "This is the long description for one of the courses", "tags": "Assist1", "images": "https://pbs.twimg.com/media/CXvJX8TWcAAS0Ax.png"},
-    {"id": 2, "small_description": "This is one of the courses", "long_description": "This is the long description for one of the courses", "tags": "Assist2", "images": "https://pbs.twimg.com/media/CXvJX8TWcAAS0Ax.png"},
-    {"id": 3, "small_description": "This is one of the courses", "long_description": "This is the long description for one of the courses", "tags": "Assist3", "images": "https://pbs.twimg.com/media/CXvJX8TWcAAS0Ax.png"},
-    {"id": 4, "small_description": "This is one of the courses", "long_description": "This is the long description for one of the courses", "tags": "Assist4", "images": "https://pbs.twimg.com/media/CXvJX8TWcAAS0Ax.png"}
+    {
+      "id": 1,
+      "small_description": "This is one of the courses",
+      "long_description": "This is the long description for one of the courses",
+      "tags": "Assist1",
+      "images": "https://pbs.twimg.com/media/CXvJX8TWcAAS0Ax.png"
+    },
+    {
+      "id": 2,
+      "small_description": "This is one of the courses",
+      "long_description": "This is the long description for one of the courses",
+      "tags": "Assist2",
+      "images": "https://pbs.twimg.com/media/CXvJX8TWcAAS0Ax.png"
+    },
+    {
+      "id": 3,
+      "small_description": "This is one of the courses",
+      "long_description": "This is the long description for one of the courses",
+      "tags": "Assist3",
+      "images": "https://pbs.twimg.com/media/CXvJX8TWcAAS0Ax.png"
+    },
+    {
+      "id": 4,
+      "small_description": "This is one of the courses",
+      "long_description": "This is the long description for one of the courses",
+      "tags": "Assist4",
+      "images": "https://pbs.twimg.com/media/CXvJX8TWcAAS0Ax.png"
+    }
   ]
 }

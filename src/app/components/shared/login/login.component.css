@@ -1,15 +1,67 @@
-
+.errGlobal{
+   position: absolute;
+   width: 33%;
+   top: -17%;
+   background: transparent;
+}
+.labelInput{
+    height: 0;
+}
+.visiblePass{
+    position: absolute;
+    left: 31%;
+    top: 40%;
+    cursor: pointer; 
+}
+.visiblePass1{
+    position: absolute;
+    left: 31%;
+    top: 55%;
+    cursor: pointer;  
+}
+.visiblePass2{
+    position: absolute;
+    left: 31%;
+    top: 32%;
+    cursor: pointer;
+}
 .maindiv{
     background-color: #020e30;
     background-repeat: no-repeat;
     background-position: center; 
     background-image: url('../../../../assets/bg_image.png');
     width: 100vw;
-    height: 100vh; 
+    height: 100vh;  
+ }  
+ .erre {
+    position: absolute;
+    left: 35%;
+    top: 37%;
+    height: 5%;
+    background: transparent
 }
- 
-
-
+.errp {
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    width: 30%;
+    height: 5%;
+    background: transparent
+}
+.errf {
+    position: absolute;
+    left: 35%;
+    top: 2%;
+    height: 5%;
+    background: transparent
+}
+ .errs {
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    height: 4%;
+    background: transparent
+}
 input {
     display: block;
 }
@@ -24,7 +76,6 @@ input {
 	text-align: center;
 }
 .sign-up {
-  
 	height: 48%;
 	width: 52%;
 	color: #FFFFFF;
@@ -50,7 +101,6 @@ input {
     border-radius: 5px;
     background-color: #FFFFFF;
 }
-
 .rectangle-2b {
     height: 45%;
     width: 34%;
@@ -58,7 +108,6 @@ input {
     background-color: #006FFF;
     margin-top: 3%;
 }
-
 .login-to-your-accoun {
     position: relative;
    
@@ -75,16 +124,15 @@ input {
     left: 56%;
     position: relative;
     text-align: center;
-
 	width: 22%;
 	opacity: 0.5;
 	color: white;
 	font-family: Roboto;
 	font-size: 20px;
-	line-height: 26px;
-    text-align: center;
-
-  
+	line-height: 26px;  
+}
+#ReserIt{
+    cursor: pointer;
 }
 .forgot-password-res {
 	height: 19%;
@@ -92,7 +140,8 @@ input {
 	color: #F7F7F7;
 	font-family: Roboto;
 	font-size: 12px;
-	line-height: 19px;
+    line-height: 19px;
+    
 }
 .don-t-have-an-accoun {
     
@@ -109,40 +158,32 @@ input {
     position: absolute;
     top: 42%;
     left: 50%;
-
-
 }
 .info-position {
     position: absolute;
     left: 2.2%;
-    top: 43%;
-    
+    top: 43%;  
  }
  .footer-position {
     position: absolute;
     top:865px;
     left: 690px;
  }
-
 .posb {
     position: relative;
     top: 36,1%;
     left: 95%;
 }
-
 .inline
 {
 display: inline;
 }
-
-
 .show {
 display: block;
 }
 .hide {
 display: none;
 }
-
 .rectangle {
 height: 33px;
 width: 98px;
@@ -153,7 +194,6 @@ background-color: #006FFF;
 top: 1000px;
 left: 690px;;
 }
-
 .btn-reset{
     height: 45px;
     width: 300px;
@@ -166,8 +206,6 @@ left: 690px;;
     font-weight: bold;
     border: none;
 }
-
-
 .terms-conditions{
     position: relative;
     height: 16px;
@@ -179,7 +217,6 @@ left: 690px;;
     font-size: 14px;
     line-height: 16px;
 }
-
 .check{
 position: relative;
 height: 19px;
@@ -188,9 +225,7 @@ left: 880px;
 top: 425px;
 border-radius: 5px;
 background-color: #FFFFFF;
-
 }
-
 .email{
     position: relative;
     height: 45px;
@@ -198,4 +233,3 @@ background-color: #FFFFFF;
     left: 950px;
     top: 545px;
 }
-

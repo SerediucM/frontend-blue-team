@@ -20,6 +20,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChapterQuestionsComponent } from './components/shared/chapter-questions/chapter-questions.component';
 import { ApiConnectionService } from './services/api-connection/api-connection.service';
 
+
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'account', component: MyAccountComponent },
@@ -29,7 +31,7 @@ const routes: Routes = [
   { path: 'courses', component: CourseListComponent },
   { path: 'courses/:courseId', component: ChapterListComponent},
   { path: 'courses/:courseId/:chapterId',component: ChapterQuestionsComponent },
-  { path: '**', redirectTo: 'dashboard' }
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
