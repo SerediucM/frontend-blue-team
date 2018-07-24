@@ -4,12 +4,18 @@
     width: 1440px;
     
 }
+.show {
+    display: block;
+    }
+.hide {
+    display: none;
+    }
 
 .account-text {
     position: relative;
 	height: 38%;
     width: 77,4%;
-    left: 39%;
+    left: 23%;
     top: 40px;
 	color: #06102B;
 	font-family: Roboto;
@@ -22,7 +28,7 @@
     position: relative;
     height: 46px;
     width: 77,4%;
-    left: 39%;
+    left: 23%;
     top: 150px;
     color: #AEB5BB;
     font-family: Roboto;
@@ -52,7 +58,7 @@
     position: absolute;
     height: 38px;
     width: 77,4%;
-    left: 19%;
+    left: 18%;
     color: #4A4A4A;
     font-family: Roboto;
     font-size: 24px;
@@ -306,8 +312,8 @@ hr{
 
 .footer{
     position: absolute;
-    left: 2%;
-    top: 721%;
+    left: 4.1%;
+    top: 725%;
     height: 59px;
     width: 1440px;
     background-color: #F7F7F7;
@@ -360,4 +366,60 @@ hr{
     font-family: Roboto;
     font-size: 12px;
     line-height: 14px;
+}
+
+.back-g2{
+    position: absolute;
+    height: 404px;
+    width: 1440px;
+    top: -20px;
+    background-color: #F6FAFC;
+}
+.footer2{
+    position: absolute;
+    left: 0%;
+    top: 100%;
+    height: 59px;
+    width: 1440px;
+    background-color: #F7F7F7;
+
+}
+
+.congrats{
+    position: absolute;
+    height: 23px;
+    width: 78px;
+    color: #AEB5BB;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 23px;
+    left: 44%;
+    top: 38%;  
+}
+.finished-course{
+    position: absolute;
+    height: 38px;
+    width: 774px;
+    color: #06102B;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 38px;
+    text-align: center;
+    left: 20%;
+    top: 45%;
+    
+}
+
+.cancel-user2{
+    position: absolute;
+    height: 29px;
+    width: 190px;
+    left: 40%;
+    top: 60%;
+    border: 1px solid #006FFF;
+    color: #006FFF;
+  
+
 }

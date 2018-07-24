@@ -19,9 +19,9 @@ export class MyAccountComponent implements OnInit, AfterViewInit {
 
  @Input() users: User;
 
-private loggedUserName: string;
-private loggedUserPass: string;
-private loggedUserEmail: string;
+private loggedUser = {};
+
+
  
   isDisplayed: boolean = true;
  constructor(private router: ActivatedRoute ,
@@ -30,16 +30,11 @@ private loggedUserEmail: string;
              private userConn: ApiConnectionService,
              private http: HttpClient
              
- ) { 
-
-     
- }
-
- ngAfterViewInit():void {
+ ) {  }
+ngAfterViewInit():void {
   this.getUsers().subscribe(data => {
-      this.loggedUserName = data[0].name;
-      this.loggedUserPass = data[0].password;
-      this.loggedUserEmail = data[0].email;   
+      this.loggedUser = data[1]; 
+      
   });
  }
 
@@ -50,10 +45,13 @@ private loggedUserEmail: string;
   loginUser(e){
     e.preventDefault();
     console.log(e);
+  }
 
+    logoutuser(){
+      
+      localStorage.removeItem('id');
+    }
 
-    
-}
 getUsers(){
   const id = +this.router.snapshot.paramMap.get('id');
   return this.userConn.getUser(id)
