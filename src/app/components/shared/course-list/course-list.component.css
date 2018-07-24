@@ -1,0 +1,107 @@
+.hero-position{
+    position: absolute;
+    top:80%;
+}
+.nav-bar {
+	position: absolute;
+	left: 10%;
+}
+.footer {
+	position: relative;
+    top: 1200px;
+	height: 59px;
+	width: 1440px;
+	background-color: #F7F7F7;
+}
+.alexa-teach-me-2018 {
+	height: 14px;
+	width: 222px;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 14px;
+}
+.terms-conditions {
+	position: relative;
+	left: 60%;
+	height: 14px;
+	width: 105px;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 14px;
+}
+.privacy {
+	position: relative;
+	left: 62%;
+	height: 14px;
+	width: 39px;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 14px;
+}
+.support {
+	position: relative;
+	left: 64%;
+	height: 14px;
+	width: 43px;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 14px;
+}
+.info-position{
+    position: absolute;
+    top: 120px;
+}
+.btns-secondary {
+	height: 33px;
+    width: 140px;
+    position: relative;
+    left:650px;
+    top: 800px;
+    color: lightblue;
+}
+
+.card_layout{
+  position: absolute;
+  top: 90%;
+  width: 300px;
+  height: 388px;
+  border: 1px solid black;
+  border-radius: 10px;
+  
+}
+
+.text_position{
+display:inline; 
+width: 300px;
+height: 400px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+	width: 300px;
+	height: 388px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card-position{
+	position: relative;
+	top:60%;
+}
+
+ul li {
+	display: inline;
+}
+
+
+
+
+
+
+

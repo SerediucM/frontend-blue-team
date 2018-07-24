@@ -5,6 +5,37 @@
   used for the admin - this component displays all the courses and offers the ability
   to create a new course, edit or remove an existing course.
 -->
-<p>
-  course-list works!
-</p>
+
+<div class="container nav-bar">
+    <div class="row">
+        <app-page-header ></app-page-header>
+        <app-hero class="hero-position" [childMessage1]="parentMessage1" [childMessage2]="parentMessage2"></app-hero>
+    </div>
+</div>
+<div class="container">
+    <ul>
+        <li *ngFor="let crs of mycourses">
+    <div class="card card-position">
+            <img src="../../../../assets/img_avatar.png" alt="Avatar" style="width:100%">
+            <div class="container">
+            <h4><b>John Doe</b></h4> 
+            <p>Architect & Engineer</p> 
+            </div>
+    </div>
+    </li>
+    </ul>
+        <footer class="footer">
+                <div class="container">
+                    <p><span class="alexa-teach-me-2018">Alexia Teach Me 2018. All rights reserved</span><span class="terms-conditions">Terms & Condition</span><span class="privacy">Privacy</span>
+                      <span class="support">Support</span></p>
+                </div>
+        </footer>
+</div>
+
+
+
+    
+
+
+  
+  

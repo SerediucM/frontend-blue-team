@@ -1,0 +1,57 @@
+.nav-bar {
+	position: absolute;
+	left: 10%;
+}
+.support {
+	position: relative;
+	left: 64%;
+	height: 14px;
+	width: 43px;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 14px;
+}
+.footer {
+	position: relative;
+	top:1200px;
+	height: 59px;
+	width: 1440px;
+	background-color: #F7F7F7;
+}
+.hero-position{
+    position: absolute;
+    top:80%;
+}
+.alexa-teach-me-2018 {
+	height: 14px;
+	width: 222px;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 14px;
+}
+.terms-conditions {
+	position: relative;
+	left: 60%;
+	height: 14px;
+	width: 105px;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 14px;
+}
+.privacy {
+	position: relative;
+	left: 62%;
+	height: 14px;
+	width: 39px;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 14px;
+}
+.chapter_position{
+	position: absolute;
+	top:400px;
+}
