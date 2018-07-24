@@ -12,7 +12,8 @@ import { MessageService } from '../../message.service';
   providedIn: 'root'
 })
 export class ApiConnectionService {
-  private userUrl = 'http://localhost:3000/users';
+  private userUrl = 'http://192.168.210.113:8080/users';
+  private userUrlP = 'http://192.168.210.113:8080/create/user';
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
   // Get: login a user
@@ -23,22 +24,11 @@ export class ApiConnectionService {
  }
   //  POST: add a new user to the server 
  addUser(user: User): Observable<User>{
-  const url = `${this.userUrl}`;
-   console.log ("USER:", user, url);
-   return this.http.post<User>(url, user)
+  const urlP = `${this.userUrlP}`;
+  // console.log ("USER:", user, url);
+   return this.http.post<User>(urlP, user);
  }
-
   private log(message: string) {
   this.messageService.add(`HeroService: ${message}`);
-}
-//  private handleError<T> (operation = 'operation', result?: T) {
-//   return (error: any): Observable<T> => {
-//     // TODO: send the error to remote logging infrastructure
-//     console.error(error); // log to console instead
-//     // TODO: better job of transforming error for user consumption
-//     this.log(`${operation} failed: ${error.message}`);
-//     // Let the app keep running by returning an empty result.
-//     return of(result as T);
-//   };
-// }  
+} 
   }

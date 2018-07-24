@@ -1,7 +1,8 @@
 .errGlobal{
    position: absolute;
    width: 33%;
-   top: -10%;
+   top: -17%;
+   background: transparent;
 }
 .labelInput{
     height: 0;
@@ -10,8 +11,19 @@
     position: absolute;
     left: 31%;
     top: 40%;
+    cursor: pointer; 
+}
+.visiblePass1{
+    position: absolute;
+    left: 31%;
+    top: 55%;
+    cursor: pointer;  
+}
+.visiblePass2{
+    position: absolute;
+    left: 31%;
+    top: 32%;
     cursor: pointer;
-    
 }
 .maindiv{
     background-color: #020e30;
@@ -21,7 +33,6 @@
     width: 100vw;
     height: 100vh;  
  }  
- 
  .erre {
     position: absolute;
     left: 35%;
@@ -32,7 +43,7 @@
 .errp {
     position: absolute;
     left: 35%;
-    top: 55%;
+    top: 50%;
     width: 30%;
     height: 5%;
     background: transparent
@@ -97,7 +108,6 @@ input {
     background-color: #006FFF;
     margin-top: 3%;
 }
-
 .login-to-your-accoun {
     position: relative;
    
@@ -148,40 +158,32 @@ input {
     position: absolute;
     top: 42%;
     left: 50%;
-
-
 }
 .info-position {
     position: absolute;
     left: 2.2%;
-    top: 43%;
-    
+    top: 43%;  
  }
  .footer-position {
     position: absolute;
     top:865px;
     left: 690px;
  }
-
 .posb {
     position: relative;
     top: 36,1%;
     left: 95%;
 }
-
 .inline
 {
 display: inline;
 }
-
-
 .show {
 display: block;
 }
 .hide {
 display: none;
 }
-
 .rectangle {
 height: 33px;
 width: 98px;
@@ -192,7 +194,6 @@ background-color: #006FFF;
 top: 1000px;
 left: 690px;;
 }
-
 .btn-reset{
     height: 45px;
     width: 300px;
@@ -205,8 +206,6 @@ left: 690px;;
     font-weight: bold;
     border: none;
 }
-
-
 .terms-conditions{
     position: relative;
     height: 16px;
@@ -218,7 +217,6 @@ left: 690px;;
     font-size: 14px;
     line-height: 16px;
 }
-
 .check{
 position: relative;
 height: 19px;
@@ -227,9 +225,7 @@ left: 880px;
 top: 425px;
 border-radius: 5px;
 background-color: #FFFFFF;
-
 }
-
 .email{
     position: relative;
     height: 45px;
