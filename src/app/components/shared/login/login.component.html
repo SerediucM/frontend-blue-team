@@ -1,96 +1,118 @@
-<!--
-  This component relates to all the login screens: login, reset
-  password, create new account. The displayed contents vary according
-  to the accessed functionality.
-
--->
-
-
 <div class="container-fluid maindiv" >
-     <div (submit)="loginUser($event)"   class="container show"> <div class="row">
-        <div class="col-xs-6 col-sm-6 info-position">
-           <h4 class="welcome-back">Welcome back</h4>
-           <h1 class="login-to-your-accoun">Login to your account</h1>
-        </div>
-    
-    <div  class="col-xs-6 col-sm-6 form-position">
-        <form>
-        <input class = "rectangle-2a email-adress" type ="email" placeholder="email adress">
-        <div class="inline">
-            <input class = "rectangle-2a email-adress" type="password" placeholder="password">
-        </div>
-        <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="Sign In">
-        <p class="forgot-password-res"><span>Forgot password?</span><a>Reset it</a></p>
-        </form>
-      </div> 
-      <div class="footer-position">
-                <label class="don-t-have-an-accoun" for="signup">Don't have an account?</label>
-                <button class="rectangle btn btn-primary sign-up" id="signup" ng-click="isDisplayed = !isDisplayed">Sing Up</button>
-      </div>
+    <div (submit)="loginUser($event)"   class="container {{state2}}"> 
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 info-position">
+                <h4 class="welcome-back">Welcome back</h4>
+                <h1 class="login-to-your-accoun">Login to your account</h1>
+            </div>  
+            <div  class="col-xs-6 col-sm-6 form-position">
+                <div class="errGlobal alert-danger">{{err}}</div>
+                <form>
+                    <div> 
+                            <label for="email"> </label> 
+                            <input  class = "rectangle-2a email-adress" type ="email"  (click)="log(email)" placeholder="email adress">
+                    </div>
+                    <div class="inline" >
+                        <input  name="password" class = "rectangle-2a email-adress" type="{{pass}}" placeholder="password">
+                    </div>
+                    <span class="visiblePass"><i (click)="VisiblePass()" class="glyphicon glyphicon-eye-open"></i></span>
+                    <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="Sign In">
+                    <p class="forgot-password-res"><span>Forgot password?</span><a id="ReserIt"(click)="ResetPass()">Reset it</a></p>
+                </form>
+            </div> 
+            <div class="footer-position">
+                        <label class="don-t-have-an-accoun" for="signup">Don't have an account?</label>
+                        <button (click)="createCont()" class="rectangle btn btn-primary sign-up" id="signup" >Sing Up</button>
+            </div>
         </div>
     </div>
-
 <!-- div-ul create -->
-    <div class="container-fluid hide">
+<!-- div-ul create -->
+<!-- div-ul create -->
+    <div (submit)="add($event)" class="container-fluid {{state1}}">
         <div class="row height">
             <div class="col-xs-6 col-sm-6 info-position">
-              <div class="welcome-back"> You're one step closer</div>
-              <h1 class="login-to-your-accoun">Create a new account</h1>
+                <div class="welcome-back"> You're one step closer</div>
+                <h1 class="login-to-your-accoun">Create a new account</h1>
             </div>
-        <div  class="col-xs-6 col-sm-6 form-position">
-            <form>
-            <input class = "rectangle-2a email-adress" type ="text" placeholder="first name">
-            <input class = "rectangle-2a email-adress" type ="text" placeholder="second name">
-            <input class = "rectangle-2a email-adress" type ="email" placeholder="email adress">
-            <input class = "rectangle-2a email-adress" type="password" placeholder="password">
-            <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="CREATE ACCOUNT">
-            <input type="checkbox" id="cb">
-            <label for="cb">I agree with Terms & Condition</label>
-            </form>
-            </div>
-            </div>
+            <div  class="col-xs-6 col-sm-6 form-position">
+                <div class="errGlobal alert-danger">{{errC}}</div>
+                <form>
+                    <input required pattern="[A-Za-z\s]+$" ngModel name="firstName" id="firstName" #firstName="ngModel" (change)="log(firstName)" class = "rectangle-2a email-adress" type ="text" placeholder="first name">
+                        <div class="errf  alert-danger" *ngIf="firstName.touched && !firstName.valid" >
+                            <div *ngIf="firstName.errors.required">First Name is required</div>
+                            <div *ngIf="firstName.errors.pattern">Must contain only characters</div>
+                        </div> 
+                    <input required pattern="[A-Za-z\s]+$" ngModel name="secondName" id="secondName" #secondName="ngModel" (change)="log(secondName)" class = "rectangle-2a email-adress" type ="text" placeholder="second name">
+                    <div class="errs  alert-danger" *ngIf="secondName.touched && !secondName.valid" >
+                        <div *ngIf="secondName.errors.required">Second Name is required</div>
+                        <div *ngIf="secondName.errors.pattern">Must contain only characters</div>
+                    </div>    
+                    <input required minlenght= "8" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class = "rectangle-2a email-adress" type ="email" placeholder="email adress" ngModel name="email" #email= "ngModel" (click)="log(email)" placeholder="email adress" >
+                    <div class=" erre  alert-danger " *ngIf="email.touched  && !email.valid ">
+                        <div *ngIf="email.errors.required && secondMessage">Email is required</div>
+                        <div *ngIf="email.errors.pattern  && secondMessage ">Email invalid</div>
+                    </div>  
+                    <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$" minlenght= "8" class = "rectangle-2a email-adress" type="{{pass1}}" ngModel name="password" #password= "ngModel" (click)="log(password)"placeholder="password">
+                    <div class="errp  alert-danger" *ngIf="password.touched && !password.valid" >
+                            <div *ngIf="password.errors.required">Password is required</div>
+                            <div *ngIf="password.errors.minlenght">The password must contain 8 characters</div>
+                            <div *ngIf="password.errors.pattern">It must contain characters, numbers and special characters</div>    
+                    </div>
+                    <span class="visiblePass1"><i (click)="VisiblePass1()" class="glyphicon glyphicon-eye-open"></i></span>
+                   
+                   
+                    <div >
+                    <input class = "rectangle-2b btn btn-primary sign-in" type="submit" ng-click="valid=checked" value="CREATE ACCOUNT">
+                    </div>
 
+                    <label > 
+                        <input type="checkbox"  required  [(ngModel)]="check" name="checkbox" #checkbox= "ngModel"  > I agree with Terms & Condition 
+                    </label>
+                    <div  class="errGlobal  alert-danger" *ngIf=" !checkbox.valid && checkVerify" >
+                            <div *ngIf="checkbox.errors.required">Checkbox is required</div>
+                    </div> 
+                    <!-- <span class="help-block" *ngIf="isActive.touched && isActive.errors?.required">Is active is required</span>required #isActive="ngModel" [(ngModel)]="user.isActive" -->
+                </form>
+             </div>
+        </div>
     </div> 
     <!-- resetare password -->
-    <div class="container hide" >
+    <div (submit)="ResetComplet($event)" class="container {{state4}}" >
         <div class="row">
             <div class="col-xs-6 col-sm-6 info-position">
                 <h4 class="welcome-back">Youre sorry</h4>
                 <h1 class="login-to-your-accoun">Let`s reset your password</h1>
-             </div>
-          <div  class="col-xs-6 col-sm-6 form-position">
+            </div>
+            <div  class="col-xs-6 col-sm-6 form-position">
               <form>
-                  <input class = "rectangle-2a email-adress" type="password" placeholder="password">
-            
-              <div class="inline">
-                  <input class = "rectangle-2a email-adress" type="password" placeholder="confirm password">
-              </div>
-              <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="Reset Password">
+                <div class="errGlobal alert-danger">{{errR}}</div>
+                <input required minlenght= "8" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class = "rectangle-2a email-adress" type ="email1" ngModel name="email1" #email1= "ngModel" (click)="log(email1)" placeholder="email adress" >
+                <div class=" errf  alert-danger " *ngIf="email1.touched  && !email1.valid ">
+                    <div *ngIf="email1.errors.required && secondMessage">Email is required</div>
+                    <div *ngIf="email1.errors.pattern  && secondMessage ">Email invalid</div>
+                </div> 
+                <!-- <input class = "rectangle-2a email-adress" type="password" placeholder="password">  -->
+                <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$" minlenght= "8" class = "rectangle-2a email-adress" type="{{pass2}}" ngModel name="password1" #password1= "ngModel" (click)="log(password1)"placeholder="password">
+                <div class="erre  alert-danger" *ngIf="password1.touched && !password1.valid" >
+                        <div *ngIf="password1.errors.required">Password is required</div>
+                        <div *ngIf="password1.errors.minlenght">The password must contain 8 characters</div>
+                        <div *ngIf="password1.errors.pattern">It must contain characters, numbers and special characters</div>    
+                </div>
+                <span class="visiblePass2"><i (click)="VisiblePass2()" class="glyphicon glyphicon-eye-open"></i></span>
+                <!-- <input class = "rectangle-2a email-adress" type="password" placeholder="confirm password"> -->
+                <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$" minlenght= "8" class = "rectangle-2a email-adress" type="{{pass3}}" ngModel name="password2" #password2= "ngModel" (click)="log(password2)"placeholder="password">
+                <div class="errp  alert-danger" *ngIf="password2.touched && !password2.valid" >
+                        <div *ngIf="password2.errors.required">Password is required</div>
+                        <div *ngIf="password2.errors.minlenght">The password must contain 8 characters</div>
+                        <div *ngIf="password2.errors.pattern">It must contain characters, numbers and special characters</div>    
+                </div>
+                <span class="visiblePass1"><i (click)="VisiblePass3()" class="glyphicon glyphicon-eye-open"></i></span>
+                <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="Reset Password">
               </form>
             </div>
         </div>
-      </div> 
-
-      <!-- confirm/send email -->
-      <div class="container hide" >
-        <div class="row">
-              <div class="col-xs-6 col-sm-6 info-position">
-           
-                  <h1 class="login-to-your-accoun">Please enter your email</h1>
-               </div>
-              <div  class="col-xs-6 col-sm-6 form-position">
-                  <form>
-                      <input class = "rectangle-2a email-adress" type="email" placeholder="some@yahoo.com">
-                
-                     
-                  <input class = "rectangle-2b btn btn-primary sign-in" type="submit"value="SEND">
-                  
-                 
-                  </form>
-                </div>
-           
-        </div>
-      </div>
+    </div> 
 </div>
 
 
