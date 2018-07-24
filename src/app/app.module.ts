@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'users/:id', component: UserComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'courses', component: CourseListComponent },
-  { path: 'courses/:id', component: ChapterListComponent},
+  { path: 'courses/:courseId', component: ChapterListComponent},
   { path: 'courses/:courseId/:chapterId',component: ChapterQuestionsComponent },
   { path: '**', redirectTo: 'login' }
 ];
