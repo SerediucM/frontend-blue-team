@@ -6,7 +6,7 @@ import { Course } from '../../shared/user interface/course';
 import { Observable, of } from 'rxjs';
 import { MessageService } from '../../message.service';
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json','Access-Control-Allow-Origin': '*' })
 };
 @Injectable({
   providedIn: 'root'
@@ -18,11 +18,14 @@ export class ApiConnectionService {
     private messageService: MessageService) { }
   private courseUrl = 'http://localhost:3000/course';
   // Get: login a user
-  
+  addGet(url, user: any): Observable<User> {
+    return this.http.get<User>(this.baseUrl + url);
+  }
   getUser(id: number): Observable<any> {
     const url = `${this.userUrl}`;
     return this.http.get<User>(url);
   }
+  
   getCourse(id: number): Observable<any> {
     const url2 = `${this.courseUrl}`;
     return this.http.get<Course>(url2);
@@ -40,11 +43,9 @@ export class ApiConnectionService {
       return of(result as T);
     };
   }
-  //  POST: add a new user to the server 
-  // addUser(user: User): Observable<User> {
-  //   const urlP = `${this.userUrlP}`;
-  //   // console.log ("USER:", user, url);
-  //   return this.http.post<User>(urlP, user);
+  // getConfigResponse(): Observable<HttpResponse<Config>> {
+  //   return this.http.get<Config>(
+  //     this.configUrl, { observe: 'response' });
   // }
 
   addPost(url, user: any): Observable<User> {

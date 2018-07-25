@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../../../shared/user interface/user';
 import { Location } from '@angular/common';
 import { ApiConnectionService } from '../../../services/api-connection/api-connection.service';
+import { DashboardComponent } from '../../dashboard/dashboard.component';
 // import { timingSafeEqual } from 'crypto';
 
 @Component({
@@ -13,13 +14,13 @@ import { ApiConnectionService } from '../../../services/api-connection/api-conne
 export class LoginComponent implements OnInit {
   model: any = {};
   err: string;
+  errC:string;
   errR: string;
   pass: string = 'password';
   pass1: string = 'password';
   pass2: string = 'password';
   pass3: string = 'password';
   titlu: string = '';
-  secondMessage: boolean = true;
   activ: string;
   state1: string = "hide";
   state2: string = "show";
@@ -27,6 +28,16 @@ export class LoginComponent implements OnInit {
   state4: string = "hide";
   state5: string = "hide";
   checkVerify: boolean = false;
+  private loginInputEmail: string;
+  private loginInputPassword: string;
+  private createinInputEmail: string;
+  private createinInputPassword: string;
+  private createinInputlast: string;
+  private createinInputfirst: string;
+  private resetinInputPassword: string;
+  private resetinInputEmail: string;
+  private resetinInputEmailConfirm: string;
+
 
   @Input() users: User[];
   isDisplayed: boolean = false;
@@ -42,16 +53,12 @@ export class LoginComponent implements OnInit {
   loginUser(e) {
     e.preventDefault();
     console.log(e);
-    var username = e.target.elements[0].value;
-    var password = e.target.elements[1].value;
     var login={
-      email: username,
-      password: password
+      email: this.loginInputEmail,
+      password: this.loginInputPassword
     }
     this.userConn.login(login as User).subscribe(data => {
       console.log('asd', data);
-    }, (err) => {
-      console.log('err', err);
     })
     // var gotResult = false;
     // this.getUsers().subscribe(data => {
@@ -82,45 +89,61 @@ export class LoginComponent implements OnInit {
   // CREATE ACCOUNT
   add(e) {
     e.preventDefault();
-    var id = Math.floor(Math.random() * 100)
-    var lastName = e.target.elements[0].value;
-    var firstName = e.target.elements[1].value;
-    var email = e.target.elements[2].value;
-    var password = e.target.elements[3].value;
     this.checkVerify = true;
     var userr = {
-      lastName: lastName,
-      firstName: firstName,
-      email: email,
-      password: password
+      lastName: this.createinInputlast,
+      firstName: this.createinInputfirst,
+      email: this.createinInputEmail,
+      password: this.createinInputPassword
     };
-    this.userConn.NewAcount(userr as User).subscribe(data => {
+    this.userConn.NewAcount(userr as User).subscribe((data : any) => {
+      if(data.success==true)
+      {
+        console.log("creat cu succes");
+        this.state1 = "hide";
+        this.state2 = "show";
+        this.state3 = "hide";
+        this.state4 = "hide";
+        this.errC="";
+      this.reset(e);
+      }
+      else 
+      if(data.success==false)
+      {
+        this.errC=data.message;
+        console.log(data.message)
+      }
+
+    },
+      (err) => {
+        console.log('err', err);
     })
   }
   //reset pass-login
   ResetComplet(f) {
     f.preventDefault();
     console.log("Am ajuns");
-    var email = f.target.elements[0].value;
-    var password = f.target.elements[1].value;
-    var confpassword = f.target.elements[2].value;
+    var confpassword = this.resetinInputEmailConfirm;
     var gotResult = false;
+    var userreset = {
+      email: this.resetinInputEmail,
+      password: this.resetinInputPassword
+    };
     this.getUsers().subscribe(data => {
       data.forEach(item => {
         if (!gotResult) {
-          if (email == item.email && password == confpassword) {
+          if (this.resetinInputEmail== item.email && this.resetinInputPassword == confpassword) {
             this.reset(f);
             // this.state1="hide";
             // this.state2 ="show";
             // this.state3 = "hide";
             // this.state4 = "hide";
             gotResult = true;
-          } else if (email == item.email && password != item.password) {
+          } else if (this.resetinInputEmail == item.email && this.resetinInputPassword!= item.password) {
             this.errR = "pass nu sunt ok ";
             gotResult = true;
           } else {
             this.errR = "This account does not exist. Please register";
-            this.secondMessage = false;
             gotResult = true;
           }
         }
@@ -134,11 +157,18 @@ export class LoginComponent implements OnInit {
   log(x) {
     this.err = "";
     this.errR = "";
-    this.secondMessage = true;
   }
   reset(e) {
-    e.target.elements[0].value = "";
-    e.target.elements[1].value = "";
+     this.loginInputEmail ="";
+    this.loginInputPassword="" ;
+    this.createinInputEmail="" ;
+    this.createinInputPassword="";
+    this.createinInputlast="";
+    this.createinInputfirst="";
+    this.resetinInputPassword="" ;
+    this.resetinInputEmail="";
+    this.resetinInputEmailConfirm ="";
+    e.target.elements[5].checked = false;
   }
   // SingUp->login
   createCont() {

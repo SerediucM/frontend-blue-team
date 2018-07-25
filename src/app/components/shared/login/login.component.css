@@ -10,18 +10,24 @@
 .visiblePass{
     position: absolute;
     left: 31%;
-    top: 40%;
+    top: 33%;
     cursor: pointer; 
+}
+.visiblePassCreate{
+    position: absolute;
+    left: 32%;
+    top: 59%;
+    cursor: pointer;  
 }
 .visiblePass1{
     position: absolute;
-    left: 31%;
+    left: 32%;
     top: 55%;
     cursor: pointer;  
 }
 .visiblePass2{
     position: absolute;
-    left: 31%;
+    left: 32%;
     top: 32%;
     cursor: pointer;
 }
@@ -44,7 +50,7 @@
     position: absolute;
     left: 35%;
     top: 50%;
-    width: 30%;
+    width: 40%;
     height: 5%;
     background: transparent
 }
@@ -133,6 +139,11 @@ input {
 	font-size: 20px;
 	line-height: 26px;  
 }
+.checkbox{
+    display: inline;
+    top:20%;
+    left: 5%;
+}
 .welcome-back2 {
     left: 60%;
     position: relative;
@@ -155,12 +166,11 @@ input {
 	font-size: 13px;
     line-height: 19px;
     position: relative;
-    left: 5%;
-    top:-10%;
+    left: 7%;
+    margin: 10px;
 
 }
 .don-t-have-an-accoun {
-    
 	height: 4,8%;
     width: 2,5%;
     margin-right: 0,2%;
