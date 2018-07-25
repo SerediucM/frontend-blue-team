@@ -15,8 +15,8 @@
           <p>Contact us at contact@alexateachme.com, if you need any help. </p>
        </div>
       <div class="container account-text">
-        <p>My Account</p>
-        <a routerLink="/login"><input class = "btn btn-primary log-out" (click) = "logoutuser()" type="submit"value="LOG OUT"></a>
+        <p>My Account</p> 
+        <a routerLink="/courses/courseId/chapterId"><input class = "btn btn-primary log-out" (click) = "logoutuser()" type="submit"value="LOG OUT"></a>
      </div>
         <div class="container back-g">
           <p class="container account-text3">Account Informations</p>
@@ -34,14 +34,21 @@
           [(ngModel)]=loggedUser.name>
           <input 
           class = "user-pass" 
-          type="password" 
+          type="{{pass}}" 
           [(ngModel)]=loggedUser.password>
+          <span class="visiblePass1"><i (click)="VisiblePass1()" class="glyphicon glyphicon-eye-open"></i></span>
+         
+
           <input class = "user-email" 
           type="text"
           [(ngModel)]=loggedUser.email >
-          <input class = "btn btn-primary save-user "
+
+
+          <input class = "btn btn-primary save-user " (click)="Save()"
           type="submit"
           value="Save">
+
+
           <input class="btn btn-default cancel-user" type="text" value="Cancel">
           <hr>
           <p class="start-courses">Start courses</p>

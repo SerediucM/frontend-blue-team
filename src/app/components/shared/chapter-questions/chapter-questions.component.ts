@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChapterQuestionsComponent implements OnInit {
 
+  limit = [1,2];
   constructor() { }
   
   ngOnInit() {
