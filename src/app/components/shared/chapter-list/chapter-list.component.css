@@ -14,14 +14,14 @@
 }
 .footer {
 	position: relative;
-	top:1200px;
+    top: 400px;
 	height: 59px;
 	width: 1440px;
 	background-color: #F7F7F7;
 }
 .hero-position{
     position: absolute;
-    top:80%;
+    top:100px;
 }
 .alexa-teach-me-2018 {
 	height: 14px;
@@ -52,6 +52,63 @@
 	line-height: 14px;
 }
 .chapter_position{
+	position: relative;
+	top: 400px;
+	left:25%;
+}
+ul li {	
+	margin: 20px;
+	list-style-type: none;
+}
+.chapter-i {
+	position: relative;
+	top:40px;
+	height: 33px;
+	width: 699px;
+	color: #006FFF;
+	font-family: Roboto;
+	font-size: 10px;
+	font-weight: bold;
+	letter-spacing: 1.1px;
+	line-height: 11px;
+}
+.welcome-to-desiclass {
+	height: 33px;
+	width: 812px;
+	color: #06102B;
+	font-family: Roboto;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 38px;
+}
+.it-s-hard-to-say-whe {
+	height: 69px;
+	width: 699px;
+	color: #AEB5BB;
+	font-family: Roboto;
+	font-size: 14px;
+	line-height: 23px;
+}
+.btns-secondary {
+	height: 33px;
+    width: 240px;
+    position: relative;
+    left: 40%;
+    bottom: 80px;
+	color: #006FFF;
+}
+.btn_start {
 	position: absolute;
-	top:400px;
+	top: -70px;
+	position: relative;
+	left:60%;
+	color : #006FFF;
+}
+.btn_start:hover {
+	position: absolute;
+	top: -70px;
+	position: relative;
+	left:60%;
+	color : white;
+	background-color: #006FFF;
 }
