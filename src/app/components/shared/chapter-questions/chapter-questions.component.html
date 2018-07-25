@@ -5,6 +5,51 @@
   the last chapter, the link should go to a screen that displays a finalization
   message - this message can be part of this same component.
 -->
-<p>
-  chapter-questions works!
-</p>
+<div class="container nav-bar">
+  <div class="row">
+    <div class="col-xs-6 col-sm-6">
+     <app-page-header></app-page-header>
+    
+     <div class="center1">
+       <p class="chapterq1">CHAPTER I</p>
+       <p class="chapterq2">Welcome To Desiclassifieds Free Classifieds Free Ads </p>
+    </div>
+    <div>
+      <button class="btn create-btn" type="submit"><span class="create-txt">Create</span></button>
+    </div>
+    <span class="glyphicon glyphicon-plus-sign plus"></span>
+    <div class="btn-group edit-btn">
+        <button class="btn">Edit</button>
+        <button class="btn">Delete</button>
+      </div>
+      
+            <!-- *ngFor="let l of limit" -->
+     
+      <div  *ngFor="let l of limit"  class="container question_position">
+      <div class=" questionB">
+       <p class="Q">Q:</p>
+      <p class="A">Where Can You Find Unique Myspace Layout</p>
+        <!-- parinte -->
+       
+      </div>
+      
+      <div class=" list">
+        <input type="checkbox" class="check">
+        <!-- copil -->
+        <p class="textQ">From Wetlands To Canals And Dams Amsterdam Is Alive</p>
+        <hr class="lineQ">
+        <p class="textQ2">From Wetlands To Canals And Dams Amsterdam Is Alive</p>
+        <input type="checkbox" class="check2">
+        <hr class="lineQ2">
+        <p class="textQ3">Add a new answear </p>
+        <input type="checkbox" class="check3">
+        <input type="submit" class="btn chapterBT" value="Previous chapter">
+        <input type="submit" class="btn chapterBT2" value="Next chapter">
+      </div>
+       </div>
+    
+
+    </div>
+  </div>
+</div>
+

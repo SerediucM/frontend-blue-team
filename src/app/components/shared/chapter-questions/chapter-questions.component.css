@@ -1,0 +1,283 @@
+.nav-bar {
+    
+    height: 100%;
+    width: 1440px;
+    
+}
+
+.center1 {
+    width: 1440px;
+    height:310px;
+    background-color: rgba(6,16,43,0.91);
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-image: url('../../../../assets/bg_image.png');
+    position: relative;
+    top:-20px;
+}
+
+.chapterq1{
+
+    position: absolute;
+    height: 25px;
+    width: 110px;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    line-height: 21px;
+    left: 23%;
+    top: 43%;     
+}
+
+.chapterq2{
+
+    position: absolute;
+    height: 38px;
+    width: 774px;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 38px;
+    left: 23%;
+    top: 55%;
+}
+
+.create-btn{
+  
+    position: relative;
+    height: 29px;
+    width: 92px;
+    border-radius: 5px;
+    background-color: #006FFF;
+    color: white;
+    left: 130%;
+    top: 32px;
+    
+    
+}
+.create-txt{
+    position: relative;
+    height: 22px;
+    width: 45px;
+    border-radius: 5px;
+    background-color:#006FFF;
+    color: white;
+    left: 18%;
+    top: -2px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.plus{
+    position: relative;
+    height: 14px;
+    width: 13px;
+    color: white;
+    top: 6px;
+    left: 131%;
+
+}
+
+.edit-btn{
+
+    position: relative;
+    height: 27px;
+    width: 116px;
+    left: 145%;
+    top: 50%;
+    
+}
+
+.btn-group :hover{
+    background-color: aqua;
+}
+
+.questionB{
+  
+   
+    position: relative;
+    height: 70px;
+    width: 830px;
+    border-radius: 5px;
+    background-color: #006FFF;
+    left: 47%;
+    top: 35%;
+    
+}
+
+.Q{
+    display: block;
+    position: relative;
+    height: 21px;
+    width: 18px;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 21px;
+    top: 35%;
+    left: 5%;  
+}
+
+.A{
+  
+    position: relative;
+    height: 21px;
+    width: 620px;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 21px;
+    top: -10%;
+    left: 10%;
+    
+}
+
+.list{
+
+    position: relative;
+    height: 191px;
+    width: 830px;
+    border: 1px solid #D1D5D8;
+    border-radius: 5px;
+    left: 47%;
+    top: 540%;
+    
+}
+
+.lineQ{
+    
+    position: absolute;
+    box-sizing: border-box;
+    height: 2px;
+    width: 830px;
+    border: 1px solid #D1D5D8;
+    top: 20%;
+    left: 0%;
+    
+}
+.textQ{
+   
+    position: absolute;
+    height: 21px;
+    width: 454px;
+    color: #AEB5BB;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    top: 10%;
+    left: 10%;
+    
+}
+.check{
+  
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #AEB5BB;
+    border-radius: 5px;
+    top: 8.5%;
+    left: 5%;
+    
+}
+
+.textQ2{
+    position: absolute;
+    height: 21px;
+    width: 454px;
+    color: #AEB5BB;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    top: 45%;
+    left: 10%;
+}
+
+.check2{
+  
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #AEB5BB;
+    border-radius: 5px;
+    top: 43%;
+    left: 5%;
+    
+}
+
+.lineQ2{
+    
+    position: absolute;
+    box-sizing: border-box;
+    height: 2px;
+    width: 830px;
+    border: 1px solid #D1D5D8;
+    top: 55%;
+    left: 0%;
+    
+}
+
+.textQ3{
+  
+    position: absolute;
+    height: 21px;
+    width: 161px;
+    color: #DBDBDB;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    top: 78%;
+    left: 10%;
+    
+}
+
+.check3{
+   
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    top: 75%;
+    left: 5%;
+}
+
+.chapterBT{
+   
+    position: relative;
+    height: 32px;
+    width: 140px;
+    border: 1px solid #006FFF;
+    border-radius: 5px;
+    left: 69%;
+    top: 110%;
+    color: blue;
+    background-color: white;
+    
+}
+
+.chapterBT2{
+
+    position: relative;
+    height: 32px;
+    width: 114px;
+    border: 1px solid #006FFF;
+    border-radius: 5px;
+    left: 70%;
+    top: 110%;
+    color: blue;
+    background-color: white;
+    
+}
+.question_position{
+ position: relative;
+ top: 80px;
+ left: -250px;
+ margin: 30px;
+}
+

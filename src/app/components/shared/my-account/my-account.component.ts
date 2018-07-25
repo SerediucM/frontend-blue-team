@@ -15,16 +15,27 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./my-account.component.css']
 })
 export class MyAccountComponent implements OnInit, AfterViewInit {
+
+
+
  @Input() users: User;
+
+// private loggedUser = {};
+pass: string = 'password';
+  isDisplayed: boolean = true;
+ 
 private loggedUser = [];
-isDisplayed: boolean = true;
+
  constructor(private router: ActivatedRoute ,
              private rout:Router,
              private location: Location,
              private userConn: ApiConnectionService,
-             private http: HttpClient
+             private http: HttpClient,
+            
              
  ) {  }
+
+ 
 ngAfterViewInit():void {
   this.getUsers().subscribe(data => {
       this.loggedUser = data[1]; 
@@ -48,6 +59,16 @@ ngAfterViewInit():void {
     e.preventDefault();
     console.log(e);
   }
+  VisiblePass1() {
+    if (this.pass === "password") {
+      this.pass = "text";
+    }
+    else {
+      this.pass = "password";
+    }
+  }
+   
+      
     logoutuser(){ 
       localStorage.removeItem('id');
     }

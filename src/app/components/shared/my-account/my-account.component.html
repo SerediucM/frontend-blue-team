@@ -36,8 +36,11 @@
           [(ngModel)]=loggedUser.name>
           <input 
           class = "user-pass" 
-          type="password" 
+          type="{{pass}}" 
           [(ngModel)]=loggedUser.password>
+          <span class="visiblePass1"><i (click)="VisiblePass1()" class="glyphicon glyphicon-eye-open"></i></span>
+         
+
           <input class = "user-email" 
           type="text"
           [(ngModel)]=loggedUser.email >
