@@ -76,6 +76,8 @@ input {
 	text-align: center;
 }
 .sign-up {
+    position: relative;
+    left: 10%;
 	height: 48%;
 	width: 52%;
 	color: #FFFFFF;
@@ -88,8 +90,8 @@ input {
 .email-adress {
 	height: 24%;
 	width: 34%;
-	color: #AEB5BB;
-	font-family: Roboto;
+	color: black;
+    font-family: Roboto;
 	font-size: 18px;
 	line-height: 24px;
 }
@@ -131,6 +133,17 @@ input {
 	font-size: 20px;
 	line-height: 26px;  
 }
+.welcome-back2 {
+    left: 60%;
+    position: relative;
+    text-align: center;
+	width: 22%;
+	opacity: 0.5;
+	color: white;
+	font-family: Roboto;
+	font-size: 20px;
+	line-height: 26px;  
+}
 #ReserIt{
     cursor: pointer;
 }
@@ -139,9 +152,12 @@ input {
 	width: 16,5%;
 	color: #F7F7F7;
 	font-family: Roboto;
-	font-size: 12px;
+	font-size: 13px;
     line-height: 19px;
-    
+    position: relative;
+    left: 5%;
+    top:-10%;
+
 }
 .don-t-have-an-accoun {
     
