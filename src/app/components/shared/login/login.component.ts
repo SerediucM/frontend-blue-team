@@ -44,33 +44,40 @@ export class LoginComponent implements OnInit {
     console.log(e);
     var username = e.target.elements[0].value;
     var password = e.target.elements[1].value;
-    var gotResult = false;
-    this.getUsers().subscribe(data => {
-      console.log(data);
-      data.forEach(item => {
-        if (!gotResult) {
-          if (username == item.email && password == item.password) {
-            console.log("Db", item.email, item.password)
-            localStorage.setItem('id', item.user_id);
-            console.log("Citire localStorage", localStorage.getItem('id'));
-            this.reset(e);
-            this.rout.navigate(['dashboard']);
-            gotResult = true;
-
-          } else if (username == item.email && password != item.password) {
-            this.err = "User and password is invalid";
-            gotResult = true;
-
-          } else if (username != item.email && password != item.password) {
-            console.log(username, item.email, password, item.password)
-            console.log(data)
-            this.err = "This account does not exist. Please register";
-            this.secondMessage = false;
-            //gotResult=true;
-          }
-        }
-      });
-    });
+    var login={
+      email: username,
+      password: password
+    }
+    this.userConn.login(login as User).subscribe(data => {
+      console.log('asd', data);
+    }, (err) => {
+      console.log('err', err);
+    })
+    // var gotResult = false;
+    // this.getUsers().subscribe(data => {
+    //   console.log(data);
+    //   data.forEach(item => {
+    //     if (!gotResult) {
+    //       if (username == item.email && password == item.password) {
+    //         console.log("Db", item.email, item.password)
+    //         localStorage.setItem('id', item.user_id);
+    //         console.log("Citire localStorage", localStorage.getItem('id'));
+    //         this.reset(e);
+    //         this.rout.navigate(['dashboard']);
+    //         gotResult = true;
+    //       } else if (username == item.email && password != item.password) {
+    //         this.err = "User and password is invalid";
+    //         gotResult = true;
+    //       } else if (username != item.email && password != item.password) {
+    //         console.log(username, item.email, password, item.password)
+    //         console.log(data)
+    //         this.err = "This account does not exist. Please register";
+    //         this.secondMessage = false;
+    //         //gotResult=true;
+    //       }
+    //     }
+    //   });
+    // });
   }
   // CREATE ACCOUNT
   add(e) {
@@ -87,7 +94,7 @@ export class LoginComponent implements OnInit {
       email: email,
       password: password
     };
-    this.userConn.addUser(userr as User).subscribe(data => {
+    this.userConn.NewAcount(userr as User).subscribe(data => {
     })
   }
   //reset pass-login
@@ -97,13 +104,11 @@ export class LoginComponent implements OnInit {
     var email = f.target.elements[0].value;
     var password = f.target.elements[1].value;
     var confpassword = f.target.elements[2].value;
-    console.log("Mama", email, password, confpassword)
     var gotResult = false;
     this.getUsers().subscribe(data => {
       data.forEach(item => {
         if (!gotResult) {
           if (email == item.email && password == confpassword) {
-            console.log(email, password, "ok")
             this.reset(f);
             // this.state1="hide";
             // this.state2 ="show";

@@ -20,9 +20,12 @@ export class MyAccountComponent implements OnInit, AfterViewInit {
 
  @Input() users: User;
 
-private loggedUser = {};
+// private loggedUser = {};
 pass: string = 'password';
   isDisplayed: boolean = true;
+ 
+private loggedUser = [];
+
  constructor(private router: ActivatedRoute ,
              private rout:Router,
              private location: Location,
@@ -36,12 +39,18 @@ pass: string = 'password';
 ngAfterViewInit():void {
   this.getUsers().subscribe(data => {
       this.loggedUser = data[1]; 
-      
+      console.log(this.loggedUser, "dupa")
   });
  }
- Save(){
-
-  console.log(this.loggedUser);
+ Save(name,password,email){
+  console.log(name, password, email)
+  var newuser={
+    lastName: name,
+    password:password,
+    email:email
+  };
+  this.userConn.Update( newuser as any).subscribe(data => {
+  })
  }
   ngOnInit():void {
     this.getUsers();
@@ -58,11 +67,11 @@ ngAfterViewInit():void {
       this.pass = "password";
     }
   }
-    logoutuser(){
+   
       
+    logoutuser(){ 
       localStorage.removeItem('id');
     }
-
 getUsers(){
   const id = +this.router.snapshot.paramMap.get('id');
   return this.userConn.getUser(id)

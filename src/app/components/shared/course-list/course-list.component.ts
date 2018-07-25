@@ -1,9 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Router, ActivatedRoute } from '@angular/router';
-import {User} from '../../../shared/user interface/user';
-import {Location} from '@angular/common';
-import {ApiConnectionService} from '../../../services/api-connection/api-connection.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { User } from '../../../shared/user interface/user';
+import { Location } from '@angular/common';
+import { ApiConnectionService } from '../../../services/api-connection/api-connection.service';
 import { Course } from '../../../shared/user interface/course';
+import { FORMERR } from 'dns';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-course-list',
@@ -11,49 +13,66 @@ import { Course } from '../../../shared/user interface/course';
   styleUrls: ['./course-list.component.css']
 })
 export class CourseListComponent implements OnInit {
-  
+
   constructor(private router: ActivatedRoute,
-              private rout:Router,
-              private location: Location,
-              private userConn: ApiConnectionService) {
-                this.getCourses().subscribe(data => {
-                  this.mycourses=data.supplies;
-                  
-                    this.course_image = data[0].images;
-                    this.small_description = data[0].small_description;
-                    this.long_description = data[0].long_description;  
-                    
-                });             
-              }
-  
+    private rout: Router,
+    private location: Location,
+    private userConn: ApiConnectionService) {
+    // this.getCourses().subscribe(data => {
+    //   this.mycourses = data.supplies;
+
+    //   this.course_image = data[0].images;
+    //   this.small_description = data[0].small_description;
+    //   this.long_description = data[0].long_description;
+
+    // });
+  }
+
   @Input() childMessage: string;
   parentMessage1 = "Browse through all Finance courses for Alexa";
   parentMessage2 = "Pick the one you like and start learning";
 
+  limit: number = 6;
   private mycourses = [];
-  
-  private course_image:string[];
-  private small_description:string[];
-  private long_description:string[];
+
+  DiscoverMore() {
+    if (this.limit <= this.mycourses.length) {
+      this.limit = this.limit + 6;
+    }
+  }
+
+  // private _course_image: string[];
+  // private _small_description: string[];
+  // private _long_description: string[];
+
   ngOnInit() {
   }
 
-ngAfterViewInit():void {
+  ngAfterViewInit(): void {
     this.getCourses().subscribe(data => {
-      this.mycourses=data.supplies;
-      
-        this.course_image = data[0].images;
-        this.small_description = data[0].small_description;
-        this.long_description = data[0].long_description;
-        
-        this.mycourses=data;
-        console.log(this.mycourses);
-        
+
+      this.mycourses = data;
+      // for (let i = 0; i < this.mycourses.length; i++) {
+      //   this._course_image[i] = this.mycourses[i].images;
+      //   this._small_description[i] = this.mycourses[i].small_description;
+      //   this._long_description[i] = this.mycourses[i].long_description;
+
+      // }
+      // data.forEach(element => {
+      //   for (let i = 0; i < element.length; i++) {
+
+      //     this._course_image[i] = element[i].images;
+      //     this._small_description[i] = element[i].small_description;
+      //     this._long_description[i] = element[i].long_description;
+      //   }
+
+      // });
     });
-   }
-getCourses(){
+  }
+
+  getCourses() {
     const id = +this.router.snapshot.paramMap.get('id');
     return this.userConn.getCourse(id)
-   }
+  }
 
 }
