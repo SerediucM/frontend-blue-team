@@ -4,21 +4,21 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../../shared/user interface/user';
 import { Course } from '../../shared/user interface/course';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from '../../message.service';
-// const httpOptions = {
-//   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-// };
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Injectable({
   providedIn: 'root'
 })
 export class ApiConnectionService {
+  private baseUrl = 'http://192.168.210.113:8080';
   private userUrl = 'http://192.168.210.113:8080/users';
-  private userUrlP = 'http://192.168.210.113:8080/create/user';
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
   private courseUrl = 'http://localhost:3000/course';
   // Get: login a user
+  
   getUser(id: number): Observable<any> {
     const url = `${this.userUrl}`;
     return this.http.get<User>(url);
@@ -40,11 +40,24 @@ export class ApiConnectionService {
       return of(result as T);
     };
   }
-
   //  POST: add a new user to the server 
-  addUser(user: User): Observable<User> {
-    const urlP = `${this.userUrlP}`;
+  // addUser(user: User): Observable<User> {
+  //   const urlP = `${this.userUrlP}`;
+  //   // console.log ("USER:", user, url);
+  //   return this.http.post<User>(urlP, user);
+  // }
+
+  addPost(url, user: any): Observable<User> {
     // console.log ("USER:", user, url);
-    return this.http.post<User>(urlP, user);
+    return this.http.post<User>(this.baseUrl + url, user, httpOptions);
+  }
+  login(user):Observable<User> {
+    return this.addPost('/login', user)
+  }
+  Update(user):Observable<User> {
+    return this.addPost('/users', user)
+  }
+  NewAcount(user):Observable<User> {
+    return this.addPost('/create/user', user)
   }
 }
