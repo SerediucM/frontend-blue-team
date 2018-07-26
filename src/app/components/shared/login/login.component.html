@@ -6,36 +6,35 @@
                 <h1 class="login-to-your-accoun">Login to your account</h1>
             </div>  
             <div  class="col-xs-6 col-sm-6 form-position">
-                <div class="errGlobal alert-danger">{{err}}</div>
-                <form name="validformLogin" id="validformLogin" #validformLogin="ngForm" >
+                <div class="errGlobal alert-danger">{{errC}}</div>
+                <form name="validformLogin"  #validformLogin="ngForm" >
                     <input 
-                    required 
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" 
-                    class ="rectangle-2a email-adress" 
-                    (click)="log(emaill)" 
-                    type ="emaill"  
-                    id="emaill" 
-                    [(ngModel)]=loginInputEmail 
-                    name="email" 
-                    #emaill= "ngModel"  
-                    placeholder="  email adress" >
+                        required 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" 
+                        class ="rectangle-2a email-adress" 
+                        (click)="log(emaill)" 
+                        type ="emaill"  
+                        [(ngModel)]=loginInputEmail 
+                        name="email" 
+                        #emaill= "ngModel"  
+                        placeholder="  email adress" >
                     <div class=" errf  alert-danger " *ngIf="emaill.touched  && !emaill.valid ">
                             <div *ngIf="emaill.errors.required ">Email is required</div>
                             <div *ngIf="emaill.errors.pattern  ">Email invalid</div>
                     </div> 
-                    <input required class = "rectangle-2a email-adress" type="{{pass1}}" [(ngModel)]=loginInputPassword name="passwordl" #passwordl= "ngModel" (click)="log(passwordl)"placeholder="  password">
+                    <input required class = "rectangle-2a email-adress" type="{{pass}}" [(ngModel)]=loginInputPassword name="passwordl" #passwordl= "ngModel" (click)="log(passwordl)"placeholder="  password">
                     <div class="errp  alert-danger" *ngIf="passwordl.touched && !passwordl.valid" >
-                                <div *ngIf="passwordl.errors.required">Password is required</div>
+                        <div *ngIf="passwordl.errors.required">Password is required</div>
                     </div>
                     <span class="visiblePass"><i (click)="VisiblePass()" class="glyphicon glyphicon-eye-open"></i></span>
                     <input class = "rectangle-2b btn btn-primary sign-in" [(disabled)]="!validformLogin.valid" type="submit" value="SIGN IN">
                     <p class="forgot-password-res"><span >Forgot password?&nbsp;&nbsp;</span>
-                    <a style="color: white; text-decoration: underline;" id="ReserIt"(click)="ResetPass()">Reset it</a></p>
+                    <a style="color: white; text-decoration: underline;" class="ReserIt"(click)="ResetPass()">Reset it</a></p>
                 </form>
             </div> 
             <div class="footer-position">
                         <label class="don-t-have-an-accoun" for="signup">Don't have an account?  </label>
-                        <button (click)="createCont()" class="rectangle btn btn-primary sign-up" id="signup" >Sign Up</button>
+                        <button (click)="createCont()" class="rectangle btn btn-primary sign-up"  >Sign Up</button>
             </div>
         </div>
     </div>
@@ -50,13 +49,13 @@
             </div>
             <div  class="col-xs-6 col-sm-6 form-position">
                 <div class="errGlobal alert-danger">{{errC}}</div>
-                <form name="validform" id="validform" #validform="ngForm">
-                    <input required pattern="[A-Za-z\s]+$" [(ngModel)]=createinInputfirst name="firstName" id="firstName" #firstName="ngModel" (change)="log(firstName)" class = "rectangle-2a email-adress" type ="text" placeholder="  first name">
+                <form name="validform"  #validform="ngForm">
+                    <input required pattern="[A-Za-z\s]+$" [(ngModel)]=createinInputfirst name="firstName"  #firstName="ngModel" (change)="log(firstName)" class = "rectangle-2a email-adress" type ="text" placeholder="  first name">
                         <div class="errf  alert-danger" *ngIf="firstName.touched && !firstName.valid" >
                             <div *ngIf="firstName.errors.required">First Name is required</div>
                             <div *ngIf="firstName.errors.pattern">Must contain only characters</div>
                         </div> 
-                    <input required pattern="[A-Za-z\s]+$" [(ngModel)]=createinInputlast name="secondName" id="secondName" #secondName="ngModel" (change)="log(secondName)" class = "rectangle-2a email-adress" type ="text" placeholder="  last name">
+                    <input required pattern="[A-Za-z\s]+$" [(ngModel)]=createinInputlast name="secondName" #secondName="ngModel" (change)="log(secondName)" class = "rectangle-2a email-adress" type ="text" placeholder="  last name">
                     <div class="errs  alert-danger" *ngIf="secondName.touched && !secondName.valid" >
                         <div *ngIf="secondName.errors.required">Second Name is required</div>
                         <div *ngIf="secondName.errors.pattern">Must contain only characters</div>
@@ -73,7 +72,7 @@
                     </div>
                     <span class="visiblePassCreate"><i (click)="VisiblePass1()" class="glyphicon glyphicon-eye-open"></i></span>
                     <div >
-                    <input class = "rectangle-2b btn btn-primary sign-in" [(disabled)]="!validform.valid" type="submit" ng-click="valid=checked" value="CREATE ACCOUNT">
+                    <input class = "rectangle-2b btn btn-primary sign-in" [(disabled)]="!validform.valid" type="submit"  value="CREATE ACCOUNT"> <!--ng-click="valid=checked"-->
                     </div>
                     <div class="checkbox" >
                         <input  type="checkbox"  required [(ngModel)]="check" name="checkbox" #checkbox= "ngModel"> 
@@ -95,9 +94,9 @@
                 <h1 class="login-to-your-accoun">Let`s reset your password</h1>
             </div>
             <div  class="col-xs-6 col-sm-6 form-position">
-              <form name="validformReset" id="validformReset" #validformReset="ngForm" >
-                <div class="errGlobal alert-danger">{{errR}}</div>
-                <input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class = "rectangle-2a email-adress" type ="email1" [(ngModel)]=resetinInputEmail id="email" name="email1" #email1= "ngModel" (click)="log(email1)" placeholder="  email adress" >
+              <form name="validformReset"  #validformReset="ngForm" >
+                <div class="errGlobal alert-danger">{{errC}}</div>
+                <input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class = "rectangle-2a email-adress" type ="email1" [(ngModel)]=resetinInputEmail name="email1" #email1= "ngModel" (click)="log(email1)" placeholder="  email adress" >
                 <div class=" errf  alert-danger " *ngIf="email1.touched  && !email1.valid ">
                     <div *ngIf="email1.errors.required ">Email is required</div>
                     <div *ngIf="email1.errors.pattern  ">Email invalid</div>

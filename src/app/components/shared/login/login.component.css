@@ -155,7 +155,7 @@ input {
 	font-size: 20px;
 	line-height: 26px;  
 }
-#ReserIt{
+.ReserIt{
     cursor: pointer;
 }
 .forgot-password-res {

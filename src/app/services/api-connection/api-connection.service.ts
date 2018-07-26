@@ -6,26 +6,32 @@ import { Course } from '../../shared/user interface/course';
 import { Observable, of } from 'rxjs';
 import { MessageService } from '../../message.service';
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json','Access-Control-Allow-Origin': '*' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 @Injectable({
   providedIn: 'root'
 })
 export class ApiConnectionService {
   private baseUrl = 'http://192.168.210.113:8080';
-  private userUrl = 'http://192.168.210.113:8080/users';
-  constructor(private http: HttpClient,
-    private messageService: MessageService) { }
+  private userUrl = 'http://192.168.210.113:8080/user';
   private courseUrl = 'http://localhost:3000/course';
+  constructor(private http: HttpClient,
+  private messageService: MessageService) { }
   // Get: login a user
   addGet(url, user: any): Observable<User> {
     return this.http.get<User>(this.baseUrl + url);
   }
-  getUser(id: number): Observable<any> {
+  getUser(email: string): Observable<any> {
+    const token = sessionStorage.getItem("resetToken");
+    const httpGetOptions = {
+      headers: new HttpHeaders({ 
+        'Content-Type': 'application/json',
+      'reset_token' : token
+      })
+    };
     const url = `${this.userUrl}`;
-    return this.http.get<User>(url);
+    return this.http.get<User>(url+"?email="+email, httpGetOptions);
   }
-  
   getCourse(id: number): Observable<any> {
     const url2 = `${this.courseUrl}`;
     return this.http.get<Course>(url2);
@@ -43,11 +49,6 @@ export class ApiConnectionService {
       return of(result as T);
     };
   }
-  // getConfigResponse(): Observable<HttpResponse<Config>> {
-  //   return this.http.get<Config>(
-  //     this.configUrl, { observe: 'response' });
-  // }
-
   addPost(url, user: any): Observable<User> {
     // console.log ("USER:", user, url);
     return this.http.post<User>(this.baseUrl + url, user, httpOptions);
@@ -60,5 +61,11 @@ export class ApiConnectionService {
   }
   NewAcount(user):Observable<User> {
     return this.addPost('/create/user', user)
+  }
+  NewReset(user):Observable<User> {
+    return this.addPost('/reset', user)
+  }
+  NewUserEmail(user):Observable<User> {
+    return this.addPost('/reset', user) //pt user/emai
   }
 }
