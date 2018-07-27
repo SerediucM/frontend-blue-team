@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-
+  users = ['Astrology', 'Finances', 'Grammar'];
+  public showList =false ;
   constructor() { }
 
   ngOnInit() {
+  }
+  Controls(){
+    if(this.showList===true)
+    {this.showList=false}
+    else
+     this.showList=true;
   }
 
 }

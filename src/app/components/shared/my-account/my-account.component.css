@@ -4,6 +4,13 @@
     width: 1440px;
     
 }
+.erre {
+    position: absolute;
+    left: 35%;
+    top: 37%;
+    height: 5%;
+    background: transparent
+}
 .show {
     display: block;
     }
@@ -111,6 +118,7 @@
     border-radius: 5px;
     background-color: #FFFFFF;
     color: gray;
+    padding-inline-start: 1%;
     
 }
 .user-pass{
@@ -123,6 +131,7 @@
     border-radius: 5px;
     background-color: #FFFFFF;
     color: gray;
+    padding-inline-start: 1%;
 
 }
 .user-email{
@@ -135,7 +144,14 @@
     border-radius: 5px;
     background-color: #FFFFFF;
     color: gray;
+    padding-inline-start: 1%;
 
+}
+.visiblePass1{
+    position: absolute;
+    left: 150%;
+    top: 285%;
+    cursor: pointer;  
 }
 .save-user{
     position: absolute;
@@ -425,11 +441,4 @@ hr{
     color: #006FFF;
   
 
-}
-
-.visiblePass1{
-    position: absolute;
-    left: 150%;
-    top: 285%;
-    cursor: pointer;  
 }
