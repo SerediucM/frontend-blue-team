@@ -19,9 +19,15 @@ export class MyAccountComponent implements OnInit, AfterViewInit {
  private email: string;
  private token: string;
 
+private loggedUser = {};
+pass: string = 'password';
   isDisplayed: boolean = true;
  
-private loggedUser = [];
+// private loggedUser = [];
+
+  // isDisplayed: boolean = true;
+ 
+// private loggedUser = [];
  constructor(private router: ActivatedRoute ,
              private rout:Router,
              private location: Location,
