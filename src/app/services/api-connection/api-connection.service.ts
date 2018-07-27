@@ -13,15 +13,32 @@ const httpOptions = {
 })
 export class ApiConnectionService {
   private baseUrl = 'http://192.168.210.113:8080';
-  private userUrl = 'http://192.168.210.113:8080/users';
-  constructor(private http: HttpClient,
-    private messageService: MessageService) { }
+  private userUrl = 'http://192.168.210.113:8080/user';
   private courseUrl = 'http://localhost:3000/course';
-  // Get: login a user
-  
-  getUser(id: number): Observable<any> {
+  constructor(private http: HttpClient,
+  private messageService: MessageService) { }
+getUser(email: string): Observable<any> {
+    const token = sessionStorage.getItem("resetToken");
+    const httpGetOptions = {
+      headers: new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'reset_token' : token
+      })
+    };
     const url = `${this.userUrl}`;
-    return this.http.get<User>(url);
+    return this.http.get<User>(url+"?email="+email, httpGetOptions);
+  }
+  postToken(email : string ): Observable<any> {
+    const token = sessionStorage.getItem("resetToken");
+    const httpGetOptions1 = {
+      headers: new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'reset_token' : token
+      })
+    };
+    console.log("Token service",token);
+    const url = `${this.baseUrl}`;
+    return this.http.post<any>(url+"/logout",token ,httpGetOptions1);
   }
   getCourse(id: number): Observable<any> {
     const url2 = `${this.courseUrl}`;
@@ -32,21 +49,11 @@ export class ApiConnectionService {
   }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-      // TODO: better job of transforming error for user consumption
+      console.error(error); 
       this.log(`${operation} failed: ${error.message}`);
-      // Let the app keep running by returning an empty result.
       return of(result as T);
     };
   }
-  //  POST: add a new user to the server 
-  // addUser(user: User): Observable<User> {
-  //   const urlP = `${this.userUrlP}`;
-  //   // console.log ("USER:", user, url);
-  //   return this.http.post<User>(urlP, user);
-  // }
-
   addPost(url, user: any): Observable<User> {
     // console.log ("USER:", user, url);
     return this.http.post<User>(this.baseUrl + url, user, httpOptions);
@@ -59,5 +66,14 @@ export class ApiConnectionService {
   }
   NewAcount(user):Observable<User> {
     return this.addPost('/create/user', user)
+  }
+  NewReset(user):Observable<User> {
+    return this.addPost('/reset', user)
+  }
+  NewUserEmail(user):Observable<User> {
+    return this.addPost('/reset', user) //pt user/emai
+  }
+  logout(user):Observable<any> {
+    return this.addPost('/logout', user) //trimit token
   }
 }

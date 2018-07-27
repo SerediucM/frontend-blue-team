@@ -5,75 +5,68 @@ import {Location} from '@angular/common';
 import {ApiConnectionService} from '../../../services/api-connection/api-connection.service';
 import { HttpClient } from '@angular/common/http'; 
 
-
-
-
-
 @Component({
   selector: 'app-my-account',
   templateUrl: './my-account.component.html',
   styleUrls: ['./my-account.component.css']
 })
 export class MyAccountComponent implements OnInit, AfterViewInit {
-
-
-
  @Input() users: User;
+ private loggedUse :string;
+ passaccount= 'password';
+ private name: string;
+ private password: string;
+ private email: string;
+ private token: string;
 
-// private loggedUser = {};
-pass: string = 'password';
   isDisplayed: boolean = true;
  
 private loggedUser = [];
-
  constructor(private router: ActivatedRoute ,
              private rout:Router,
              private location: Location,
              private userConn: ApiConnectionService,
-             private http: HttpClient,
-            
-             
+             private http: HttpClient,            
  ) {  }
-
- 
+ ngOnInit():void {
+  this.getUsers();
+}
+ getUsers() {
+  return this.userConn.getUser(sessionStorage.getItem('email'));
+}
 ngAfterViewInit():void {
   this.getUsers().subscribe(data => {
-      this.loggedUser = data[1]; 
-      console.log(this.loggedUser, "dupa")
+    this.name = data.objects[0].firstName +" " +data.objects[0].lastName; 
+    this.password= data.objects[0].password;
+    this.email= data.objects[0].email;
+    this.token = data.objects[0].resetToken
   });
  }
- Save(name,password,email){
-  console.log(name, password, email)
+ Save (name,password,email){
   var newuser={
     lastName: name,
-    password:password,
-    email:email
+    password: password,
+    email: email
   };
   this.userConn.Update( newuser as any).subscribe(data => {
   })
  }
-  ngOnInit():void {
-    this.getUsers();
-  }
   loginUser(e){
     e.preventDefault();
-    console.log(e);
   }
   VisiblePass1() {
-    if (this.pass === "password") {
-      this.pass = "text";
+    if (this.passaccount === "password") {
+      this.passaccount = "text";
     }
     else {
-      this.pass = "password";
+      this.passaccount = "password";
     }
+  }  
+  logoutuser(){ 
+    this.userConn.postToken(this.token as any).subscribe((data : any) => {
+      //console.log("Dupa logout", data);
+   })
+   sessionStorage.removeItem('email');
+   sessionStorage.removeItem('resetToken');
   }
-   
-      
-    logoutuser(){ 
-      localStorage.removeItem('id');
-    }
-getUsers(){
-  const id = +this.router.snapshot.paramMap.get('id');
-  return this.userConn.getUser(id)
-}
 }

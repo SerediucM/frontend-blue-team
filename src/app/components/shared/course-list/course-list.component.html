@@ -14,7 +14,6 @@
     </div>
     <div class="container">
         <div *ngFor="let course of mycourses ; let i = index" class="btn-group">
-
             <div *ngIf="i<limit" class="card card-position">
                 <a routerLink="/courses/:courseId">
                     <img [src]="mycourses[i].images" alt="Avatar " style="width:100% ">
@@ -27,7 +26,6 @@
                 </div>
             </div>
         </div>
-
         <footer class="footer">
             <div class="container ">
                 <button *ngIf="limit < mycourses.length" (click)="DiscoverMore()" class="btns-secondary">Discover more</button>
