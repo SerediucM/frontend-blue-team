@@ -5,33 +5,51 @@
   used for the admin - this component displays all the courses and offers the ability
   to create a new course, edit or remove an existing course.
 -->
-<div class="container-fluid bck">
+<div class="container-fluid">
     <div class="container nav-bar">
         <div class="row">
             <app-page-header></app-page-header>
             <app-hero class="hero-position" [childMessage1]="parentMessage1" [childMessage2]="parentMessage2"></app-hero>
         </div>
     </div>
+    <div class="center2">
+        <div class="group-5 container">
+            <form>
+                <input class="rectangle-7" [(ngModel)]="filterSearch" name="searchInput.small_description" type="search" name="searchInput"
+                    placeholder="search here...">
+                <input class="rectangle-7-copy btn btn-primary" type="button" value="Search">
+            </form>
+        </div>
+    </div>
     <div class="container">
+        <ul *ngFor="let course of mycourses | filter : small_description : filterSearch ; let i=index" class="btn-group">
+
+            <!-- <div *ngIf="i<limit" routerLink="/courses/:courseId" class="card card-position">
+                <img [src]="course.images" alt="Avatar " style="width:100% ">
+
         <div *ngFor="let course of mycourses ; let i = index" class="btn-group">
             <div *ngIf="i<limit" class="card card-position">
                 <a routerLink="/courses/:courseId">
                     <img [src]="mycourses[i].images" alt="Avatar " style="width:100% ">
                 </a>
                 <div class="container cont_div">
-                    <h4 class="text-size ">
-                        <b>{{mycourses[i].small_description}}</b>
-                    </h4>
-                    <p class="text-size ">{{mycourses[i].long_description}}</p>
+                    <h4 class="text-size "> -->
+            <p *ngIf="i < limit">{{course.small_description}}</p>
+
+            <!-- </h4>
+                    <p class="text-size ">{{course.long_description}}</p>
                 </div>
+            </div> -->
+        </ul>
+        <!-- 
             </div>
-        </div>
+        </div> -->
         <footer class="footer">
             <div class="container ">
                 <button *ngIf="limit < mycourses.length" (click)="DiscoverMore()" class="btns-secondary">Discover more</button>
                 <p>
-                    <span class="alexa-teach-me-2018 ">Alexia Teach Me 2018. All rights reserved</span>
-                    <span class="terms-conditions ">Terms & Condition</span>
+                    <span class="alexa-teach-me-2018 ">Alexia Teach Me 2018. All rights reserved.</span>
+                    <span class="terms-conditions ">Terms & Conditions</span>
                     <span class="privacy ">Privacy</span>
                     <span class="support ">Support</span>
                 </p>

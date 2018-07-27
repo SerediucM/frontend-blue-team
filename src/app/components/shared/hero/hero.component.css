@@ -13,7 +13,7 @@
     left: 30%;
     top: 30%;
 	height: 28px;
-    width: 613px;
+    width: 1000px;
 	color: #FFFFFF;;
 	font-family: Roboto;
 	font-size: 24px;
@@ -25,10 +25,48 @@
     left: 37%;
     top: 30%;
 	height: 21px;
-	width: 308px;
+	width: 1000px;
 	opacity: 0.5;
     color: #FFFFFF;;
 	font-family: Roboto;
 	font-size: 18px;
+	line-height: 21px;
+}
+.browse-through-best2 {
+    position: relative;
+    left: 22.5%;
+    top: 15%;
+	height: 28px;
+    width: 1000px;
+	color: #FFFFFF;;
+	font-family: Roboto;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 28px;
+}
+.pick-the-one-you-lik2 {
+    position: relative;
+    left: 22.5%;
+    top: 15%;
+	height: 21px;
+	width: 600px;
+	opacity: 0.5;
+    color: #FFFFFF;;
+	font-family: Roboto;
+	font-size: 18px;
+	line-height: 21px;
+}
+.finance {
+    position: relative;
+    left: 22.5%;
+    top: -15%;
+    text-align: center;
+	height: 21px;
+	width: 80px;
+	color: #FFFFFF;
+	font-family: Roboto;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 0.8px;
 	line-height: 21px;
 }
