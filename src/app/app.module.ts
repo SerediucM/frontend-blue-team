@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { FilterPipe } from '../app/components/dashboard/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+
 
 import { PageHeaderComponent } from './components/shared/page-header/page-header.component';
 import { CourseComponent } from './components/admin/course/course.component';
@@ -29,8 +31,8 @@ const routes: Routes = [
   { path: 'users/:id', component: UserComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'courses', component: CourseListComponent },
-  { path: 'courses/:courseId', component: ChapterListComponent},
-  { path: 'courses/:courseId/:chapterId',component: ChapterQuestionsComponent },
+  { path: 'courses/:courseId', component: ChapterListComponent },
+  { path: 'courses/:courseId/:chapterId', component: ChapterQuestionsComponent },
   { path: '**', redirectTo: 'login' }
 ];
 
@@ -47,17 +49,18 @@ const routes: Routes = [
     ChapterListComponent,
     MyAccountComponent,
     DashboardComponent,
-    ChapterQuestionsComponent
+    ChapterQuestionsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     HttpClientModule,
-    RouterModule.forRoot(routes, {useHash: true})
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [ApiConnectionService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 
 export class AppModule { }
