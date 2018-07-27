@@ -20,11 +20,11 @@ export class MyAccountComponent implements OnInit, AfterViewInit {
 
  @Input() users: User;
 
-// private loggedUser = {};
+private loggedUser = {};
 pass: string = 'password';
   isDisplayed: boolean = true;
  
-private loggedUser = [];
+// private loggedUser = [];
 
  constructor(private router: ActivatedRoute ,
              private rout:Router,

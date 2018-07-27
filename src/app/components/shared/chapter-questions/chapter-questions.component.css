@@ -5,6 +5,7 @@
     
 }
 
+
 .center1 {
     width: 1440px;
     height:310px;
@@ -87,8 +88,10 @@
     position: relative;
     height: 27px;
     width: 116px;
-    left: 145%;
+    left: 144%;
     top: 50%;
+
+   
     
 }
 
@@ -141,12 +144,13 @@
 .list{
 
     position: relative;
-    height: 191px;
+    height: 70px;
     width: 830px;
     border: 1px solid #D1D5D8;
     border-radius: 5px;
     left: 47%;
     top: 540%;
+    padding: 10px;
     
 }
 
@@ -277,7 +281,150 @@
 .question_position{
  position: relative;
  top: 80px;
- left: -250px;
+ left: -280px;
  margin: 30px;
 }
 
+.chapter-buttons{
+    position: relative;
+    left: 57%;
+    top: 100px;
+}
+
+.footer2{
+    position: relative;
+    left: 0%;
+    top: 150px;
+    height: 59px;
+    width: 1440px;
+    background-color: #F7F7F7;
+
+}
+
+.copyright{
+    position: relative;
+    height: 14px;
+    width: 250px;
+    left: 15%;
+    top: 30px;
+    color: #AEB5BB;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;  
+}
+
+.alexa-terms{
+    position: relative;
+    height: 14px;
+    width: 105px;
+    top: 5px;
+    left: 69%;
+    color: #AEB5BB;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
+    
+}
+
+.alexa-privacy{
+    position: absolute;
+    height: 14px;
+    width: 105px;
+    top: 29px;
+    left: 78%;
+    color: #AEB5BB;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
+
+}
+
+.alexa-supp{
+    position: absolute;
+    height: 14px;
+    width: 105px;
+    top: 29px;
+    left: 82%;
+    color: #AEB5BB;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.new-title{
+    position: relative;
+    left: 12%;
+    height: 35px;
+    width: 700px;
+    top: -4px;
+}
+
+.createB{
+    position: relative;
+    height: 70px;
+    width: 830px;
+    border-radius: 5px;
+    background-color: #006FFF;
+    left: 87%;
+    top: 35%;
+}
+.createB2{
+
+    position: relative;
+    height: 70px;
+    width: 830px;
+    border-radius: 5px;
+    background-color: #F7F7F7;
+    left: 87%;
+    top: 35%;
+
+
+}
+
+.textQ2{
+    position: relative;
+    height: 21px;
+    width: 454px;
+    color: #AEB5BB;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    top: 10%;
+    left: 2%;
+}
+
+.new-title2{
+    position: relative;
+    left: 3%;
+    height: 35px;
+    width: 680px;
+    top: 4px;
+}
+.addQ{
+
+    position: relative;
+    left:163%;
+    top: 220px;
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-color: #F7F7F7;
+    color: blue;
+  
+}
+
+.saveB{
+    position: relative;
+    left:-10px;
+    top: 110%;
+    border: none;
+    color: blue;
+    background-color: white;
+}
+
+.alert-danger{
+    position: relative;
+    font-weight: bold;
+    left: 44%;
+    top: 130px;
+}
