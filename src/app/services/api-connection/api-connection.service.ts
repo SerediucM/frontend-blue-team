@@ -17,20 +17,28 @@ export class ApiConnectionService {
   private courseUrl = 'http://localhost:3000/course';
   constructor(private http: HttpClient,
   private messageService: MessageService) { }
-  // Get: login a user
-  addGet(url, user: any): Observable<User> {
-    return this.http.get<User>(this.baseUrl + url);
-  }
-  getUser(email: string): Observable<any> {
+getUser(email: string): Observable<any> {
     const token = sessionStorage.getItem("resetToken");
     const httpGetOptions = {
       headers: new HttpHeaders({ 
         'Content-Type': 'application/json',
-      'reset_token' : token
+        'reset_token' : token
       })
     };
     const url = `${this.userUrl}`;
     return this.http.get<User>(url+"?email="+email, httpGetOptions);
+  }
+  postToken(email : string ): Observable<any> {
+    const token = sessionStorage.getItem("resetToken");
+    const httpGetOptions1 = {
+      headers: new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'reset_token' : token
+      })
+    };
+    console.log("Token service",token);
+    const url = `${this.baseUrl}`;
+    return this.http.post<any>(url+"/logout",token ,httpGetOptions1);
   }
   getCourse(id: number): Observable<any> {
     const url2 = `${this.courseUrl}`;
@@ -41,11 +49,8 @@ export class ApiConnectionService {
   }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-      // TODO: better job of transforming error for user consumption
+      console.error(error); 
       this.log(`${operation} failed: ${error.message}`);
-      // Let the app keep running by returning an empty result.
       return of(result as T);
     };
   }
@@ -67,5 +72,8 @@ export class ApiConnectionService {
   }
   NewUserEmail(user):Observable<User> {
     return this.addPost('/reset', user) //pt user/emai
+  }
+  logout(user):Observable<any> {
+    return this.addPost('/logout', user) //trimit token
   }
 }

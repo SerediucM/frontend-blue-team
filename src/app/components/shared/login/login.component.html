@@ -23,7 +23,7 @@
                             <div *ngIf="emaill.errors.pattern  ">Email invalid</div>
                     </div> 
                     <input required class = "rectangle-2a email-adress" type="{{pass}}" [(ngModel)]=loginInputPassword name="passwordl" #passwordl= "ngModel" (click)="log(passwordl)"placeholder="  password">
-                    <div class="errp  alert-danger" *ngIf="passwordl.touched && !passwordl.valid" >
+                    <div class="errp alert-danger" *ngIf="passwordl.touched && !passwordl.valid" >
                         <div *ngIf="passwordl.errors.required">Password is required</div>
                     </div>
                     <span class="visiblePass"><i (click)="VisiblePass()" class="glyphicon glyphicon-eye-open"></i></span>
@@ -40,7 +40,6 @@
     </div>
 <!-- div-ul create -->
 <!-- div-ul create -->
-<!-- div-ul create -->
     <div (submit)="add($event)" class="container-fluid {{state1}}">
         <div class="row height">
             <div class="col-xs-6 col-sm-6 info-position">
@@ -49,7 +48,7 @@
             </div>
             <div  class="col-xs-6 col-sm-6 form-position">
                 <div class="errGlobal alert-danger">{{errC}}</div>
-                <form name="validform"  #validform="ngForm">
+                <form name="validform"  #validform="ngForm"  >
                     <input required pattern="[A-Za-z\s]+$" [(ngModel)]=createinInputfirst name="firstName"  #firstName="ngModel" (change)="log(firstName)" class = "rectangle-2a email-adress" type ="text" placeholder="  first name">
                         <div class="errf  alert-danger" *ngIf="firstName.touched && !firstName.valid" >
                             <div *ngIf="firstName.errors.required">First Name is required</div>
@@ -66,7 +65,7 @@
                         <div *ngIf="email.errors.pattern  ">Email invalid</div>
                     </div>  
                     <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%.^#:;,\|+_-`~*?&])[A-Za-z\d$@$!%.^#;:,\|+_-`~*?&]{8,50}" class = "rectangle-2a email-adress" type="{{pass1}}" [(ngModel)]=createinInputPassword name="password" #password= "ngModel" (click)="log(password)"placeholder="  password">
-                    <div class="errp  alert-danger" *ngIf="password.touched && !password.valid" >
+                    <div class="errcp  alert-danger" *ngIf="password.touched && !password.valid" >
                             <div *ngIf="password.errors.required">Password is required</div>
                             <div *ngIf="password.errors.pattern">It must contain upper-case, lower-case, numbers, special characters and length should be at least 8 characters</div>    
                     </div>
@@ -102,17 +101,15 @@
                     <div *ngIf="email1.errors.pattern  ">Email invalid</div>
                 </div> 
                 <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%.^#:;,\|+_-`~*?&])[A-Za-z\d$@$!%.^#;:,\|+_-`~*?&]{8,50}" minlenght= "8" class = "rectangle-2a email-adress" type="{{pass2}}" [(ngModel)]=resetinInputPassword name="password1" #password1= "ngModel" (click)="log(password1)"placeholder="  new password">
-                <div class="erre  alert-danger" *ngIf="password1.touched && !password1.valid" >
+                <div class="errre  alert-danger" *ngIf="password1.touched && !password1.valid" >
                         <div *ngIf="password1.errors.required">Password is required</div>
-                        <div *ngIf="password1.errors.minlenght">The password must contain 8 characters</div>
-                        <div *ngIf="password1.errors.pattern">It must contain characters, numbers and special characters</div>    
+                        <div *ngIf="password1.errors.pattern">It must contain upper-case, lower-case, numbers, special characters and length should be at least 8 characters</div>    
                 </div>
                 <span class="visiblePass2"><i (click)="VisiblePass2()" class="glyphicon glyphicon-eye-open"></i></span>
                 <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%.^#:;,\|+_-`~*?&])[A-Za-z\d$@$!%.^#;:,\|+_-`~*?&]{8,50}" minlenght= "8" class = "rectangle-2a email-adress" type="{{pass3}}" [(ngModel)]=resetinInputEmailConfirm name="password2" #password2= "ngModel" (click)="log(password2)"placeholder="  confirm password">
-                <div class="errp  alert-danger" *ngIf="password2.touched && !password2.valid" >
+                <div class="errrp  alert-danger" *ngIf="password2.touched && !password2.valid" >
                         <div *ngIf="password2.errors.required">Password is required</div>
-                        <div *ngIf="password2.errors.minlenght">The password must contain 8 characters</div>
-                        <div *ngIf="password2.errors.pattern">It must contain characters, numbers and special characters</div>    
+                        <div *ngIf="password2.errors.pattern">It must contain upper-case, lower-case, numbers, special characters and length should be at least 8 characters</div>    
                 </div>
                 <span class="visiblePass1"><i (click)="VisiblePass3()" class="glyphicon glyphicon-eye-open"></i></span>
                 <input class = "rectangle-2b btn btn-primary sign-in" [disabled]="!validformReset.valid" type="submit"value="RESET PASSWORD">

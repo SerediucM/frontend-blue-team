@@ -4,7 +4,6 @@ import { User } from '../../../shared/user interface/user';
 import { Location } from '@angular/common';
 import { ApiConnectionService } from '../../../services/api-connection/api-connection.service';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
-// import { timingSafeEqual } from 'crypto';
 
 @Component({
   selector: 'app-login',
@@ -74,6 +73,10 @@ export class LoginComponent implements OnInit {
         this.reset(e);
       }
       else 
+      if(data.success==false){
+        this.errC="Password is invalid";
+        console.log(this.loginInputPassword);
+      }else
       if(data.success==false)
       {
         this.errC="The provided email address doesn't belong to any existing account";
@@ -98,7 +101,7 @@ export class LoginComponent implements OnInit {
         this.state2 = "show";
         this.state3 = "hide";
         this.state4 = "hide";
-        this.errC="";
+
       this.reset(e);
       }
       else 
@@ -118,18 +121,19 @@ export class LoginComponent implements OnInit {
     var gotResult = false;
     var userreset = {
       email: this.resetinInputEmail,
-      password: this.resetinInputPassword
+      password: this.resetinInputPassword,
+      reset_token : sessionStorage.removeItem('resetToken')
+
     };
     if(this.resetinInputEmailConfirm === this.resetinInputPassword )
     {
-      this.userConn.NewReset(userreset as User).subscribe((data : any) => {
+      this.userConn.NewReset(userreset as any).subscribe((data : any) => {
         if(data.success==true)
       {
         this.state1 = "hide";
         this.state2 = "show";
         this.state3 = "hide";
         this.state4 = "hide";
-        this.errC="";
         this.reset(f);
       }
       else 
@@ -146,10 +150,10 @@ export class LoginComponent implements OnInit {
   }
   log(x) {
     this.err = "";
-    this.errR = "";
+    this.errC = "";
   }
   reset(e) {
-     this.loginInputEmail ="";
+    this.loginInputEmail ="";
     this.loginInputPassword="" ;
     this.createinInputEmail="" ;
     this.createinInputPassword="";
@@ -161,6 +165,7 @@ export class LoginComponent implements OnInit {
   }
   // SingUp->login
   createCont() {
+    this.errC="";
     this.state1 = "show";
     this.state2 = "hide";
     this.state3 = "hide";
@@ -168,6 +173,7 @@ export class LoginComponent implements OnInit {
   }
   //reset Email din login
   ResetPass() {
+    this.errC="";
     this.state1 = "hide";
     this.state2 = "hide";
     this.state3 = "hide";
