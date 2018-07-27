@@ -7,10 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
   constructor() { }
-  
+
   @Input() childMessage1: string;
   @Input() childMessage2: string;
-  
+  @Input() childMessage3: string;
+  @Input() childMessage4: string;
+  @Input() childMessage5: string;
+
+
   ngOnInit() {
   }
 

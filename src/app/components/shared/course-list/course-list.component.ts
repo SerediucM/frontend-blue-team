@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../../../shared/user interface/user';
 import { Location } from '@angular/common';
@@ -6,11 +6,15 @@ import { ApiConnectionService } from '../../../services/api-connection/api-conne
 import { Course } from '../../../shared/user interface/course';
 import { FORMERR } from 'dns';
 import { element } from 'protractor';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.css']
+})
+@Pipe({
+  name: 'filter'
 })
 export class CourseListComponent implements OnInit {
 
@@ -28,8 +32,7 @@ export class CourseListComponent implements OnInit {
     // });
   }
 
-  @Input() childMessage: string;
-  parentMessage1 = "Browse through all Finance courses for Alexa";
+  parentMessage1 = "Browse through all courses for Alexa"
   parentMessage2 = "Pick the one you like and start learning";
 
   limit: number = 6;
@@ -69,10 +72,14 @@ export class CourseListComponent implements OnInit {
       // });
     });
   }
-
   getCourses() {
     const id = +this.router.snapshot.paramMap.get('id');
     return this.userConn.getCourse(id)
   }
+  getRandomColor = function () {
+    return {
+      borderLeft: '2px solid #' + Math.floor(Math.random() * 16777215).toString(16)
+    }
+  };
 
 }

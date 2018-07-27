@@ -5,11 +5,46 @@
   Every user can be edited, duplicated, removed or his role may be changed.
   There's also a possibility to create a new user.
 -->
+  <div class="container nav-bar">
+    <div class="row">
+      <app-page-header></app-page-header>
+    </div>
+  </div>
+      <div class="container table_pos">
+          <table>
+              <tr>
+                <th class="basic-info"></th>
+                <th>BASIC INFO</th>
+                <th>TOTAL SCORE</th> 
+                <th>TAGS</th>
+                <th>DATA CREATED</th>
+                <th></th>
+              </tr>
+              <tr *ngFor="let user of users" >
+                <td><input type="checkbox" class="form-check-input checkbox"></td>
+                <td><img [src]="user[0].images"> {{user}} <div>mihaela.assist.ro</div></td>
+                <td>50</td>
+                <td>Smith</td> 
+                <td>12.06.2018</td>
+                <td><label class="LsitControl" (click)="Controls()">...</label></td>
+              </tr>
+              <ul *ngIf="showList" class="ShowListControl"   style="list-style: none;" >
+                  <li>Edit</li>
+                  <li>Delete</li>
+                  <li>Make an Administrator</li>
+              </ul>
+            </table>
+        </div>
 
-      
-       
-           
-        
-      
-     
-  
+  <footer class="footer">
+      <div class="container ">
+          <p>
+              <span class="alexa-teach-me-2018 ">Alexia Teach Me 2018. All rights reserved</span>
+              <span class="terms-conditions ">Terms & Condition</span>
+              <span class="privacy ">Privacy</span>
+              <span class="support ">Support</span>
+          </p>
+      </div>
+  </footer>
+
+

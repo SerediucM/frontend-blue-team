@@ -6,30 +6,28 @@
   <div class="row">
     <div class="col-md-12">
       <app-page-header></app-page-header>
-      <app-hero class="hero-position"></app-hero>
+      <app-hero class="hero-position" [childMessage3]="parentMessage1" [childMessage4]="parentMessage2" [childMessage5]="parentMessage3"></app-hero>
       <div class="container">
         <div *ngFor="let chapter of chapters; let i=index" class="container chapter_position">
 
           <div *ngIf="i<limit" class="container">
             <h1 class="chapter-i">{{chapter}}</h1>
             <h3 class="welcome-to-desiclass ">Welcome Welcome Welcome Welcome</h3>
-            <p style="height: 180; " class="it-s-hard-to-say-whe">Dummy data Dummy data Dummy data Dummy data Dummy data Dummy data Dummy data Dummy data Dummy data Dummy data
-              Dummy data Dummy data Dummy data Dummy data Dummy data Dummy data
+            <p style="height: 180;" class="it-s-hard-to-say-whe">{{txt_sliced}}
             </p>
             <div>
               <button routerLink="/courses/:courseId/:chapterId" class="btn_start">Start</button>
             </div>
             <br>
-            <hr>
+            <hr style="position: relative; left: -17.5%; width:65%;">
           </div>
-
         </div>
         <footer class="footer">
           <div class="container">
             <button *ngIf="limit < chapters.length" class="btns-secondary" (click)="showFullcurriculum()">See the full curriculum</button>
             <p>
-              <span class="alexa-teach-me-2018">Alexia Teach Me 2018. All rights reserved</span>
-              <span class="terms-conditions">Terms & Condition</span>
+              <span class="alexa-teach-me-2018">Alexia Teach Me 2018. All rights reserved.</span>
+              <span class="terms-conditions">Terms & Conditions</span>
               <span class="privacy">Privacy</span>
               <span class="support">Support</span>
             </p>

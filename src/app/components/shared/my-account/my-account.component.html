@@ -8,7 +8,6 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6">
        <app-page-header></app-page-header>
-
        <div class="container show">
        <div class=" container account-text2">
          <p>Here you can edit your account’s informations, courses you started and the progress for each one.</p> 
@@ -30,23 +29,11 @@
               Image selected, should have maximum 15 MB size.</p>
       </div>
       <div  class="container">
-           <input 
-          class = "user-name" 
-          type="text" 
-          [(ngModel)]=loggedUser.name>
-          <input 
-          class = "user-pass" 
-          type="{{pass}}" 
-          [(ngModel)]=loggedUser.password>
+           <input  class = "user-name"  type="text"  [(ngModel)]=name>
+          <input class = "user-pass" type="{{passaccount}}" [(ngModel)]=password>
           <span class="visiblePass1"><i (click)="VisiblePass1()" class="glyphicon glyphicon-eye-open"></i></span>
-         
-
-          <input class = "user-email" 
-          type="text"
-          [(ngModel)]=loggedUser.email >
-          <input class = "btn btn-primary save-user "
-          type="submit" (click)="Save(loggedUser.name, loggedUser.password, loggedUser.email)"
-          value="Save" >
+          <input class = "user-email"  type="text" [(ngModel)]=email >
+          <input class = "btn btn-primary save-user "type="submit" (click)="Save(name, loggedUser.password, loggedUser.email)"value="Save" >
           <input class="btn btn-default cancel-user" type="text" value="Cancel">
           <hr>
           <p class="start-courses">Start courses</p>
