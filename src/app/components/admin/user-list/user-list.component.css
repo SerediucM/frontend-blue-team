@@ -30,11 +30,19 @@
 }
 .LsitControl{
 	cursor: pointer;
+	height: 6px;
+	width: 22px;
 }
 .ShowListControl{
-	/* visibility: hidden; */position: relative;
-	top:20%;
-	left: 30%;
+	/* visibility: hidden; */
+	position: relative;
+	top:-20px;
+	left: 450%;
+	height: 90px;
+	width: 200px;
+	border-radius: 5px;
+	background-color: #006FFF;
+	color: white;
 }
 .privacy {
 	position: relative;
@@ -143,6 +151,58 @@ tr{
 }
 table{
     border-collapse: collapse;
-    width: 100%;
+	width: 100%;
+	border-radius: 5px;
+}
+.happy-tag{
+	position: relative;
+	height: 22px;
+	width: 71px;
+
+	
+}
+.date-created{
+		position: relative;
+		height: 14px;
+		width: 70px;
+		color: #AEB5BB;
+		font-family: Roboto;
+		font-size: 12px;
+		line-height: 14px;
+		padding-left: 200px;
+
 }
 
+.check{
+	position: relative;
+	left: 32%;
+}
+
+.score{
+	
+	position: relative;
+	color: #AEB5BB;
+	height: 14px;
+	width: 37px;
+	font-family: Roboto;
+	font-size: 12px;
+	line-height: 14px;
+	left: -100px;
+	
+}
+
+.email{
+	position: relative;
+	color: #AEB5BB;
+
+}
+
+.name-user{
+
+	position: relative;
+	color: #4A4A4A;
+	font-family: Roboto;
+	font-weight: bold;
+	
+	
+}
