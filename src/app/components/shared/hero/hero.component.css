@@ -44,6 +44,18 @@
 	font-weight: bold;
 	line-height: 28px;
 }
+.browse-through-best3 {
+    position: relative;
+    left: 30.5%;
+    top: -20%;
+	height: 28px;
+    width: 1000px;
+	color: #FFFFFF;;
+	font-family: Roboto;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 28px;
+}
 .pick-the-one-you-lik2 {
     position: relative;
     left: 22.5%;

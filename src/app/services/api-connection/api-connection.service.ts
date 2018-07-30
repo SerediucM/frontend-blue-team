@@ -16,29 +16,29 @@ export class ApiConnectionService {
   private userUrl = 'http://192.168.210.113:8080/user';
   private courseUrl = 'http://localhost:3000/course';
   constructor(private http: HttpClient,
-  private messageService: MessageService) { }
-getUser(email: string): Observable<any> {
+    private messageService: MessageService) { }
+  getUser(email: string): Observable<any> {
     const token = sessionStorage.getItem("resetToken");
     const httpGetOptions = {
-      headers: new HttpHeaders({ 
+      headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'reset_token' : token
+        'reset_token': token
       })
     };
     const url = `${this.userUrl}`;
-    return this.http.get<User>(url+"?email="+email, httpGetOptions);
+    return this.http.get<User>(url + "?email=" + email, httpGetOptions);
   }
-  postToken(email : string ): Observable<any> {
+  postToken(email: string): Observable<any> {
     const token = sessionStorage.getItem("resetToken");
     const httpGetOptions1 = {
-      headers: new HttpHeaders({ 
+      headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'reset_token' : token
+        'reset_token': token
       })
     };
-    console.log("Token service",token);
+    console.log("Token service", token);
     const url = `${this.baseUrl}`;
-    return this.http.post<any>(url+"/logout",token ,httpGetOptions1);
+    return this.http.post<any>(url + "/logout", token, httpGetOptions1);
   }
   getCourse(id: number): Observable<any> {
     const url2 = `${this.courseUrl}`;
@@ -49,7 +49,7 @@ getUser(email: string): Observable<any> {
   }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      console.error(error); 
+      console.error(error);
       this.log(`${operation} failed: ${error.message}`);
       return of(result as T);
     };
@@ -58,22 +58,22 @@ getUser(email: string): Observable<any> {
     // console.log ("USER:", user, url);
     return this.http.post<User>(this.baseUrl + url, user, httpOptions);
   }
-  login(user):Observable<User> {
+  login(user): Observable<User> {
     return this.addPost('/login', user)
   }
-  Update(user):Observable<User> {
+  Update(user): Observable<User> {
     return this.addPost('/users', user)
   }
-  NewAcount(user):Observable<User> {
+  NewAcount(user): Observable<User> {
     return this.addPost('/create/user', user)
   }
-  NewReset(user):Observable<User> {
+  NewReset(user): Observable<User> {
     return this.addPost('/reset', user)
   }
-  NewUserEmail(user):Observable<User> {
+  NewUserEmail(user): Observable<User> {
     return this.addPost('/reset', user) //pt user/emai
   }
-  logout(user):Observable<any> {
+  logout(user): Observable<any> {
     return this.addPost('/logout', user) //trimit token
   }
 }

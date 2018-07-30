@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { Pipe, PipeTransform } from '@angular/core';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, generate } from 'rxjs';
 import { getLocalePluralCase } from '@angular/common';
 
 
@@ -20,55 +20,16 @@ export class DashboardComponent implements OnInit {
   ;
   private serchtest: string;
   constructor() {
+    this.getcol();
   }
-  limit: number = 6;
 
+  limit: number = 6;
+  RandomColor: {};
+  course: string;
   startSearch: boolean = false;
   courses = ['Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activit', 'Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activit', 'Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activity', 'Sports'];
-
-  ColorObj = {
-    "background": "linear-gradient(225deg, lightblue 30%, cyan 70%)",
-    "border-radius": "10px",
-    "color": "white",
-    "padding": "10px 24px",
-    "cursor": "pointer",
-    "width": "214px",
-    "height": "140px",
-    "display": "inline",
-    "font-weight": "bold",
-    "font-size": "18px"
-  };
-  generate() {
-
-    var hexValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e"];
-
-    function populate(a) {
-      for (var i = 0; i < 6; i++) {
-        var x = Math.round(Math.random() * 14);
-        var y = hexValues[x];
-        a += y;
-      }
-      return a;
-    }
-
-    var newColor1 = populate('#');
-    var newColor2 = populate('#');
-    var angle = Math.round(Math.random() * 360);
-
-    var gradient = "linear-gradient(" + angle + "deg, " + newColor1 + ", " + newColor2 + ")";
-    return gradient;
-  }
-
-  DiscoverMore() {
-    if (this.limit <= this.courses.length) {
-      this.limit = this.limit + 6;
-    }
-  }
-  getCourse(course: string) {
-    return course;
-  }
-  getRandomColor = function () {
-    return {
+  getcol() {
+    return this.RandomColor = {
       "background": 'linear-gradient(70deg,' + ' #' + Math.floor(Math.random() * 16777215).toString(16) + ' 30%, ' + ' #' + Math.floor(Math.random() * 16777215).toString(16) + ' 70%)',
       "border-radius": "10px",
       "color": "white",
@@ -79,8 +40,16 @@ export class DashboardComponent implements OnInit {
       "display": "inline",
       "font-weight": "bold",
       "font-size": "18px",
+    };
+  }
+  DiscoverMore() {
+    if (this.limit <= this.courses.length) {
+      this.limit = this.limit + 6;
     }
-  };
+  }
+  getCourse(course: string) {
+    return course;
+  }
 
 
 

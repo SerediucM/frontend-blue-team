@@ -13,6 +13,9 @@ export class HeroComponent implements OnInit {
   @Input() childMessage3: string;
   @Input() childMessage4: string;
   @Input() childMessage5: string;
+  @Input() childMessage6: string;
+  @Input() childMessage7: string;
+  @Input() childMessage8: string;
 
 
   ngOnInit() {

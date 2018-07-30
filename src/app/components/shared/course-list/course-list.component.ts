@@ -32,8 +32,10 @@ export class CourseListComponent implements OnInit {
     // });
   }
 
-  parentMessage1 = "Browse through all courses for Alexa"
+  parentMessage1 = "Browse through all"
   parentMessage2 = "Pick the one you like and start learning";
+  parentMessage3 = "Sports";
+  parentMessage4 = "courses for Alexa";
 
   limit: number = 6;
   private mycourses = [];

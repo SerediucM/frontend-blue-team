@@ -1,32 +1,35 @@
 .nav-bar {
-	position: absolute;
-	left: 10%;
+    position: absolute;
+    left: 10%;
 }
 .footer {
-	position: absolute;
-	top:95%;
-	left: 10%;
-	height: 59px;
-	width: 1440px;
-	background-color: #F7F7F7;
+    position: absolute;
+    top:95%;
+    left: 10%;
+    height: 59px;
+    width: 1440px;
+    background-color: #F7F7F7
+;
 }
 .alexa-teach-me-2018 {
-	height: 14px;
-	width: 222px;
-	color: #AEB5BB;
-	font-family: Roboto;
-	font-size: 12px;
-	line-height: 14px;
+    height: 14px;
+    width: 222px;
+    color: #AEB5BB
+;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
 }
 .terms-conditions {
-	position: relative;
-	left: 60%;
-	height: 14px;
-	width: 105px;
-	color: #AEB5BB;
-	font-family: Roboto;
-	font-size: 12px;
-	line-height: 14px;
+    position: relative;
+    left: 60%;
+    height: 14px;
+    width: 105px;
+    color: #AEB5BB
+;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
 }
 .LsitControl{
 	cursor: pointer;
@@ -45,109 +48,116 @@
 	color: white;
 }
 .privacy {
-	position: relative;
-	left: 62%;
-	height: 14px;
-	width: 39px;
-	color: #AEB5BB;
-	font-family: Roboto;
-	font-size: 12px;
-	line-height: 14px;
+    position: relative;
+    left: 62%;
+    height: 14px;
+    width: 39px;
+    color: #AEB5BB
+;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
 }
 .support {
-	position: relative;
-	left: 64%;
-	height: 14px;
-	width: 43px;
-	color: #AEB5BB;
-	font-family: Roboto;
-	font-size: 12px;
-	line-height: 14px;
+    position: relative;
+    left: 64%;
+    height: 14px;
+    width: 43px;
+    color: #AEB5BB
+;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
 }
 .bck{
-	width: 100%;
-	height: 100vh;
-	background-color: #F6FAFC;;
+    width: 100%;
+    height: 100vh;
+    background-color: #F6FAFC
+;;
 }
 .table_pos{
-    position: relative;
-    top:245px;
-    left: 50px;
-    
+   position: relative;
+   top:245px;
+   left: 50px;
+   
 }
 .btn-group button {
-	position: absolute;
-	left: 10%;
-	top: 100px;
-}
-
-
-.basic-info {
-    padding-right: 174px;
-    width: 65px;
-	height: 14px;
-	color: #AEB5BB;
-	font-family: Roboto;
-	font-size: 12px;
-	font-weight: bold;
-	line-height: 14px;
+    position: absolute;
+    left: 10%;
+    top: 100px;
+}.basic-info {
+   padding-right: 174px;
+   width: 65px;
+    height: 14px;
+    color: #AEB5BB
+;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
 }
 .total-score {
-    padding-right: 174px;
-	height: 14px;
-	width: 78px;
-	color: #AEB5BB;
-	font-family: Roboto;
-	font-size: 12px;
-	font-weight: bold;
-	line-height: 14px;
+   padding-right: 174px;
+    height: 14px;
+    width: 78px;
+    color: #AEB5BB
+;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
 }
 .tags {
-    padding-right: 174px;
-	height: 14px;
-	width: 31px;
-	color: #AEB5BB;
-	font-family: Roboto;
-	font-size: 12px;
-	font-weight: bold;
-	line-height: 14px;
+   padding-right: 174px;
+    height: 14px;
+    width: 31px;
+    color: #AEB5BB
+;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
 }
 .date-created {
-    padding-right: 174px;    
-	height: 14px;
-	width: 84px;
-	color: #AEB5BB;
-	font-family: Roboto;
-	font-size: 12px;
-	font-weight: bold;
-	line-height: 14px;
+   padding-right: 174px;    
+    height: 14px;
+    width: 84px;
+    color: #AEB5BB
+;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
 }
 .photo-user{
- 
-	position: relative;
-	height: 39px;
-	width: 49px;
-	background-color: black;
-	border-radius: 50%;
-	top: 18%;
-	left: 5%;	
- }
+
+    position: relative;
+    height: 39px;
+    width: 49px;
+    background-color: black;
+    border-radius: 50%;
+    top: 18%;
+    left: 5%;    
+}
 th{
-	height: 14px;
-	/* width: 65px; */
-	color: #AEB5BB;
-	font-family: Roboto;
-	font-size: 12px;
-	font-weight: bold;
-	line-height: 14px;
+    height: 14px;
+    /* width: 65px; */
+    color: #AEB5BB
+;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
 }
 tr{
-	height: 70px;
-	width: 940px;
-	border: 1px solid #EFF1F4;
-	border-radius: 5px;
-	background-color: #FFFFFF;
-	margin: 200px;
+    height: 70px;
+    width: 940px;
+    border: 1px solid #EFF1F4
+;
+    border-radius: 5px;
+    background-color: #FFFFFF
+;
+    margin: 200px;
 }
 table{
     border-collapse: collapse;
