@@ -47,44 +47,14 @@
     </table>
   </div>
 
-  <tr *ngFor="let user of users">
 
-    <td>
-      <input type="checkbox" class="form-check-input checkbox check">
-    </td>
-    <td class="name-user">
-      <img [src]="user[0].images"> {{user}}
-      <div class="email">mihaela.assist.ro</div>
-    </td>
-    <td class="score">50</td>
-    <td class="happy-tag">Smith</td>
-    <td class="date-created">12.06.2018</td>
-
-    <td>
-      <label class="LsitControl" (click)="Controls()">...</label>
-    </td>
-
-  </tr>
-  <ul *ngIf="showList" class="ShowListControl" style="list-style: none;">
-    <li>Edit</li>
-    <li>Delete</li>
-    <li>Make an Administrator</li>
-  </ul>
-  <!-- <ul *ngIf="showList" class="ShowListControl" style="list-style: none;">
-      <li>Edit</li>
-      <li>Delete</li>
-      <li>Make an Administrator</li>
-    </ul> -->
-
-  </table>
-</div>
-<footer class="footer">
-  <div class="container ">
-    <p>
-      <span class="alexa-teach-me-2018 ">Alexia Teach Me 2018. All rights reserved</span>
-      <span class="terms-conditions ">Terms & Condition</span>
-      <span class="privacy ">Privacy</span>
-      <span class="support ">Support</span>
-    </p>
-  </div>
-</footer>
+  <footer class="footer">
+    <div class="container ">
+      <p>
+        <span class="alexa-teach-me-2018 ">Alexia Teach Me 2018. All rights reserved</span>
+        <span class="terms-conditions ">Terms & Condition</span>
+        <span class="privacy ">Privacy</span>
+        <span class="support ">Support</span>
+      </p>
+    </div>
+  </footer>
