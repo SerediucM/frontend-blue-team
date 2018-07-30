@@ -9,10 +9,18 @@ import { Question } from '../../../shared/question/question';
 export class ChapterQuestionsComponent implements OnInit {
  private newQuestion: Question;
  public show:boolean = false;
+ public showChapter:boolean = true;
+ public showChapter2:boolean = true;
+ public endChapter:boolean = false;
  private newTitle: string = '';
  private newAnswers = [''];
  private newAnswer = [];
  private err="";
+
+ data: any = [];
+ delRow;
+ showX = true;
+ 
  
   private allQuestions:Array<Question> = [
     {
@@ -30,6 +38,7 @@ export class ChapterQuestionsComponent implements OnInit {
     }
   ]
 
+
   addAnswer(){
    this.newAnswers.push('');
     
@@ -39,6 +48,25 @@ export class ChapterQuestionsComponent implements OnInit {
     this.show = !this.show;
     
   }
+
+  nextChapter(){
+    this.showChapter = !this.showChapter
+    this.endChapter = !this.endChapter
+
+  }
+  previousChapter(){
+    this.showChapter = !this.showChapter
+    this.endChapter = false;
+
+  }
+  delete(row){
+    console.log(row);
+    this.delRow = this.allQuestions.indexOf(row);
+    this.allQuestions.splice(this.delRow,1);
+    console.log(this.allQuestions);
+    
+}
+  
 
   saveQuestion(){
     this.newQuestion = <Question>{title: this.newTitle, answers: this.newAnswer}
