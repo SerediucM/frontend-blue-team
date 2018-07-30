@@ -20,7 +20,6 @@ export class CourseListComponent implements OnInit {
 
   constructor(private router: ActivatedRoute,
     private rout: Router,
-    private location: Location,
     private userConn: ApiConnectionService) {
     // this.getCourses().subscribe(data => {
     //   this.mycourses = data.supplies;
@@ -31,52 +30,38 @@ export class CourseListComponent implements OnInit {
 
     // });
   }
-
   parentMessage1 = "Browse through all"
   parentMessage2 = "Pick the one you like and start learning";
   parentMessage3 = "Sports";
   parentMessage4 = "courses for Alexa";
-
+  private id = null;
   limit: number = 6;
   private mycourses = [];
+  courseList:{};
 
   DiscoverMore() {
     if (this.limit <= this.mycourses.length) {
       this.limit = this.limit + 6;
     }
   }
-
   // private _course_image: string[];
   // private _small_description: string[];
   // private _long_description: string[];
 
   ngOnInit() {
-  }
 
+  }
   ngAfterViewInit(): void {
-    this.getCourses().subscribe(data => {
-
-      this.mycourses = data;
-      // for (let i = 0; i < this.mycourses.length; i++) {
-      //   this._course_image[i] = this.mycourses[i].images;
-      //   this._small_description[i] = this.mycourses[i].small_description;
-      //   this._long_description[i] = this.mycourses[i].long_description;
-
-      // }
-      // data.forEach(element => {
-      //   for (let i = 0; i < element.length; i++) {
-
-      //     this._course_image[i] = element[i].images;
-      //     this._small_description[i] = element[i].small_description;
-      //     this._long_description[i] = element[i].long_description;
-      //   }
-
-      // });
-    });
+    this.id = sessionStorage.getItem("idcurs")
+    this.userConn.getCourse(this.id).subscribe(data => {
+       this.courseList=data.objects;
+      });
   }
-  getCourses() {
-    const id = +this.router.snapshot.paramMap.get('id');
-    return this.userConn.getCourse(id)
+  courseid(id){
+    sessionStorage.setItem('idcapitol', id);
+    this.userConn.getchapters(id).subscribe(data => {
+        this.rout.navigate(["courses/:courseId"]);
+          });
   }
   getRandomColor = function () {
     return {
