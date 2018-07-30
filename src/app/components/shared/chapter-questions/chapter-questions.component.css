@@ -90,6 +90,7 @@
     width: 116px;
     left: 144%;
     top: 50%;
+   
 
    
     
@@ -258,8 +259,8 @@
     width: 140px;
     border: 1px solid #006FFF;
     border-radius: 5px;
-    left: 69%;
-    top: 110%;
+    left: 59%;
+    top: -32px;
     color: blue;
     background-color: white;
     
@@ -272,7 +273,7 @@
     width: 114px;
     border: 1px solid #006FFF;
     border-radius: 5px;
-    left: 70%;
+    left: 80%;
     top: 110%;
     color: blue;
     background-color: white;
@@ -428,3 +429,22 @@
     left: 44%;
     top: 130px;
 }
+
+.finish-btn{
+    position: relative;
+    left: 81%;
+    top: -63px;
+    height: 29px;
+    width: 114px;
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+
+}
+
+.x_position{
+    position: relative;
+    top: 30%;
+    right: 2%;
+    }
