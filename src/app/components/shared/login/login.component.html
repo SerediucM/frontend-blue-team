@@ -59,13 +59,13 @@
                         <div *ngIf="secondName.errors.required">Second Name is required</div>
                         <div *ngIf="secondName.errors.pattern">Must contain only characters</div>
                     </div>    
-                    <input required minlenght= "8" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class = "rectangle-2a email-adress" type ="email" placeholder="  email adress" [(ngModel)]=createinInputEmail name="email" #email= "ngModel" (click)="log(email)" placeholder="  email adress" >
+                    <input required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class = "rectangle-2a email-adress" type ="email" placeholder="  email adress" [(ngModel)]=createinInputEmail name="email" #email= "ngModel" (click)="log(email)" placeholder="  email adress" >
                     <div class=" erre  alert-danger " *ngIf="email.touched  && !email.valid ">
                         <div *ngIf="email.errors.required ">Email is required</div>
                         <div *ngIf="email.errors.pattern  ">Email invalid</div>
                     </div>  
                     <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%.^#:;,\|+_-`~*?&])[A-Za-z\d$@$!%.^#;:,\|+_-`~*?&]{8,50}" class = "rectangle-2a email-adress" type="{{pass1}}" [(ngModel)]=createinInputPassword name="password" #password= "ngModel" (click)="log(password)"placeholder="  password">
-                    <div class="errcp  alert-danger" *ngIf="password.touched && !password.valid" >
+                    <div [ngClass]="password.errors.pattern ? 'errcplong' : '' " class="errcp  alert-danger" *ngIf="password.touched && !password.valid" >
                             <div *ngIf="password.errors.required">Password is required</div>
                             <div *ngIf="password.errors.pattern">It must contain upper-case, lower-case, numbers, special characters and length should be at least 8 characters</div>    
                     </div>
@@ -95,19 +95,19 @@
             <div  class="col-xs-6 col-sm-6 form-position">
               <form name="validformReset"  #validformReset="ngForm" >
                 <div class="errGlobal alert-danger">{{errC}}</div>
-                <input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class = "rectangle-2a email-adress" type ="email1" [(ngModel)]=resetinInputEmail name="email1" #email1= "ngModel" (click)="log(email1)" placeholder="  email adress" >
+                <input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class = "rectangle-2a email-adress" type ="email" [(ngModel)]=resetinInputEmail name="email1" #email1= "ngModel" (click)="log(email1)" placeholder="  email adress" >
                 <div class=" errf  alert-danger " *ngIf="email1.touched  && !email1.valid ">
                     <div *ngIf="email1.errors.required ">Email is required</div>
                     <div *ngIf="email1.errors.pattern  ">Email invalid</div>
                 </div> 
-                <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%.^#:;,\|+_-`~*?&])[A-Za-z\d$@$!%.^#;:,\|+_-`~*?&]{8,50}" minlenght= "8" class = "rectangle-2a email-adress" type="{{pass2}}" [(ngModel)]=resetinInputPassword name="password1" #password1= "ngModel" (click)="log(password1)"placeholder="  new password">
-                <div class="errre  alert-danger" *ngIf="password1.touched && !password1.valid" >
+                <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%.^#:;,\|+_-`~*?&])[A-Za-z\d$@$!%.^#;:,\|+_-`~*?&]{8,50}"  class = "rectangle-2a email-adress" type="{{pass2}}" [(ngModel)]=resetinInputPassword name="password1" #password1= "ngModel" (click)="log(password1)" placeholder="  new password">
+                <div [ngClass]=" password1.errors.pattern ? 'errelong' : ''  " class="errre  alert-danger" *ngIf="password1.touched && !password1.valid" >
                         <div *ngIf="password1.errors.required">Password is required</div>
                         <div *ngIf="password1.errors.pattern">It must contain upper-case, lower-case, numbers, special characters and length should be at least 8 characters</div>    
                 </div>
                 <span class="visiblePass2"><i (click)="VisiblePass2()" class="glyphicon glyphicon-eye-open"></i></span>
-                <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%.^#:;,\|+_-`~*?&])[A-Za-z\d$@$!%.^#;:,\|+_-`~*?&]{8,50}" minlenght= "8" class = "rectangle-2a email-adress" type="{{pass3}}" [(ngModel)]=resetinInputEmailConfirm name="password2" #password2= "ngModel" (click)="log(password2)"placeholder="  confirm password">
-                <div class="errrp  alert-danger" *ngIf="password2.touched && !password2.valid" >
+                <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%.^#:;,\|+_-`~*?&])[A-Za-z\d$@$!%.^#;:,\|+_-`~*?&]{8,50}" class = "rectangle-2a email-adress" type="{{pass3}}" [(ngModel)]=resetinInputEmailConfirm name="password2" #password2= "ngModel" (click)="log(password2)"placeholder="  confirm password">
+                <div [ngClass]=" password1.errors.pattern ? 'errrplong' : ''  " class="errrp  alert-danger" *ngIf="password2.touched && !password2.valid" >
                         <div *ngIf="password2.errors.required">Password is required</div>
                         <div *ngIf="password2.errors.pattern">It must contain upper-case, lower-case, numbers, special characters and length should be at least 8 characters</div>    
                 </div>
