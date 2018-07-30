@@ -17,7 +17,30 @@
 .hide {
     display: none;
     }
-
+.errMyEmail{
+    position: absolute;
+    left: 155%;
+    top: 310%;
+    width: 120px;
+    background: transparent
+}
+.errMyname {
+    position: absolute;
+    left: 155%;
+    top: 260%;
+    width: 50%;
+    background: transparent
+}
+.errMypas{
+    position: absolute;
+    left: 155%;
+    top: 285%;
+    width: 50%;
+    background: transparent
+}
+.errMypaslong{
+    top: 281% !important ;
+}
 .account-text {
     position: relative;
 	height: 38%;
@@ -77,22 +100,25 @@
 .account-img{
     position: absolute;
     height: 140px;
-    width: 140px;
+    width: 138px;
     border-radius: 5px;
     left: 42%;
     top: 260%;
-    background-color: black;
-    
+    background-color:transparent;   
 }
+.uploadimg{
+    border: none;
 
+}
 .upload-pic{
     position: absolute;
-    height: 29px;
-    width: 96px;
+    height: 24px;
+    width: 93px;
     left: 45%;
     top: 320%;
     border: 1px solid #006FFF;
     color: #006FFF;
+    background-color: #006FFF;
 
 }
 .talk-user{

@@ -54,6 +54,9 @@
     width: 40%;
     background: transparent
 }
+.errelong{
+    top: 25% !important ;
+}
 .errp { /*fol*/
     position: absolute;
     left: 35%;
@@ -70,6 +73,9 @@
     height: 5%;
     background: transparent
 }
+.errrplong { /*fol*/
+    top: 49% !important  ;
+}
 .errcp { /*fol*/
     position: absolute;
     left: 35%;
@@ -78,10 +84,13 @@
     height: 5%;
     background: transparent
 }
+.errcplong { /*fol*/
+    top: 55% !important ;
+}
 .errf { /*fol*/
     position: absolute;
     left: 35%;
-    top: 6%;
+    top: 5%;
     height: 5%;
     background: transparent
 }
@@ -227,23 +236,23 @@ input {
 }
 .inline
 {
-display: inline;
+    display: inline;
 }
 .show {
-display: block;
+    display: block;
 }
 .hide {
-display: none;
+    display: none;
 }
 .rectangle {
-height: 33px;
-width: 98px;
-border-radius: 5px;
-background-color: #006FFF;
+    height: 33px;
+    width: 98px;
+    border-radius: 5px;
+    background-color: #006FFF;
 }
 .footer{
-top: 1000px;
-left: 690px;;
+    top: 1000px;
+    left: 690px;;
 }
 .btn-reset{
     height: 45px;
@@ -269,14 +278,14 @@ left: 690px;;
     line-height: 16px;
 }
 .check{
-position: relative;
-height: 19px;
-width: 19px;
-left: 880px;
-top: 425px;
-border-radius: 5px;
-background-color: #FFFFFF;
-}
+    position: relative;
+    height: 19px;
+    width: 19px;
+    left: 880px;
+    top: 425px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    }
 .email{
     position: relative;
     height: 45px;

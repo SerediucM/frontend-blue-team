@@ -11,23 +11,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./my-account.component.css']
 })
 export class MyAccountComponent implements OnInit, AfterViewInit {
- @Input() users: User;
- private loggedUse :string;
- passaccount= 'password';
- private name: string;
- private password: string;
- private email: string;
- private token: string;
-
+@Input() users: User;
+private loggedUse :string;
+passaccount= 'password';
+private name: string;
+private password: string;
+private email: string;
+private token: string;
 private loggedUser = {};
+private namesplit ={};
 pass: string = 'password';
-  isDisplayed: boolean = true;
+private selectedFile  = null;
+isDisplayed: boolean = true;
  
-// private loggedUser = [];
-
-  // isDisplayed: boolean = true;
- 
-// private loggedUser = [];
  constructor(private router: ActivatedRoute ,
              private rout:Router,
              private location: Location,
@@ -48,29 +44,36 @@ ngAfterViewInit():void {
     this.token = data.objects[0].resetToken
   });
  }
- Save (name,password,email){
+ onFileSelected (event){
+  this.selectedFile;
+  console.log("Img",this.selectedFile)
+  sessionStorage.setItem('img', this.selectedFile );
+  return this.selectedFile;
+ }
+ 
+ Save (password,email){
+   console.log("Img",this.selectedFile)
+  this.namesplit =  this.name.split(" ");
   var newuser={
-    lastName: name,
+    //  this.selectedFile; img 
+    lastName: this.namesplit[1],
+    firstName: this.namesplit[0],
     password: password,
     email: email
   };
   this.userConn.Update( newuser as any).subscribe(data => {
   })
  }
-  loginUser(e){
-    e.preventDefault();
+ VisiblePass1() {
+  if (this.passaccount === "password") {
+    this.passaccount = "text";
   }
-  VisiblePass1() {
-    if (this.passaccount === "password") {
-      this.passaccount = "text";
-    }
-    else {
-      this.passaccount = "password";
-    }
-  }  
+  else {
+    this.passaccount = "password";
+  }
+} 
   logoutuser(){ 
     this.userConn.postToken(this.token as any).subscribe((data : any) => {
-      //console.log("Dupa logout", data);
    })
    sessionStorage.removeItem('email');
    sessionStorage.removeItem('resetToken');

@@ -7,6 +7,7 @@ import { FilterPipe } from '../app/components/dashboard/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { ImageUploadModule } from "angular2-image-upload";
 
 
 import { PageHeaderComponent } from './components/shared/page-header/page-header.component';
@@ -53,6 +54,7 @@ const routes: Routes = [
     FilterPipe
   ],
   imports: [
+    ImageUploadModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule,
