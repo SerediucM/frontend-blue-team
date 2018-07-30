@@ -11,7 +11,7 @@
         <div *ngFor="let chapter of chapters; let i=index" class="container chapter_position">
 
           <div *ngIf="i<limit" class="container">
-            <h1 class="chapter-i">{{chapter}}</h1>
+            <h1 class="chapter-i">{{chapter | uppercase}}</h1>
             <h3 class="welcome-to-desiclass ">Welcome Welcome Welcome Welcome</h3>
             <p style="height: 180;" class="it-s-hard-to-say-whe">{{txt_sliced}}
             </p>

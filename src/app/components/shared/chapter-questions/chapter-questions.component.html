@@ -8,64 +8,68 @@
 <div class="container nav-bar">
   <div class="row">
     <div class="col-xs-6 col-sm-6">
-     <app-page-header></app-page-header>
-    
-     <div class="center1">
-       <p class="chapterq1">CHAPTER I</p>
-       <p class="chapterq2">Welcome To Desiclassifieds Free Classifieds Free Ads </p>
-    </div>
-    <div style="display: block;">
-    <div >
-      <button class="btn create-btn" type="submit"  (click) = "createQuestion()"><span class="create-txt">
-        Create
-       </span></button>
-       
-    </div>
- 
-   
-    
-    <span class="glyphicon glyphicon-plus-sign plus"></span>
-    <div class="btn-group edit-btn">
-        <button class="btn">Edit</button>
-        <button class="btn">Delete</button>
+      <app-page-header></app-page-header>
+
+      <div class="center1">
+        <p class="chapterq1">CHAPTER I</p>
+        <p class="chapterq2">Welcome To Desiclassifieds Free Classifieds Free Ads </p>
       </div>
+      <div style="display: block;">
+        <div>
+          <button class="btn create-btn" type="submit" (click)="createQuestion()">
+            <span class="create-txt">
+              Create
+            </span>
+          </button>
+        </div>
+
+        <span class="glyphicon glyphicon-plus-sign plus"></span>
+        <div class="btn-group edit-btn">
+          <button class="btn">Edit</button>
+          <button (click)="deleteQ()" class="btn">Delete</button>
+        </div>
       </div>
       <div class="alert-danger">{{err}}</div>
       <div *ngIf="show">
-        
-          <input type="submit"  (click)="addAnswer()" class="addQ " value="+">
-          <div class="question_position">
-              <div class="createB">
-                  <span class="Q">Title:</span> <input [(ngModel)]="newTitle"  class="new-title"> 
-              </div>
-              <div *ngFor="let answer of newAnswers; let i=index" class="list createB2">
-                
-                <span class="textQ2">Question:</span>
-                <input class="new-title2" [(ngModel)]= "newAnswer[i]">
-                <input  type="submit" (click) = "saveQuestion()" value="Save" class="saveB">
-              </div>
-            </div>
+
+        <input type="submit" (click)="addAnswer()" class="addQ " value="+">
+        <div class="question_position">
+          <div class="createB">
+            <span class="Q">Title:</span>
+            <input [(ngModel)]="newTitle" class="new-title">
+          </div>
+          <div *ngFor="let answer of newAnswers; let i=index" class="list createB2">
+
+            <span class="textQ2">Question:</span>
+            <input class="new-title2" [(ngModel)]="newAnswer[i]">
+            <input type="submit" (click)="saveQuestion()" value="Save" class="saveB">
+          </div>
+        </div>
       </div>
-     
-  
-         
-      <div  *ngFor="let question of allQuestions"  class="container question_position">
-      <div class=" questionB">
-       <p class="Q">Q:</p>
-      <p class="A">{{ question.title }}</p>
+
+
+
+      <div *ngFor="let question of allQuestions; let i = index" class="container question_position">
+        <div class=" questionB">
+          <button *ngIf="showX" type="button" class="close x_position" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <p class="Q">Q:</p>
+          <p class="A">{{ question.title }}</p>
+        </div>
+
+        <div class="list" *ngFor="let answers of question.answers">
+          <input type="checkbox" class="check">
+          <p class="textQ">{{ answers }}</p>
+        </div>
       </div>
-      
-      <div class="list" *ngFor="let answers of question.answers">
-        <input type="checkbox" class="check">
-        <p class="textQ">{{ answers }}</p>        
-      </div>
-    </div>
-    <div class="chapter-buttons">
+      <div class="chapter-buttons">
         <input type="submit" class="btn chapterBT" value="Previous chapter">
         <input type="submit" class="btn chapterBT2" value="Next chapter">
-    </div>
-    <div class=" footer2">
-        <p class="copyright"><strong>Alexa Teach Me 2018.</strong> All rights reserved.</p>
+      </div>
+      <div class=" footer2">
+        <p class="copyright">
+          <strong>Alexa Teach Me 2018.</strong> All rights reserved.</p>
         <p class="alexa-terms">Terms & Conditions</p>
         <p class="alexa-privacy">Privacy</p>
         <p class="alexa-supp">Support</p>
@@ -73,4 +77,3 @@
     </div>
   </div>
 </div>
-

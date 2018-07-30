@@ -8,7 +8,7 @@
 
 .center1 {
     width: 1440px;
-    height:310px;
+    height:400px;
     background-color: rgba(6,16,43,0.91);
     background-repeat: no-repeat;
     background-position: center; 
@@ -427,4 +427,10 @@
     font-weight: bold;
     left: 44%;
     top: 130px;
+}
+
+.x_position{
+ position: relative;
+ top: 30%;
+ right: 2%;
 }

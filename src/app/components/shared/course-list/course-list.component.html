@@ -9,7 +9,8 @@
     <div class="container nav-bar">
         <div class="row">
             <app-page-header></app-page-header>
-            <app-hero class="hero-position" [childMessage1]="parentMessage1" [childMessage2]="parentMessage2"></app-hero>
+            <app-hero class="hero-position" [childMessage6]="parentMessage1" [childMessage7]="parentMessage3" [childMessage2]="parentMessage2"
+                [childMessage8]="parentMessage4"></app-hero>
         </div>
     </div>
     <div class="center2">
@@ -22,24 +23,24 @@
         </div>
     </div>
     <div class="container">
-        <ul *ngFor="let course of mycourses | filter : small_description : filterSearch ; let i=index" class="btn-group">
+        <ul *ngFor="let course of mycourses ; let i=index" class="btn-group">
 
-            <!-- <div *ngIf="i<limit" routerLink="/courses/:courseId" class="card card-position">
-                <img [src]="course.images" alt="Avatar " style="width:100% ">
-
-        <div *ngFor="let course of mycourses ; let i = index" class="btn-group">
-            <div *ngIf="i<limit" class="card card-position">
+            <div *ngIf="i<limit" routerLink="/courses/:courseId" class="card card-position">
+                <!-- <img [src]="course.images" alt="Avatar " style="width:100% "> -->
+                <!-- 
+            <div *ngFor="let course of mycourses ; let i = index" class="btn-group">
+                <div *ngIf="i<limit" class="card card-position"> -->
                 <a routerLink="/courses/:courseId">
                     <img [src]="mycourses[i].images" alt="Avatar " style="width:100% ">
                 </a>
                 <div class="container cont_div">
-                    <h4 class="text-size "> -->
-            <p *ngIf="i < limit">{{course.small_description}}</p>
+                    <h4 class="text-size ">
+                        <p *ngIf="i < limit">{{course.small_description}}</p>
 
-            <!-- </h4>
+                    </h4>
                     <p class="text-size ">{{course.long_description}}</p>
                 </div>
-            </div> -->
+            </div>
         </ul>
         <!-- 
             </div>
