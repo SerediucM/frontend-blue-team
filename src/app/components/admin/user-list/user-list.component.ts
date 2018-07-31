@@ -12,7 +12,7 @@ export class UserListComponent implements OnInit {
   userss:{}
   public showList = false;
   delRow;
-  data: any[];
+  data: Array<any> = [];
   status = [false, false, false];
   constructor(private userConn: ApiConnectionService,
     private router: ActivatedRoute,
@@ -31,8 +31,7 @@ export class UserListComponent implements OnInit {
       this.status[index] = true;
   }
   DeleteRow(row) {
-    this.delRow = this.data.indexOf(row);
-    this.data.splice(this.delRow, 1);
+    this.data.splice(row, 1);
   }
   ngAfterViewInit(): void {
     this.userConn.getUsers().subscribe(data => {

@@ -24,7 +24,7 @@
         <div>
           <ul *ngIf="status[i] == true" class="ShowListControl" style="list-style: none;">
             <li class="clickable">Edit</li>
-            <li class="clickable" (click)="DeleteRow(row)">Delete</li>
+            <li class="clickable" (click)="DeleteRow(i)">Delete</li>
             <li class="clickable">Make an Administrator</li>
           </ul>
         </div>

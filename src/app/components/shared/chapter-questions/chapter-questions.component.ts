@@ -19,11 +19,13 @@ export class ChapterQuestionsComponent implements OnInit {
   private newAnswer = [];
   private err = "";
   public showInput: boolean = false;
+
+  i = 1;
   data: any = [];
   delRow;
   showX = true;
   private id = null;
-  questionsList:{};
+  questionsList: {};
   private allQuestions: Array<Question> = [
     {
       title: 'Title 1',
@@ -45,17 +47,10 @@ export class ChapterQuestionsComponent implements OnInit {
   ngAfterViewInit(): void {
     this.id = sessionStorage.getItem("idchapter")
     this.userConn.getquestions(this.id).subscribe(data => {
-       this.questionsList=data.objects;
-       console.log("Intrebare ", data );
-      });
-        // sessionStorage.setItem('idquestions', id);
-        // console.log("id capitolului ",id)
-        // this.userConn.getquestions(id).subscribe(data => {
-        //   console.log("Am ajuns");
-        //    console.log("Id intrebare accesat",data.objects);
-        //      this.rout.navigate(["courses/:courseId/:chapterId"]);
-        //       });
-      }
+      this.questionsList = data.objects;
+      console.log("Intrebare ", data);
+    });
+  }
 
   deleteQ() {
     this.allQuestions.pop();
@@ -75,10 +70,10 @@ export class ChapterQuestionsComponent implements OnInit {
     this.endChapter = false;
   }
   delete() {
-    this.allQuestions.pop()
+    this.questionsList[this.i - 1] = null;
 
   }
-  showI(){
+  showI() {
     this.showInput = !this.showInput;
 
   }
@@ -87,14 +82,12 @@ export class ChapterQuestionsComponent implements OnInit {
     if (this.newTitle == "" || this.newAnswer[0] == undefined) {
       this.err = "Title or answer missing !"
     }
-    else {
-      console.log("Ce afiseaza intrebarea", this.newAnswer[0])
-      this.allQuestions.push(this.newQuestion)
-      this.newTitle = '';
-      this.newAnswers = [''];
-      this.newAnswer = [];
-      this.err = ""
-    }
+    this.questionsList[this.i] = this.newQuestion;
+    this.newTitle = '';
+    this.newAnswers = [''];
+    this.newAnswer = [];
+    this.err = ""
+    this.i++;
   }
 
   ngOnInit() {
