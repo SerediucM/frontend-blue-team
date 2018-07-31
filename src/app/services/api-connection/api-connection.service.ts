@@ -15,7 +15,6 @@ export class ApiConnectionService {
   private baseUrl = 'http://192.168.210.113:8080';
   private userUrl = 'http://192.168.210.113:8080/user';
   private categoryUrl = 'http://192.168.210.113:8080/categories';
-  private courseUrl = 'http://localhost:3000/course';
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
   getUser(email: string): Observable<any> {
@@ -41,6 +40,18 @@ export class ApiConnectionService {
     const url = `${this.baseUrl}`;
     return this.http.post<any>(url + "/logout", token, httpGetOptions1);
   }
+  putUpdate(user: User): Observable<any> {
+    const token = sessionStorage.getItem("resetToken");
+    const httpGetOptions1 = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'reset_token': token
+      })
+    };
+    console.log("Update token service", token);
+    const url = `${this.baseUrl}`;
+    return this.http.put<any>(url + "/user",user, httpGetOptions1);
+  }
   getCategory(): Observable<any> {
     const token = sessionStorage.getItem("resetToken");
     const httpGetOptions = {
@@ -51,6 +62,18 @@ export class ApiConnectionService {
     };
     const url = `${this.categoryUrl}`;
     return this.http.get<any>(url, httpGetOptions);
+  }
+  getUsers(): Observable<any> {
+    const token = sessionStorage.getItem("resetToken");
+    const httpGetOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'reset_token': token
+      })
+    };
+    const url = `${this.baseUrl}`;
+    console.log("Am ajuns in service");
+    return this.http.get<User>(url + "/users", httpGetOptions);
   }
   getCourse(id: number): Observable<any> {
     console.log("Id couses services", id)
