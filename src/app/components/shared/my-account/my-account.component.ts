@@ -17,6 +17,9 @@ export class MyAccountComponent implements OnInit, AfterViewInit {
   private name: string;
   private password: string;
   private email: string;
+  private nameconst: string;
+  private passwordconst: string;
+  private emailconst: string;
   private token: string;
   private loggedUser = {};
   private namesplit = {};
@@ -35,6 +38,7 @@ export class MyAccountComponent implements OnInit, AfterViewInit {
   bdr = "1px solid white";
   bdr1 = "1px solid white";
   bdr2 = "1px solid white";
+   id = null;
 
   constructor(private router: ActivatedRoute,
     private rout: Router,
@@ -50,9 +54,9 @@ export class MyAccountComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.getUsers().subscribe(data => {
-      this.name = data.objects[0].firstName + " " + data.objects[0].lastName;
-      this.password = data.objects[0].password;
-      this.email = data.objects[0].email;
+      this.name= this.nameconst = data.objects[0].firstName + " " + data.objects[0].lastName;
+      this.password =this.passwordconst= data.objects[0].password;
+      this.email =this.emailconst= data.objects[0].email;
       this.token = data.objects[0].resetToken
     });
   }
@@ -64,17 +68,26 @@ export class MyAccountComponent implements OnInit, AfterViewInit {
   }
 
   Save(password, email) {
+    this.id= sessionStorage.getItem('iduser');
     console.log("Img", this.selectedFile)
     this.namesplit = this.name.split(" ");
     var newuser = {
-      //  this.selectedFile; img 
+      user_id : this.id,
       lastName: this.namesplit[1],
       firstName: this.namesplit[0],
-      password: password,
-      email: email
+      password: this.password,
+      email: this.email
     };
-    this.userConn.Update(newuser as any).subscribe(data => {
+    console.log("datele noi", newuser);
+    this.userConn.putUpdate( newuser as any).subscribe(data => {
+      console.log("update", data);
     })
+  }
+  close(){
+    this.name= this.nameconst ;
+    this.password =this.passwordconst;
+    this.email =this.emailconst;
+  
   }
   VisiblePass1() {
     if (this.passaccount === "password") {

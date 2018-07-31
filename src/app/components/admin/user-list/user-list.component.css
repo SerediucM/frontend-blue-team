@@ -4,7 +4,7 @@
 }
 .footer {
     position: absolute;
-    top:940px;
+    top:3100px;
     left: 0%;
     height: 59px;
     width: 1440px;
@@ -149,6 +149,8 @@ th{
     font-size: 12px;
     font-weight: bold;
     line-height: 14px;
+    margin-left: 40px;
+    padding-left: 60px;
 }
 tr{
     height: 70px;

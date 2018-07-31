@@ -66,7 +66,7 @@
           </div>
 
           <input class="btn btn-primary save-user " type="submit" (click)="Save(name, loggedUser.password, loggedUser.email)" value="Save">
-          <input class="btn btn-default cancel-user" type="text" value="Cancel">
+          <input class="btn btn-default cancel-user" type="text" (click)="close()" value="Cancel">
           <hr>
           <p class="start-courses">Start courses</p>
         </div>
