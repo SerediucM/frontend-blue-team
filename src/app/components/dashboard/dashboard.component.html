@@ -23,9 +23,9 @@
       </div>
       <div class="container">
         <div class="btn-group">
-          <ul style="display: inline;" *ngFor="let course of courses |  filter : searchAllow ; let i=index">
+          <ul style="display: inline;" *ngFor="let course of categories |  filter : searchAllow ; let i=index">
 
-            <button (click)="getCourse(course)" [ngStyle]="RandomColor" *ngIf="i < limit" routerLink="/courses" style="margin:20px;">{{course | uppercase}}</button>
+            <button (click)="getCourseid(course.id)" [ngStyle]="RandomColor" *ngIf="i < limit" routerLink="/courses" style="margin:20px;">{{course.name | uppercase}}</button>
 
           </ul>
         </div>
