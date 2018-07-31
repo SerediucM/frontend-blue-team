@@ -18,18 +18,44 @@
           <form>
             <input class="rectangle-7 " [(ngModel)]="searchText" name="searchInput" type="search" placeholder="search here...">
             <input class="rectangle-7-copy btn btn-primary" (click)="searchAllow = searchText;" type="button" value="SEARCH">
+            <!--  -->
+            <button  class="btn create-btn" type="submit" (click)="createQuestion()" >
+              <span class="create-txt">
+                Create
+              </span>
+              <span class="glyphicon glyphicon-plus-sign plus"></span>
+            </button>
+           
           </form>
         </div>
       </div>
       <div class="container">
         <div class="btn-group">
+           <!--  -->
+           <div *ngIf="show">
+              <!-- <input type="submit" (click)="addAnswer()" class="addQ " value="+"> -->
+       
+              <div class="question_position">
+                <div class="createB">
+                  <span class="Q">Course:</span>
+                  <input [(ngModel)]="newTitle" class="new-title">
+                  <input type="submit"  class="saveB" value="Save" (click) = "  saveCourse() ">
+                </div>
+                <div *ngFor="let answer of newAnswers; let i=index" class="list createB2">
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          
           <ul style="display: inline;" *ngFor="let course of categories |  filter : searchAllow ; let i=index">
+            
+            
 
             <button (click)="getCourseid(course.id)" [ngStyle]="RandomColor" *ngIf="i < limit" routerLink="/courses" style="margin:20px;">{{course.name | uppercase}}</button>
 
           </ul>
         </div>
-        <footer class="footer ">
+        <footer class="footer">
           <div class="container ">
             <button *ngIf="limit < courses.length" class="btns-secondary " (click)="DiscoverMore() ">Discover more</button>
             <p>

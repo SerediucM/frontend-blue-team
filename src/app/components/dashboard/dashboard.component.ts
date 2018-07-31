@@ -5,6 +5,7 @@ import { Observable, Subject, generate } from 'rxjs';
 import { getLocalePluralCase } from '@angular/common';
 import { ApiConnectionService } from '../../services/api-connection/api-connection.service';
 import { Router, ActivatedRoute } from '@angular/router';
+ 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -16,6 +17,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class DashboardComponent implements OnInit {
   // heroes$: Observable <Course[]>;
   // private searchTerms = new Subject<string>();
+  public show: boolean = false;
+
+  // 
+
+  // 
   ;
   private serchtest: string;
   parentMessage1 = "Browse through best learning courses for Alexa";
@@ -31,6 +37,10 @@ export class DashboardComponent implements OnInit {
   private id: number;
   startSearch: boolean = false;
   categories: {};
+  newTitle ='';
+  // 
+  cat = [''];
+  // 
   courses = ['Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activit', 'Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activit', 'Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activity', 'Sports'];
   getcol() {
     return this.RandomColor = {
@@ -46,6 +56,14 @@ export class DashboardComponent implements OnInit {
       "font-size": "18px",
     };
   }
+
+  // 
+
+  createQuestion() {
+    this.show = !this.show;
+  }
+
+  // 
   getCourseid(id) {
     sessionStorage.setItem('idcurs', id);
     this.userConn.getCourse(id).subscribe(data => {
@@ -59,9 +77,22 @@ export class DashboardComponent implements OnInit {
   ngAfterViewInit(): void {
     this.getCateg().subscribe(data => {
       this.categories = data.objects;
+      // 
+      this.cat = data.objects;
+      // 
       console.log("Categ:", this.categories);
     });
   }
+  saveCourse(){
+    // this.cat.push('');
+    var newuser = {
+      name: this.newTitle,
+    };
+    this.userConn.postCategorie(newuser as any).subscribe(data => {
+    })
+
+  }
+  
   DiscoverMore() {
     if (this.limit <= this.courses.length) {
       this.limit = this.limit + 6;
