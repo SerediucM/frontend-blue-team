@@ -18,6 +18,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CourseListComponent implements OnInit {
 
+  public show: boolean = false;
+
   constructor(private router: ActivatedRoute,
     private rout: Router,
     private userConn: ApiConnectionService) {
@@ -38,6 +40,10 @@ export class CourseListComponent implements OnInit {
   }
   ngOnInit() {
 
+  }
+
+  createQuestion() {
+    this.show = !this.show;
   }
   ngAfterViewInit(): void {
     this.id = sessionStorage.getItem("idcurs")

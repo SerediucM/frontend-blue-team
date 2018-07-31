@@ -41,6 +41,18 @@ export class ApiConnectionService {
     const url = `${this.baseUrl}`;
     return this.http.post<any>(url + "/logout", token, httpGetOptions1);
   }
+  postCategorie(categorie : any): Observable<any> {
+    const token = sessionStorage.getItem("resetToken");
+    const httpGetOptions1 = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'reset_token': token
+      })
+    };
+    console.log("Token service", token);
+    const url = `${this.baseUrl}`;
+    return this.http.post<any>(url + "/create/category",categorie, httpGetOptions1);
+  }
   getCategory(): Observable<any> {
     const token = sessionStorage.getItem("resetToken");
     const httpGetOptions = {
