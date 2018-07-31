@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Question } from '../../../shared/question/question';
+import { ApiConnectionService } from '../../../services/api-connection/api-connection.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-chapter-questions',
@@ -22,6 +24,11 @@ export class ChapterQuestionsComponent implements OnInit {
 
 
 
+  data: any = [];
+  delRow;
+  showX = true;
+  private id = null;
+  questionsList:{};
   private allQuestions: Array<Question> = [
     {
       title: 'Title 1',
@@ -37,28 +44,33 @@ export class ChapterQuestionsComponent implements OnInit {
       answers: ['Answ1', 'Answ2', 'Answ3']
     }
   ]
+  constructor(private router: ActivatedRoute,
+    private rout: Router,
+    private userConn: ApiConnectionService) { }
+  ngAfterViewInit(): void {
+    this.id = sessionStorage.getItem("idchapter")
+    this.userConn.getquestions(this.id).subscribe(data => {
+       this.questionsList=data.objects;
+       console.log("Intrebare ", data );
+      });
+  }
 
-  
- 
+  deleteQ() {
+    this.allQuestions.pop();
+  }
   addAnswer() {
     this.newAnswers.push('');
-
   }
-
   createQuestion() {
     this.show = !this.show;
-
   }
-
   nextChapter() {
     this.showChapter = !this.showChapter
     this.endChapter = !this.endChapter
-
   }
   previousChapter() {
     this.showChapter = !this.showChapter
     this.endChapter = false;
-
   }
   delete() {
     this.allQuestions.pop()
@@ -68,11 +80,8 @@ export class ChapterQuestionsComponent implements OnInit {
     this.showInput = !this.showInput;
 
   }
-
-
   saveQuestion() {
     this.newQuestion = <Question>{ title: this.newTitle, answers: this.newAnswer }
-
     if (this.newTitle == "" || this.newAnswer[0] == undefined) {
       this.err = "Title or answer missing !"
     }
@@ -86,12 +95,7 @@ export class ChapterQuestionsComponent implements OnInit {
     }
   }
 
-
-  constructor() { }
-
   ngOnInit() {
-
-
   }
 
 }

@@ -12,16 +12,22 @@
   <div class="container table_pos">
     <table>
       <tr>
-        <th class="basic-info"></th>
+        <th></th>
         <th>BASIC INFO</th>
-        <th class="score">TOTAL SCORE</th>
+        <th>TOTAL SCORE</th>
         <th>TAGS</th>
-        <th class="date-created">DATA CREATED</th>
+        <th>DATA CREATED</th>
         <th></th>
       </tr>
 
-      <tr *ngFor="let user of users">
-
+      <tr *ngFor="let user of users ; let i = index">
+        <div>
+          <ul *ngIf="status[i] == true" class="ShowListControl" style="list-style: none;">
+            <li class="clickable">Edit</li>
+            <li class="clickable" (click)="DeleteRow(row)">Delete</li>
+            <li class="clickable">Make an Administrator</li>
+          </ul>
+        </div>
         <td>
           <input type="checkbox" class="form-check-input checkbox check">
         </td>
@@ -32,21 +38,12 @@
         <td class="score">50</td>
         <td class="happy-tag">Smith</td>
         <td class="date-created">12.06.2018</td>
-
         <td>
-          <label class="LsitControl" (click)="Controls()">...</label>
+          <label class="ListControl" (click)="verify(i)">...</label>
         </td>
-
       </tr>
-      <ul *ngIf="showList" class="ShowListControl" style="list-style: none;">
-        <li>Edit</li>
-        <li>Delete</li>
-        <li>Make an Administrator</li>
-      </ul>
-
     </table>
   </div>
-
 
   <footer class="footer">
     <div class="container ">
@@ -58,3 +55,4 @@
       </p>
     </div>
   </footer>
+</div>
