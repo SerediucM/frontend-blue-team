@@ -17,22 +17,26 @@
 
           </div> -->
 
+
+      <div class="btn-group edit-btn">
+        
+        <button class="btn" (click) = "showI()">Edit</button>
+        <button class="btn" (click)='delete()'>Delete</button>
+      </div>
       <div class="center1">
         <p class="chapterq1">CHAPTER I</p>
         <p class="chapterq2">Welcome To Desiclassifieds Free Classifieds Free Ads </p>
       </div>
       <div style="display: block;">
         <div>
-          <button class="btn create-btn" type="submit" (click)="createQuestion()">
+            
+          <button  class="btn create-btn" type="submit" (click)="createQuestion()" >
             <span class="create-txt">
               Create
             </span>
-          </button>
-          <div class="btn-group edit-btn">
             <span class="glyphicon glyphicon-plus-sign plus"></span>
-            <button class="btn">Edit</button>
-            <button class="btn" (click)='delete(row)'>Delete</button>
-          </div>
+          </button>
+         
         </div>
 
       </div>
@@ -47,7 +51,7 @@
           </div>
           <div *ngFor="let answer of newAnswers; let i=index" class="list createB2">
 
-            <span class="textQ2">Question:</span>
+            <span class="textQ2">Answer:</span>
             <input class="new-title2" [(ngModel)]="newAnswer[i]">
             <input type="submit" (click)="saveQuestion()" value="Save" class="saveB">
           </div>
@@ -55,15 +59,26 @@
       </div>
       <div *ngFor="let question of questionsList; let i = index" class="container question_position">
         <div class=" questionB">
-          <button *ngIf="showX" type="button" class="close x_position" aria-label="Close">
+          <!-- <button *ngIf="showX1" type="button" class="close x_position" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-          </button>
+          </button> -->
+          <div *ngIf = "showInput">
+              <input class="inputQ" type="text" value="Edit Question:">
+          </div>
+          
+          
           <p class="Q">Q:</p>
           <p class="A">{{ question.content }}</p>
         </div>
 
         <div class="list" *ngFor="let answers of question.answers">
           <input type="checkbox" class="check">
+          <div *ngIf = "showInput">
+              <input class="inputA" type="text" value="Edit answer:">
+              <input type="button" class="btn save-changes()" value="Save">
+          </div>
+          
+
           <p class="textQ">{{ answers }}</p>
         </div>
       </div>

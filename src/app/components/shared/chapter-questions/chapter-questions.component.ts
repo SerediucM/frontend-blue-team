@@ -18,6 +18,12 @@ export class ChapterQuestionsComponent implements OnInit {
   private newAnswers = [''];
   private newAnswer = [];
   private err = "";
+  public showInput: boolean = false;
+
+  
+
+
+
   data: any = [];
   delRow;
   showX = true;
@@ -66,11 +72,13 @@ export class ChapterQuestionsComponent implements OnInit {
     this.showChapter = !this.showChapter
     this.endChapter = false;
   }
-  delete(row) {
-    console.log(row);
-    this.delRow = this.allQuestions.indexOf(row);
-    this.allQuestions.splice(this.delRow, 1);
-    console.log(this.allQuestions);
+  delete() {
+    this.allQuestions.pop()
+
+  }
+  showI(){
+    this.showInput = !this.showInput;
+
   }
   saveQuestion() {
     this.newQuestion = <Question>{ title: this.newTitle, answers: this.newAnswer }

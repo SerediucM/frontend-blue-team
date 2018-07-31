@@ -14,7 +14,7 @@
     background-position: center; 
     background-image: url('../../../../assets/bg_image.png');
     position: relative;
-    top:-20px;
+    top:-50px;
 }
 
 .chapterq1{
@@ -78,8 +78,8 @@
     height: 14px;
     width: 13px;
     color: white;
-    top: 6px;
-    left: 131%;
+    top: -1px;
+    left: -55px;
 
 }
 
@@ -88,9 +88,9 @@
     position: relative;
     height: 27px;
     width: 116px;
-    left: 144%;
-    top: 50%;
-   
+    left: 146%;
+    top: 455px;
+  
 
    
     
@@ -447,4 +447,38 @@
     position: relative;
     top: 30%;
     right: 2%;
+    }
+
+.inputQ{
+
+    position: relative;
+    height: 70px;
+    width: 830px;
+    border-radius: 5px;
+    background-color: #006FFF;
+    
+
+}
+
+.inputA{
+    position: relative;
+    height: 70px;
+    width: 830px;
+    border-radius: 5px;
+    left: -10px;
+    top: -10px;
+    color: royalblue;
+  
+   
+
+}
+
+.save-changes{
+    position: relative;
+    left:92%;
+    top: -10px;
+    border: none;
+    color: blue;
+    background-color: white;
+
 }
