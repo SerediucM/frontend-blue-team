@@ -346,11 +346,11 @@ hr{
 
 }
 .shape-x{
-    position: absolute;
-    height: 8.96px;
-    width: 8.96px;
-    left: 35%;
-    top: 0%;
+    position: relative;
+    height: 10px;
+    width: 10px;
+    left: -5px;
+    top: -9px;
     color: white;
 
 }
@@ -467,4 +467,10 @@ hr{
     color: #006FFF;
   
 
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
 }

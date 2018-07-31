@@ -14,8 +14,8 @@ const httpOptions = {
 export class ApiConnectionService {
   private baseUrl = 'http://192.168.210.113:8080';
   private userUrl = 'http://192.168.210.113:8080/user';
-  private courseUrl = 'http://localhost:3000/course';
   private categoryUrl = 'http://192.168.210.113:8080/categories';
+  private courseUrl = 'http://localhost:3000/course';
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
   getUser(email: string): Observable<any> {
@@ -61,7 +61,7 @@ export class ApiConnectionService {
         'reset_token': token
       })
     };
-    const url = `${this.baseUrl}`; 
+    const url = `${this.baseUrl}`;
     return this.http.get<any>(url + "/courses?category=" + id, httpGetOptions);
   }
   getchapters(id: number): Observable<any> {
@@ -73,7 +73,7 @@ export class ApiConnectionService {
         'reset_token': token
       })
     };
-    const url = `${this.baseUrl}`; 
+    const url = `${this.baseUrl}`;
     return this.http.get<any>(url + "/chapters?course_id=" + id, httpGetOptions);
   }
   getquestions(id: number): Observable<any> {
@@ -85,7 +85,7 @@ export class ApiConnectionService {
         'reset_token': token
       })
     };
-    const url = `${this.baseUrl}`; 
+    const url = `${this.baseUrl}`;
     return this.http.get<any>(url + "/questions?id=" + id, httpGetOptions);
   }
   private log(message: string) {

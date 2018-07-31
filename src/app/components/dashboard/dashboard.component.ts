@@ -18,6 +18,8 @@ export class DashboardComponent implements OnInit {
   // private searchTerms = new Subject<string>();
   ;
   private serchtest: string;
+  parentMessage1 = "Browse through best learning courses for Alexa";
+  parentMessage2 = "Pick the one you like and start learning";
   constructor(private userConn: ApiConnectionService,
     private router: ActivatedRoute,
     private rout: Router) {
@@ -26,7 +28,7 @@ export class DashboardComponent implements OnInit {
   limit: number = 6;
   RandomColor: {};
   course: string;
-  private id : number;
+  private id: number;
   startSearch: boolean = false;
   categories: {};
   courses = ['Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activit', 'Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activit', 'Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activity', 'Sports'];
@@ -44,31 +46,43 @@ export class DashboardComponent implements OnInit {
       "font-size": "18px",
     };
   }
-  getCourseid(id){
+  getCourseid(id) {
     sessionStorage.setItem('idcurs', id);
     this.userConn.getCourse(id).subscribe(data => {
-       console.log("Id cursului accesat",data.objects);
-       this.rout.navigate(['courses']);
-          });
+      console.log("Id cursului accesat", data.objects);
+      this.rout.navigate(['courses']);
+    });
   }
   getCateg() {
     return this.userConn.getCategory();
   }
   ngAfterViewInit(): void {
     this.getCateg().subscribe(data => {
-    this.categories = data.objects;
+      this.categories = data.objects;
       console.log("Categ:", this.categories);
-          });
+    });
   }
   DiscoverMore() {
     if (this.limit <= this.courses.length) {
       this.limit = this.limit + 6;
     }
   }
-  parentMessage1 = "Browse through best learning courses for Alexa";
-  parentMessage2 = "Pick the one you like and start learning";
+  getCourse(course: string) {
+    return course;
+  }
+  getUsers() {
+    return this.userConn.getUser(sessionStorage.getItem('email'));
+  }
   ngOnInit() {
     this.getCateg();
   }
-
 }
+  // search(searchTerm: string) {
+  //   this.editHero = undefined;
+  //   if (searchTerm) {
+  //     this.heroesService.searchHeroes(searchTerm)
+  //       .subscribe(heroes => this.heroes = heroes);
+  //   }
+  // }
+  // @Input() childMessageCategory: string;
+
