@@ -4,9 +4,7 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Observable, Subject, generate } from 'rxjs';
 import { getLocalePluralCase } from '@angular/common';
 import { ApiConnectionService } from '../../services/api-connection/api-connection.service';
-
-
-
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -20,15 +18,19 @@ export class DashboardComponent implements OnInit {
   // private searchTerms = new Subject<string>();
   ;
   private serchtest: string;
-  constructor(private userConn: ApiConnectionService) {
-    this.getcol();
-  }
   parentMessage1 = "Browse through best learning courses for Alexa";
   parentMessage2 = "Pick the one you like and start learning";
+  constructor(private userConn: ApiConnectionService,
+    private router: ActivatedRoute,
+    private rout: Router) {
+    this.getcol();
+  }
   limit: number = 6;
   RandomColor: {};
   course: string;
+  private id: number;
   startSearch: boolean = false;
+  categories: {};
   courses = ['Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activit', 'Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activit', 'Astrology', 'Finances', 'Grammar', 'Fun Facts', 'Jokes', 'Life Hacks', 'Sports', 'Habbits', 'Activity', 'Sports'];
   getcol() {
     return this.RandomColor = {
@@ -44,8 +46,21 @@ export class DashboardComponent implements OnInit {
       "font-size": "18px",
     };
   }
-  ngOnInit(): void {
-    this.getUsers();
+  getCourseid(id) {
+    sessionStorage.setItem('idcurs', id);
+    this.userConn.getCourse(id).subscribe(data => {
+      console.log("Id cursului accesat", data.objects);
+      this.rout.navigate(['courses']);
+    });
+  }
+  getCateg() {
+    return this.userConn.getCategory();
+  }
+  ngAfterViewInit(): void {
+    this.getCateg().subscribe(data => {
+      this.categories = data.objects;
+      console.log("Categ:", this.categories);
+    });
   }
   DiscoverMore() {
     if (this.limit <= this.courses.length) {
@@ -58,14 +73,10 @@ export class DashboardComponent implements OnInit {
   getUsers() {
     return this.userConn.getUser(sessionStorage.getItem('email'));
   }
-  ngAfterViewInit(): void {
-    this.getUsers().subscribe(data => {
-    });
+  ngOnInit() {
+    this.getCateg();
   }
 }
-
-
-
   // search(searchTerm: string) {
   //   this.editHero = undefined;
   //   if (searchTerm) {

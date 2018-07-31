@@ -14,7 +14,7 @@ const httpOptions = {
 export class ApiConnectionService {
   private baseUrl = 'http://192.168.210.113:8080';
   private userUrl = 'http://192.168.210.113:8080/user';
-  private categoryUrl = 'http://192.168.210.113:8080//categories';
+  private categoryUrl = 'http://192.168.210.113:8080/categories';
   private courseUrl = 'http://localhost:3000/course';
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
@@ -41,11 +41,7 @@ export class ApiConnectionService {
     const url = `${this.baseUrl}`;
     return this.http.post<any>(url + "/logout", token, httpGetOptions1);
   }
-  getCourse(id: number): Observable<any> {
-    const url2 = `${this.courseUrl}`;
-    return this.http.get<Course>(url2);
-  }
-  getCategory(id: number): Observable<any> {
+  getCategory(): Observable<any> {
     const token = sessionStorage.getItem("resetToken");
     const httpGetOptions = {
       headers: new HttpHeaders({
@@ -55,6 +51,42 @@ export class ApiConnectionService {
     };
     const url = `${this.categoryUrl}`;
     return this.http.get<any>(url, httpGetOptions);
+  }
+  getCourse(id: number): Observable<any> {
+    console.log("Id couses services", id)
+    const token = sessionStorage.getItem("resetToken");
+    const httpGetOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'reset_token': token
+      })
+    };
+    const url = `${this.baseUrl}`;
+    return this.http.get<any>(url + "/courses?category=" + id, httpGetOptions);
+  }
+  getchapters(id: number): Observable<any> {
+    console.log("Id chapters services", id)
+    const token = sessionStorage.getItem("resetToken");
+    const httpGetOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'reset_token': token
+      })
+    };
+    const url = `${this.baseUrl}`;
+    return this.http.get<any>(url + "/chapters?course_id=" + id, httpGetOptions);
+  }
+  getquestions(id: number): Observable<any> {
+    console.log("Id chapters services", id)
+    const token = sessionStorage.getItem("resetToken");
+    const httpGetOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'reset_token': token
+      })
+    };
+    const url = `${this.baseUrl}`;
+    return this.http.get<any>(url + "/questions?id=" + id, httpGetOptions);
   }
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
