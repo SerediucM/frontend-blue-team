@@ -23,6 +23,14 @@
         </div>
     </div>
     <div class="container">
+        <!--  -->
+        <!-- <button  class="btn create-btn" type="submit" (click)="createQuestion()" >
+                <span class="create-txt">
+                  Create
+                </span>
+                <span class="glyphicon glyphicon-plus-sign plus"></span>
+              </button> -->
+              
         <ul *ngFor="let course of courseList ; let i=index" class="btn-group">
 
             <div *ngIf="i<limit" (click)="courseid(course.id)"  class="card card-position">
