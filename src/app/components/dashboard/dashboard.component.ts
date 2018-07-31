@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Observable, Subject, generate } from 'rxjs';
 import { getLocalePluralCase } from '@angular/common';
+import { ApiConnectionService } from '../../services/api-connection/api-connection.service';
 
 
 
@@ -19,10 +20,11 @@ export class DashboardComponent implements OnInit {
   // private searchTerms = new Subject<string>();
   ;
   private serchtest: string;
-  constructor() {
+  constructor(private userConn: ApiConnectionService) {
     this.getcol();
   }
-
+  parentMessage1 = "Browse through best learning courses for Alexa";
+  parentMessage2 = "Pick the one you like and start learning";
   limit: number = 6;
   RandomColor: {};
   course: string;
@@ -42,6 +44,9 @@ export class DashboardComponent implements OnInit {
       "font-size": "18px",
     };
   }
+  ngOnInit(): void {
+    this.getUsers();
+  }
   DiscoverMore() {
     if (this.limit <= this.courses.length) {
       this.limit = this.limit + 6;
@@ -50,6 +55,14 @@ export class DashboardComponent implements OnInit {
   getCourse(course: string) {
     return course;
   }
+  getUsers() {
+    return this.userConn.getUser(sessionStorage.getItem('email'));
+  }
+  ngAfterViewInit(): void {
+    this.getUsers().subscribe(data => {
+    });
+  }
+}
 
 
 
@@ -61,14 +74,4 @@ export class DashboardComponent implements OnInit {
   //   }
   // }
   // @Input() childMessageCategory: string;
-  parentMessage1 = "Browse through best learning courses for Alexa";
-  parentMessage2 = "Pick the one you like and start learning";
-  ngOnInit() {
-    // this.heroes$ = this.searchTerms.pipe(
-    //   debounceTime(300),
-    //   distinctUntilChanged(),
-    //   switchMap((term: string) => this.heroService.searchHeroes(term)),
-    // );
-  }
 
-}

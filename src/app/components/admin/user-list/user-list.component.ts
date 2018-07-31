@@ -8,14 +8,26 @@ import { Component, OnInit } from '@angular/core';
 export class UserListComponent implements OnInit {
   users = ['Astrology', 'Finances', 'Grammar'];
   public showList = false;
+  delRow;
+  data: any[];
+  status = [false, false, false];
   constructor() { }
 
   ngOnInit() {
   }
-  Controls() {
-    if (this.showList === true) { this.showList = false }
+  Controls(i) {
+    if (this.status[i] === true) { this.status[i] = false }
     else
-      this.showList = true;
+      this.showList[i] = true;
+  }
+  verify(index) {
+    if (this.status[index] === true) { this.status[index] = false }
+    else
+      this.status[index] = true;
+  }
+  DeleteRow(row) {
+    this.delRow = this.data.indexOf(row);
+    this.data.splice(this.delRow, 1);
   }
 
 }
