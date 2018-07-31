@@ -65,24 +65,10 @@ export class DashboardComponent implements OnInit {
       this.limit = this.limit + 6;
     }
   }
-
-  // search(searchTerm: string) {
-  //   this.editHero = undefined;
-  //   if (searchTerm) {
-  //     this.heroesService.searchHeroes(searchTerm)
-  //       .subscribe(heroes => this.heroes = heroes);
-  //   }
-  // }
-  // @Input() childMessageCategory: string;
   parentMessage1 = "Browse through best learning courses for Alexa";
   parentMessage2 = "Pick the one you like and start learning";
   ngOnInit() {
     this.getCateg();
-    // this.heroes$ = this.searchTerms.pipe(
-    //   debounceTime(300),
-    //   distinctUntilChanged(),
-    //   switchMap((term: string) => this.heroService.searchHeroes(term)),
-    // );
   }
 
 }

@@ -21,14 +21,6 @@ export class CourseListComponent implements OnInit {
   constructor(private router: ActivatedRoute,
     private rout: Router,
     private userConn: ApiConnectionService) {
-    // this.getCourses().subscribe(data => {
-    //   this.mycourses = data.supplies;
-
-    //   this.course_image = data[0].images;
-    //   this.small_description = data[0].small_description;
-    //   this.long_description = data[0].long_description;
-
-    // });
   }
   parentMessage1 = "Browse through all"
   parentMessage2 = "Pick the one you like and start learning";
@@ -44,10 +36,6 @@ export class CourseListComponent implements OnInit {
       this.limit = this.limit + 6;
     }
   }
-  // private _course_image: string[];
-  // private _small_description: string[];
-  // private _long_description: string[];
-
   ngOnInit() {
 
   }

@@ -48,6 +48,7 @@ export class ChapterQuestionsComponent implements OnInit {
        console.log("Intrebare ", data );
       });
   }
+
   deleteQ() {
     this.allQuestions.pop();
   }
