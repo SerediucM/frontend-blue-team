@@ -66,6 +66,7 @@ export class LoginComponent implements OnInit {
         console.log("data",data.objects);
         sessionStorage.setItem('resetToken', this.user[0].resetToken );
         sessionStorage.setItem('email', this.user[0].email );
+        sessionStorage.setItem('iduser', this.user[0].user_id );
         this.Username= this.user[0].firstName + " " + this.user[0].lastName 
         console.log("Concatenare name", this.Username);
         this.rout.navigate(['dashboard']);

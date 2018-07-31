@@ -19,11 +19,6 @@ export class ChapterQuestionsComponent implements OnInit {
   private newAnswer = [];
   private err = "";
   public showInput: boolean = false;
-
-  
-
-
-
   data: any = [];
   delRow;
   showX = true;
@@ -53,7 +48,14 @@ export class ChapterQuestionsComponent implements OnInit {
        this.questionsList=data.objects;
        console.log("Intrebare ", data );
       });
-  }
+        // sessionStorage.setItem('idquestions', id);
+        // console.log("id capitolului ",id)
+        // this.userConn.getquestions(id).subscribe(data => {
+        //   console.log("Am ajuns");
+        //    console.log("Id intrebare accesat",data.objects);
+        //      this.rout.navigate(["courses/:courseId/:chapterId"]);
+        //       });
+      }
 
   deleteQ() {
     this.allQuestions.pop();
