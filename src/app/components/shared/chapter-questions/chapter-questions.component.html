@@ -19,9 +19,9 @@
 
 
       <div class="btn-group edit-btn">
-        
-        <button class="btn" (click) = "showI()">Edit</button>
-        <button class="btn" (click)='delete()'>Delete</button>
+
+        <button class="btn" (click)="showI()">Edit</button>
+        <button class="btn">Delete</button>
       </div>
       <div class="center1">
         <p class="chapterq1">CHAPTER I</p>
@@ -29,16 +29,14 @@
       </div>
       <div style="display: block;">
         <div>
-            
-          <button  class="btn create-btn" type="submit" (click)="createQuestion()" >
+
+          <button class="btn create-btn" type="submit" (click)="createQuestion()">
             <span class="create-txt">
               Create
             </span>
             <span class="glyphicon glyphicon-plus-sign plus"></span>
           </button>
-         
         </div>
-
       </div>
       <div class="alert-danger">{{err}}</div>
       <div *ngIf="show">
@@ -62,22 +60,22 @@
           <!-- <button *ngIf="showX1" type="button" class="close x_position" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button> -->
-          <div *ngIf = "showInput">
-              <input class="inputQ" type="text" value="Edit Question:">
+          <div *ngIf="showInput">
+            <input class="inputQ" [(ngModel)]="question.content" type="text" value="">
           </div>
-          
-          
+
+
           <p class="Q">Q:</p>
           <p class="A">{{ question.content }}</p>
         </div>
 
         <div class="list" *ngFor="let answers of question.answers">
           <input type="checkbox" class="check">
-          <div *ngIf = "showInput">
-              <input class="inputA" type="text" value="Edit answer:">
-              <input type="button" class="btn save-changes()" value="Save">
+          <div *ngIf="showInput">
+            <input class="inputA" type="text" value="Edit answer:">
+            <input type="button" class="btn save-changes()" (click)="showI()" value="Save">
           </div>
-          
+
 
           <p class="textQ">{{ answers }}</p>
         </div>

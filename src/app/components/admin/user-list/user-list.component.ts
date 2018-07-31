@@ -9,7 +9,7 @@ export class UserListComponent implements OnInit {
   users = ['Astrology', 'Finances', 'Grammar'];
   public showList = false;
   delRow;
-  data: any[];
+  data: Array<any> = [];
   status = [false, false, false];
   constructor() { }
 
@@ -26,8 +26,7 @@ export class UserListComponent implements OnInit {
       this.status[index] = true;
   }
   DeleteRow(row) {
-    this.delRow = this.data.indexOf(row);
-    this.data.splice(this.delRow, 1);
+    this.data.splice(row, 1);
   }
 
 }
