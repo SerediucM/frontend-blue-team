@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiConnectionService } from '../../../services/api-connection/api-connection.service';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -9,14 +7,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UserListComponent implements OnInit {
   users = ['Astrology', 'Finances', 'Grammar'];
-  userss:{}
   public showList = false;
   delRow;
   data: Array<any> = [];
   status = [false, false, false];
-  constructor(private userConn: ApiConnectionService,
-    private router: ActivatedRoute,
-    private rout: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -31,12 +26,8 @@ export class UserListComponent implements OnInit {
       this.status[index] = true;
   }
   DeleteRow(row) {
-    this.data.splice(row, 1);
+    this.data.splice(
+      row, 1);
   }
-  ngAfterViewInit(): void {
-    this.userConn.getUsers().subscribe(data => {
-      this.userss = data.objects;
-      console.log("Users:", data.objects);
-    });
-  }
+
 }
