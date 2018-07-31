@@ -11,6 +11,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./my-account.component.css']
 })
 export class MyAccountComponent implements OnInit, AfterViewInit {
+  
+
 @Input() users: User;
 private loggedUse :string;
 passaccount= 'password';
@@ -30,9 +32,12 @@ isDisplayed: boolean = true;
              private userConn: ApiConnectionService,
              private http: HttpClient,            
  ) {  }
+
+ 
  ngOnInit():void {
   this.getUsers();
 }
+
  getUsers() {
   return this.userConn.getUser(sessionStorage.getItem('email'));
 }
@@ -44,12 +49,12 @@ ngAfterViewInit():void {
     this.token = data.objects[0].resetToken
   });
  }
- onFileSelected (event){
-  this.selectedFile;
-  console.log("Img",this.selectedFile)
-  sessionStorage.setItem('img', this.selectedFile );
-  return this.selectedFile;
- }
+//  onFileSelected (event){
+//   this.selectedFile;
+//   console.log("Img",this.selectedFile)
+//   sessionStorage.setItem('img', this.selectedFile );
+//   return this.selectedFile;
+//  }
  
  Save (password,email){
    console.log("Img",this.selectedFile)
