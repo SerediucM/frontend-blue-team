@@ -15,7 +15,6 @@ describe('CourseListComponent', () => {
 
 
 
-  
   beforeEach(() => {
     fixture = TestBed.createComponent(CourseListComponent);
     component = fixture.componentInstance;
