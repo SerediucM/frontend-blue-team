@@ -4,7 +4,7 @@
     background-color: rgba(6,16,43,0.91);
     background-repeat: no-repeat;
     background-position: center; 
-    background-image: url('../../../../assets/bg_image.png');
+    /* background-image: url('../../../../assets/bg_image.png'); */
     position: absolute;
     top:80%;
 }

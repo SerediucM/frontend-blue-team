@@ -15,31 +15,32 @@ export class ApiConnectionService {
   private baseUrl = 'http://192.168.210.113:8080';
   private userUrl = 'http://192.168.210.113:8080/user';
   private categoryUrl = 'http://192.168.210.113:8080/categories';
+  private local = 'http://localhost:3000/users';
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
-  getUser(email: string): Observable<any> {
-    const token = sessionStorage.getItem("resetToken");
-    const httpGetOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'reset_token': token
-      })
-    };
-    const url = `${this.userUrl}`;
-    return this.http.get<User>(url + "?email=" + email, httpGetOptions);
-  }
-  postToken(email: string): Observable<any> {
-    const token = sessionStorage.getItem("resetToken");
-    const httpGetOptions1 = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'reset_token': token
-      })
-    };
-    console.log("Token service", token);
-    const url = `${this.baseUrl}`;
-    return this.http.post<any>(url + "/logout", token, httpGetOptions1);
-  }
+  // getUser(email: string): Observable<any> {
+  //   const token = sessionStorage.getItem("resetToken");
+  //   const httpGetOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       'reset_token': token
+  //     })
+  //   };
+  //   const url = `${this.userUrl}`;
+  //   return this.http.get<User>(url + "?email=" + email, httpGetOptions);
+  // }
+  // postToken(email: string): Observable<any> {
+  //   const token = sessionStorage.getItem("resetToken");
+  //   const httpGetOptions1 = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       'reset_token': token
+  //     })
+  //   };
+  //   console.log("Token service", token);
+  //   const url = `${this.baseUrl}`;
+  //   return this.http.post<any>(url + "/logout", token, httpGetOptions1);
+  // }
 
 
 
@@ -140,6 +141,10 @@ export class ApiConnectionService {
       return of(result as T);
     };
   }
+  NewAcount( user: any): Observable<User> {
+    // console.log ("USER:", user, url);
+    return this.http.post<User>(this.local, user);
+  }
   addPost(url, user: any): Observable<User> {
     // console.log ("USER:", user, url);
     return this.http.post<User>(this.baseUrl + url, user, httpOptions);
@@ -150,9 +155,9 @@ export class ApiConnectionService {
   Update(user): Observable<User> {
     return this.addPost('/users', user)
   }
-  NewAcount(user): Observable<User> {
-    return this.addPost('/create/user', user)
-  }
+  // NewAcount(user): Observable<User> {
+  //   return this.addPost('', user)
+  // }
   NewReset(user): Observable<User> {
     return this.addPost('/reset', user)
   }

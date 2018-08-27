@@ -1,50 +1,26 @@
-.nav-bar {	height: 100px;	width: 1440px;}
 
-.navbar-brand{
-    background-image: url('../../../../assets/logo_teachme-nav-bar.svg');
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 34%;
-   
-    
+ .navbar{
+ 	width:100%;
+ 	background-color: rgb(123,144,224);
+ 	border-radius:0;
 }
-.nav.navbar-nav.navbar-right li a{
-    color: darkblue;
+ .navbar img{
+ 	margin-left:20%;
+ 	margin-top:2em;
+ 	height:2%;
+ 	width:100%;
+	float: left;
+	font-weight: bold;
 }
-
-.main-user{
-    position: absolute;
-    top: 32%;
-    font-size: 120%;
-    left: 79%;
+ .navbar-right{
+	float:right;	
+	margin-right: 1%;
 }
-.image-user{
-    position: absolute;
-    top: 40%;
-    font-size: 120%;
-    background-color: black;
-    border-radius: 50%;
-    left: 76%;
-    width: 3%;
-
-}
-
-.user-course{
-    position: absolute;
-    top: 32%;
-    left: 44%;
-    font-size: 120%;
-    
-}
-.user-new{
-    position: absolute;
-    top: 32%;
-    left: 54%;
-    font-size: 120%;
-}
-.user-about{
-    position: absolute;
-    top: 32%;
-    left: 66%;
-    font-size: 120%;
-}
+li>a{
+	display: block;
+ 	font-size: 150%;
+ 	color:#fff;
+ 	margin-top:2em;	
+ 	text-decoration: none;
+ 	padding:0 15px 0 15px;
+ }

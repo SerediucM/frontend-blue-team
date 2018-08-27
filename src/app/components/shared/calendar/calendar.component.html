@@ -2,7 +2,7 @@
   This is the component that lists the chapters of a course. Every chapter has a
   description and a button that links to the chapter questions (based on an id).
 -->
-<div class="container nav-bar">
+<!-- <div class="container nav-bar">
   <div class="row">
     <div class="col-md-12">
       <app-page-header></app-page-header>
@@ -36,4 +36,17 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<app-page-header></app-page-header>
+<label style="top: 50px">calendar</label>
+<footer class="footer">
+  <div class="container">
+    <button *ngIf="limit < chapters.length" class="btns-secondary" (click)="showFullcurriculum()">calendar</button>
+    <p>
+      <span class="alexa-teach-me-2018">Alexia Teach Me 2018. All rights reserved.</span>
+      <span class="terms-conditions">Terms & Conditions</span>
+      <span class="privacy">Privacy</span>
+      <span class="support">Support</span>
+    </p>
+  </div>
+</footer>

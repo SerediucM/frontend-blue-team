@@ -5,12 +5,11 @@
   Categories can be searched through, and there's a link to display more categories.
 -->
 
-<div class="container nav-bar">
+<!-- <div class="container nav-bar">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <app-page-header></app-page-header>
-        <app-hero [childMessage1]="parentMessage1" [childMessage2]="parentMessage2"></app-hero>
+      <div class="col-md-12"> -->
+        <!-- <app-hero [childMessage1]="parentMessage1" [childMessage2]="parentMessage2"></app-hero>
       </div>
 
       <div class="center2">
@@ -18,8 +17,8 @@
           <form>
             <input class="rectangle-7 " [(ngModel)]="searchText" name="searchInput" type="search" placeholder="search here...">
             <input class="rectangle-7-copy btn btn-primary" (click)="searchAllow = searchText;" type="button" value="SEARCH">
-            <!--  -->
-            <button  class="btn create-btn" type="submit" (click)="createQuestion()" >
+              -->
+            <!-- <button  class="btn create-btn" type="submit" (click)="createQuestion()" >
               <span class="create-txt">
                 Create
               </span>
@@ -31,10 +30,10 @@
       </div>
       <div class="container">
         <div class="btn-group">
-           <!--  -->
-           <div *ngIf="show">
+         
+           <div *ngIf="show"> -->
               <!-- <input type="submit" (click)="addAnswer()" class="addQ " value="+"> -->
-       
+<!--        
               <div class="question_position">
                 <div class="createB">
                   <span class="Q">Course:</span>
@@ -45,8 +44,7 @@
                 </div>
               </div>
             </div>
-            <!--  -->
-          
+           
           <ul style="display: inline;" *ngFor="let course of categories |  filter : searchAllow ; let i=index">
             
             
@@ -69,4 +67,49 @@
       </div>
     </div>
   </div>
+</div> -->
+<app-page-header></app-page-header>
+<div class="dashboard_v1">
+<section class="section1">
+ <div class="top">
+     <br><form class="" action="Add_service">
+     <input type="submit" value="+" class="add"><br>
+     <h5 class="service">New service</h5>
+     </form>
+ </div>
+
+ <div class="service_box">
+  <div class="title">
+      <h1>Name of the service</h1>
+      <img class="right_icons" src="../assets/trash.png"> 
+      <img class="right_icons" src="../assets/edit.png">
+    </div>
+   <section class="section2"><br>
+     <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nulla nisl, pretium in sagittis finibus, consectetur aliquet dolor. Maecenas non tincidunt urna. Proin eu magna eget purus dapibus convallis. Phasellus rutrum nibh et velit varius, a molestie diam lobortis. Quisque luctus leo quam, a fermentum tellus ullamcorper et. Quisque blandit imperdiet felis at fermentum. Vestibulum sit amet erat augue. Sed sed malesuada nibh. Nunc sollicitudin tristique diam et tempus. Sed sagittis vitae nisl quis vestibulum. 
+     </h5><br>  
+     <div class="sd1">
+       <div class="sd11">
+         <h2>Mon - Fri, 08:00 - 16:00</h2>
+         <h5>Availability</h5>
+       </div>
+       <div class="sd12">
+         <h2>6 available</h2>
+         <h5>Spaces</h5>
+       </div>
+     </div> 
+     <div class="sd2">
+       <div class="sd21">
+         <h2>1 hour</h2>
+         <h5>Duration</h5>
+       </div>
+
+       <div class="sd22">
+         <h2>210 lei</h2>
+         <h5>Price</h5>
+       </div>
+     </div>  
+     <br>
+   </section>
+ </div>
+</section>
 </div>

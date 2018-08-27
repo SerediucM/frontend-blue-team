@@ -3,9 +3,9 @@ import { ApiConnectionService } from '../../../services/api-connection/api-conne
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-chapter-list',
-  templateUrl: './chapter-list.component.html',
-  styleUrls: ['./chapter-list.component.css']
+  selector: 'app-calendar',
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.css']
 })
 export class ChapterListComponent implements OnInit {
   chapters = "Chapter"

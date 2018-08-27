@@ -1,37 +1,16 @@
-<!--
-  This component represents the header of the page with the navigation bar. It
-  should be displayed on all pages, except for the login ones and should conditionally
-  display certain links according to the logged in user role (admin / user).
--->
-<nav class="navbar navbar-default nav-bar">
-  <div class="container-fluid">
-    <div class="container">
 
-      <div class="navbar-header">
-        <a routerLink="/dashboard" class="container navbar-brand"></a>
-      </div>
-
-      <div class="navbar-default">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="main-user">
-            <a routerLink="/account">{{name}}</a>
-          </li>
-          <li class="image-user">
-            <a routerLink="/account"></a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="user-course">
-            <a routerLink="/dashboard">Courses</a>
-          </li>
-          <li class="user-new">
-            <a href="#">What's new</a>
-          </li>
-          <li class="user-about">
-            <a href="#">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
+<div class="navigation">
+	<nav class="navbar navbar-default nav-bar">
+	 	<div>
+	   	  <div class="navbar-header">
+	        <img src="../assets/image.png" alt="Booking App"> 
+	      </div>
+	      <ul class="nav navbar-nav navbar-right ">
+            <li><a routerLink="/dashboard"  > DASHBOARD </a></li>
+            <li><a routerLink="/bookings" > BOOKINGS</a></li>
+            <li><a routerLink="/calendar" > CALENDAR</a></li>
+						<li><a routerLink="/account"  > PROFILE </a></li>
+		    </ul>
+	  </div>
+	</nav>
+</div>

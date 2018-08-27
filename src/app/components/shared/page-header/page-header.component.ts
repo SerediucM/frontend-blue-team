@@ -14,16 +14,5 @@ export class PageHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getUsers();
   }
-  getUsers() {
-    return this.userConn.getUser(sessionStorage.getItem('email'));
-  }
-  ngAfterViewInit():void {
-    this.getUsers().subscribe(data => {
-      this.name = data.objects[0].firstName +" " +data.objects[0].lastName
-      console.log("Name:", this.name);
-
-    });
-   }
 }

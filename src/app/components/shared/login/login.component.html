@@ -1,46 +1,86 @@
-<div class="container-fluid maindiv" >
-    <div (submit)="loginUser($event)"   class="container {{state2}}"> 
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 info-position">
-                <h4 class="welcome-back2">Welcome back</h4>
-                <h1 class="login-to-your-accoun">Login to your account</h1>
-            </div>  
-            <div  class="col-xs-6 col-sm-6 form-position">
-                <div class="errGlobal alert-danger">{{errC}}</div>
-                <form name="validformLogin"  #validformLogin="ngForm" >
-                    <input 
-                        required 
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" 
-                        class ="rectangle-2a email-adress" 
-                        (click)="log(emaill)" 
-                        type ="emaill"  
-                        [(ngModel)]=loginInputEmail 
-                        name="email" 
-                        #emaill= "ngModel"  
-                        placeholder="  email adress" >
-                    <div class=" errf  alert-danger " *ngIf="emaill.touched  && !emaill.valid ">
-                            <div *ngIf="emaill.errors.required ">Email is required</div>
-                            <div *ngIf="emaill.errors.pattern  ">Email invalid</div>
-                    </div> 
-                    <input required class = "rectangle-2a email-adress" type="{{pass}}" [(ngModel)]=loginInputPassword name="passwordl" #passwordl= "ngModel" (click)="log(passwordl)"placeholder="  password">
-                    <div class="errp alert-danger" *ngIf="passwordl.touched && !passwordl.valid" >
-                        <div *ngIf="passwordl.errors.required">Password is required</div>
-                    </div>
-                    <span class="visiblePass"><i (click)="VisiblePass()" class="glyphicon glyphicon-eye-open"></i></span>
-                    <input class = "rectangle-2b btn btn-primary sign-in" [(disabled)]="!validformLogin.valid" type="submit" value="SIGN IN">
-                    <p class="forgot-password-res"><span >Forgot password?&nbsp;&nbsp;</span>
-                    <a style="color: white; text-decoration: underline;" class="ReserIt"(click)="ResetPass()">Reset it</a></p>
-                </form>
+<div class="container-fluid" >
+     <!-- login page -->
+    <div  class="container   " *ngIf="loginContent" > 
+        <img src="../assets/booking_logo.png" alt="book_img" class="book_img"/>
+        <div class="errGlobal alert-danger">{{errC}}</div>
+        <form name="validformLogin"  #validformLogin="ngForm" class="div">
+            <label class="date"> Email address </label>
+            <input class="tbox" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"  [(ngModel)]=loginInputEmail  name="email"  #emaill= "ngModel" type="email">
+                    <!-- <input form-group required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class ="rectangle-2a email-adress"  (click)="log(emaill)"  type ="emaill"  [(ngModel)]=loginInputEmail  name="email"  #emaill= "ngModel"   placeholder="  email adress" >-->
+            <div class="err-email-login  alert-danger " *ngIf="emaill.touched  && !emaill.valid ">
+                <div *ngIf="emaill.errors.required ">Email is required</div>
+                <div *ngIf="emaill.errors.pattern  ">Email invalid</div>
             </div> 
-            <div class="footer-position">
-                        <label class="don-t-have-an-accoun" for="signup">Don't have an account?  </label>
-                        <button (click)="createCont()" class="rectangle btn btn-primary sign-up"  >Sign Up</button>
+            <label class="date">Password</label>
+            <input class="tbox space-between" type="{{showHide ? 'password' : 'text'}}" required [(ngModel)]=loginInputPassword name="passwordl" #passwordl= "ngModel">
+                <!-- <input required class = "rectangle-2a email-adress" type="{{pass}}" [(ngModel)]=loginInputPassword name="passwordl" #passwordl= "ngModel" (click)="log(passwordl)"placeholder="  password">-->
+            <i class="fa { showHide ? 'fa-eye' : 'fa-eye-slash'} glyphicon glyphicon-eye-open visiblePassLogin " (mousedown)="showMyPass()"  ></i>
+            <div class="err-password-login  alert-danger" *ngIf="passwordl.touched && !passwordl.valid" >
+                <div *ngIf="passwordl.errors.required">Password is required</div>
             </div>
-        </div>
+                <!-- <span class="visiblePass"><i (click)="VisiblePass()" class="glyphicon glyphicon-eye-open"></i></span> -->
+                    <!-- <input class = "rectangle-2b btn btn-primary sign-in" [(disabled)]="!validformLogin.valid" type="submit" value="SIGN IN"> -->
+            <input type="submit" (click)="loginUser()"  class="book_btn" [(disabled)]="!validformLogin.valid"  value="LOGIN">
+                    <!-- <p class="forgot-password-res"><span class="text" >Recover password &nbsp;&nbsp;</span> -->
+            <a  class="recover-password-txt" (click)="manageForms(false, false, true)"><br>Recover password</a>
+            <a  class="register-txt" (click)="manageForms(false, true, false)"><br>Register</a>
+        </form>
+    </div> <!-- close login -->
+ 
+<!-- create a new account -->
+    <div class="container " *ngIf="registerContent">
+        <img src="../assets/booking_logo.png" alt="book_img" class="book_img"/>
+        <div class="errGlobal alert-danger">{{errC}}</div>
+        <form name="validformLogin"  #validformLogin="ngForm" class="div">
+            <label class="date" >Your name</label>
+            <input class="tbox" required pattern="[A-Za-z\s]+$" [(ngModel)]=createinInputfirst name="firstName"  #firstName="ngModel" type="text" >
+                    <!-- <input required pattern="[A-Za-z\s]+$" [(ngModel)]=createinInputfirst name="firstName"  #firstName="ngModel" (change)="log(firstName)" class = "rectangle-2a email-adress" type ="text" placeholder="  first name"> -->
+                <div class="err-name-create  alert-danger" *ngIf="firstName.touched && !firstName.valid" >
+                    <div *ngIf="firstName.errors.required">Name is required</div>
+                    <div *ngIf="firstName.errors.pattern">Must contain only characters</div>
+                </div> 
+                <label class="date"> Email address </label>
+                <input class="tbox" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"  [(ngModel)]=loginInputEmail  name="email"  #emaill= "ngModel" type="email">
+                        <!-- <input form-group required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class ="rectangle-2a email-adress"  (click)="log(emaill)"  type ="emaill"  [(ngModel)]=loginInputEmail  name="email"  #emaill= "ngModel"   placeholder="  email adress" >-->
+                <div class="err-email-create alert-danger " *ngIf="emaill.touched  && !emaill.valid ">
+                    <div *ngIf="emaill.errors.required ">Email is required</div>
+                    <div *ngIf="emaill.errors.pattern  ">Email invalid</div>
+                </div> 
+                <label class="date">Password</label>
+                <input class="tbox space-between" type="{{showHidecreate ? 'password' : 'text'}}" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%.^#:;,\|+_-`~*?&])[A-Za-z\d$@$!%.^#;:,\|+_-`~*?&]{12,50}" [(ngModel)]=loginInputPassword name="passwordl" #passwordl= "ngModel">
+                                <!-- <input required class = "rectangle-2a email-adress" type="{{pass}}" [(ngModel)]=loginInputPassword name="passwordl" #passwordl= "ngModel" (click)="log(passwordl)"placeholder="  password">-->
+                <i (mousedown)="showMyPassCreate()" class="fa {{ showHidecreate ? 'fa-eye' : 'fa-eye-slash'}} glyphicon glyphicon-eye-open visiblePassCreate "></i>
+                <div [ngClass]="passwordl.errors.pattern ? 'err-password-createlong' : ''  " class="err-password-create  alert-danger" *ngIf="passwordl.touched && !passwordl.valid" >
+                    <div *ngIf="passwordl.errors.required">Password is required</div>
+                    <div *ngIf="passwordl.errors.pattern">It must contain upper-case, lower-case, numbers, special characters and length should be at least 8 characters</div>    
+                </div>           
+                <input type="submit" (click)="loginUser()"  class="book_btn" [(disabled)]="!validformLogin.valid"  value="REGISTER">
+                    <!-- <p class="forgot-password-res"><span class="text" >Recover password &nbsp;&nbsp;</span> -->
+                <a  class="account-txt" (click)="manageForms(true, false, false)"><br>You already have an account?</a>
+        </form>
+    </div> 
+    <div class="container " *ngIf="resetContent">
+        <img src="../assets/booking_logo.png" alt="book_img" class="book_img"/>
+        <div class="errGlobal alert-danger">{{errC}}</div>
+        <form name="validformLogin"  #validformLogin="ngForm" class="div">
+            <label class="date"> Email address </label>
+            <input class="tbox" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"  [(ngModel)]=loginInputEmail  name="email"  #emaill= "ngModel" type="email">
+                    <!-- <input form-group required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class ="rectangle-2a email-adress"  (click)="log(emaill)"  type ="emaill"  [(ngModel)]=loginInputEmail  name="email"  #emaill= "ngModel"   placeholder="  email adress" >-->
+            <div class="err-email-recover  alert-danger " *ngIf="emaill.touched  && !emaill.valid ">
+                <div *ngIf="emaill.errors.required ">Email is required</div>
+                <div *ngIf="emaill.errors.pattern  ">Email invalid</div>
+            </div> 
+                <!-- <span class="visiblePass"><i (click)="VisiblePass()" class="glyphicon glyphicon-eye-open"></i></span> -->
+                    <!-- <input class = "rectangle-2b btn btn-primary sign-in" [(disabled)]="!validformLogin.valid" type="submit" value="SIGN IN"> -->
+            <input type="submit" (click)="loginUser()"  class="book_btn" [(disabled)]="!validformLogin.valid"  value="RECOVER">
+                    <!-- <p class="forgot-password-res"><span class="text" >Recover password &nbsp;&nbsp;</span> -->
+        </form>
     </div>
+
+<!--close create-->
 <!-- div-ul create -->
 <!-- div-ul create -->
-    <div (submit)="add($event)" class="container-fluid {{state1}}">
+    <!-- <div (submit)="add($event)" class="container-fluid {{state1}}">
         <div class="row height">
             <div class="col-xs-6 col-sm-6 info-position">
                 <div class="welcome-back2"> You're one step closer</div>
@@ -72,7 +112,7 @@
                     <span class="visiblePassCreate"><i (click)="VisiblePass1()" class="glyphicon glyphicon-eye-open"></i></span>
                     <div >
                     <input class = "rectangle-2b btn btn-primary sign-in" [(disabled)]="!validform.valid" type="submit"  value="CREATE ACCOUNT"> <!--ng-click="valid=checked"-->
-                    </div>
+                    <!-- </div>
                     <div class="checkbox" >
                         <input  type="checkbox"  required [(ngModel)]="check" name="checkbox" #checkbox= "ngModel"> 
                         <span  > I agree with Terms & Conditions  </span>
@@ -84,9 +124,11 @@
                 </form>
              </div>
         </div>
-    </div> 
-    <!-- resetare password -->
-    <div (submit)="ResetComplet($event)" class="container {{state4}}" >
+    </div>  --> 
+<!-- resetare password -->
+<!--  reset password -->
+
+    <!-- <div (submit)="ResetComplet($event)" class="container {{state4}}" >
         <div class="row">
             <div class="col-xs-6 col-sm-6 info-position">
                 <h4 class="welcome-back2">You`re sorry</h4>
@@ -116,7 +158,7 @@
               </form>
             </div>
         </div>
-    </div> 
+    </div>  -->
 </div>
 
 

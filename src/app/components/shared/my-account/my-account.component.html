@@ -1,141 +1,27 @@
-<!--
-  This component represents the account of the logged in user. The user can
-  log out here, change the account information and profile picture. The user
-  can view the started courses and the progress that was made on a specific
-  course. Any started course can be closed on this page.
--->
-<div class="container nav-bar">
-  <div class="row">
-    <div class="col-xs-6 col-sm-6">
-      <app-page-header></app-page-header>
-      <div class="container show">
-        <div class=" container account-text2">
-          <p>Here you can edit your account’s informations, courses you started and the progress for each one.</p>
-          <p>Contact us at contact@alexateachme.com, if you need any help. </p>
-        </div>
-        <div class="container account-text">
-          <p>My Account</p>
-          <a routerLink="/login">
-            <input class="btn btn-primary log-out" (click)="logoutuser()" type="button" value="LOG OUT">
-          </a>
-        </div>
 
-
-        <div class="container back-g">
-          <p class="container account-text3">Account Informations</p>
-        </div>
-        <div class="container ">
-          <img class="account-img" [src]="[selectedFile]" alt="Photo">
-        </div>
-
-
-        <div class="container">
-          <!-- <image-upload></image-upload>  -->
-          <input class=" upload-pic" [(ngModel)]=selectedFile type="file" accept="file_extension|audio/*|video/*|image/*|media_type">
-          <p class="talk-user">To quickly change your profile picture, just drag&drop an image or upload a file. Image selected, should have maximum
-            15 MB size.</p>
-        </div>
-
-
-        <div class="container">
-          <input required pattern="[A-Za-z\s]+$" class="user-name" #firstName="ngModel" type="text" [(ngModel)]=name>
-          <div class="errMyname  alert-danger" *ngIf="firstName.touched && !firstName.valid">
-            <div *ngIf="firstName.errors.required">First Name is required</div>
-            <div *ngIf="firstName.errors.pattern">Must contain only characters</div>
+<app-page-header></app-page-header>
+<div>
+     <section class="section">
+       <form >
+          <div class="logo">
+            <img src="../assets/company_logo.png"/>
+            <input type="file" class="choosefile submit_button"/>
           </div>
 
-
-
-          <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%.^#:;,\|+_-`~*?&])[A-Za-z\d$@$!%.^#;:,\|+_-`~*?&]{8,50}"
-            class="user-pass" #password1="ngModel" name="password" type="{{passaccount}}" [(ngModel)]=password>
-          <div [ngClass]="password1.errors.pattern ? 'errMypaslong' : '' " class="errMypas  alert-danger" *ngIf="password1.touched && !password1.valid">
-            <div *ngIf="password1.errors.required">Password is required</div>
-            <div *ngIf="password1.errors.pattern">It must contain upper-case, lower-case, numbers, special characters and length should be at least 8 characters</div>
-          </div>
-
-
-
-          <span class="visiblePass1">
-            <i (click)="VisiblePass1()" class="glyphicon glyphicon-eye-open"></i>
-          </span>
-          <input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" class="user-email" type="email" #email1="ngModel" name="email"
-            [(ngModel)]=email>
-          <div class=" errMyEmail  alert-danger " *ngIf="email1.touched  && !email1.valid ">
-            <div *ngIf="email1.errors.required ">Email is required</div>
-            <div *ngIf="email1.errors.pattern  ">Email invalid</div>
-          </div>
-
-          <input class="btn btn-primary save-user " type="submit" (click)="Save(name, loggedUser.password, loggedUser.email)" value="Save">
-          <input class="btn btn-default cancel-user" type="text" (click)="close()" value="Cancel">
-          <hr>
-          <p class="start-courses">Start courses</p>
-        </div>
-
-
-        <div [ngStyle]="{'border' : bdr}" (click)="showbtn()" style="cursor: pointer;" class="container course1 {{state1}}">
-          <div class="course-img1"></div>
-          <p class="first-p1">Internet Banner Advertising Most Reliable Forms Of Web Advertising</p>
-          <p class="first-p2">In order to discuss the general function of the logo, we must firstly identify and define the environment where
-            this will have to fulfill its function. </p>
-          <p class="first-points1">120 points</p>
-          <hr class="first-bar1">
-          <button *ngIf="showX" (click)="x_pressed()" class="btn closed">
-            <div class="shape-x">x</div>
-          </button>
-        </div>
-
-        <div [ngStyle]="{'border' : bdr1}" (click)="showbtn1()" style="cursor: pointer;" class="container course2 {{state2}}">
-          <div class="course-img1"></div>
-          <p class="first-p1">Internet Banner Advertising Most Reliable Forms Of Web Advertising</p>
-          <p class="first-p2">In order to discuss the general function of the logo, we must firstly identify and define the environment where
-            this will have to fulfill its function. </p>
-          <p class="first-points1">90 points</p>
-          <hr class="first-bar2">
-          <button *ngIf="showX1" (click)="x_pressed1()" class="btn closed">
-            <div class="shape-x">x</div>
-          </button>
-        </div>
-
-        <div [ngStyle]="{'border' : bdr2}" (click)="showbtn2()" style="cursor: pointer;" class="container course3 {{state3}}">
-          <div class="course-img1"></div>
-          <p class="first-p1">Internet Banner Advertising Most Reliable Forms Of Web Advertising</p>
-          <p class="first-p2">In order to discuss the general function of the logo, we must firstly identify and define the environment where
-            this will have to fulfill its function. </p>
-          <p class="first-points1">30 points</p>
-          <hr class="first-bar3">
-          <button *ngIf="showX2" (click)="x_pressed2()" class="btn closed">
-            <div class="shape-x">x</div>
-          </button>
-        </div>
-        <div class="container footer">
-          <p class="container copyright">Alexa Teach Me 2018. All rights reserved.</p>
-          <p class="alexa-terms">Terms & Conditions</p>
-          <p class="alexa-privacy">Privacy</p>
-          <p class="alexa-supp">Support</p>
-
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col-xs-6 col-sm-6">
-          <div class="hide">
-            <div class="back-g2">
-              <p class="congrats">CONGRATS!</p>
-              <p class="finished-course">You have finished the course.</p>
-              <a routerLink="/courses">
-                <input class="btn btn-default cancel-user2" type="text" value="Go to courses page.">
-              </a>
-              <div class="container footer2">
-                <p class="container copyright">Alexa Teach Me 2018. All rights reserved.</p>
-                <p class="alexa-terms">Terms & Conditions</p>
-                <p class="alexa-privacy">Privacy</p>
-                <p class="alexa-supp">Support</p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          <div class="profile"> 
+                 <label class="date">Company name</label>
+                 <input type="text" class="tbox"/><br><br>
+                 <div class="company_description">
+                 <label class="date">Company description</label>
+                 <textarea></textarea >
+                 </div>
+                 <div class="buttons">
+                    <button class="book_btn btn btn-secondary" style="float:left" >Sign out</button>
+                    <div class="form-group" >
+                    <button type="submit"  style="float: right"   class="book_btn" >Save</button> 
+                    </div>
+                </div>
+          </div> 
+      </form>
+    </section>
   </div>
-</div>

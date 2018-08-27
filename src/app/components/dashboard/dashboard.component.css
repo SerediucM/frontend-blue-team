@@ -1,4 +1,127 @@
-body{
+.section1{
+    width: 42%;
+    margin: 0 auto;
+}
+.section2{
+    width: 95%;
+    margin: 0 auto;
+}
+.top{
+    margin: 0 auto;
+    margin-top: 25px;
+    height:150px;
+}
+.add{
+    margin-right: 10px;
+    float:right;
+    border-radius: 100%;
+    border: none;
+    height: 80px;
+    width: 80px;
+    background-color: #c97ce5;
+    color:white;
+    font-size: 40px ;
+    font-family: "Roboto Thin";
+}
+.service{
+    margin-top: 10px;
+    color:dimgray;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    display:inline-block ;
+    float:right;
+    clear: right;
+}
+.service_box{
+    background: #fff;
+    width: 100%;
+    -webkit-box-shadow: 2px 2px 10px 2px rgba(201,124,229,0.25);
+    -moz-box-shadow: 2px 2px 10px 2px rgba(201,124,229,0.25);
+    box-shadow: 2px 2px 10px 2px rgba(201,124,229,0.25);
+    display: table;
+}
+.title h1{
+    line-height: 60px; 
+    font-family: Arial;
+    font-size:26px;
+    color: #c97ce5;
+    margin-left: 2.5%;
+    display: inline-block;
+}
+.title{
+    height: 60px;
+    clear:right;
+    border-radius: 3px;
+   }
+.right_icons{
+    float: right;
+    margin-top: 6px;
+    margin-right: 10px;
+    color: #858585;
+}
+.sd1{
+    float: left;
+    width: 50%;
+}
+.sd11{
+    float: left;
+    width: 65%; 
+}
+.sd12{
+    float: right;
+    width: 30%;
+    margin-left: 5%; 
+}
+.sd1 h2{
+    color: dimgray;
+    font-family: Arial;
+    font-size: 20px;
+    height: auto;
+    font-weight: bold;
+}
+.sd1 h5{
+    font-size: 15px;
+    font-family: Arial;
+    color: #b3b3b3;
+    height: auto;
+}
+.sd2{
+    float:right;
+    width: 50%;
+}
+.sd21{
+    float: left;
+    width: 30%; 
+    margin-left: 20%;
+}
+.sd22{
+    float: right;
+    width: 20%; 
+    margin-left: 30%;
+}
+.sd2 h2{
+   color: dimgray;
+   font-family: Arial;
+   font-size: 20px;
+   height: auto;
+   font-weight: bold;
+}
+.sd2 h5{
+  font-size: 15px;
+  font-family: Arial;
+  color: #b3b3b3;
+  height: auto;
+  margin: 0 auto;
+}
+h5{
+  font-size: 17px;
+  font-family: Arial;
+  color: #b3b3b3;
+  line-height: 22px;
+
+}
+/* body{
    
         height: 696px;
         width: 1440px;
@@ -111,7 +234,7 @@ body{
 	position: relative;
 	left: 23%;
 	top: 500px;
-	
+	 */
     /* border: 1px solid green;  */
     /* background: linear-gradient(to bottom right, red, yellow);
 	border-radius: 10px;
@@ -121,7 +244,7 @@ body{
 	width: 214px; 
 	height: 140px;
 	display: inline;  */
-}
+/* }
 
 .btns-secondary {
     position: relative;
@@ -309,4 +432,4 @@ background-repeat: repeat-x;
     top: -10%;
     left: 10%;
     
-}
+} */

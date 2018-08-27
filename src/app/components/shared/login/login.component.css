@@ -1,4 +1,71 @@
-.errGlobal{
+.err-email-login { 
+    position: absolute;
+    left: 100%;
+    top: 23%;
+    height: 5%;
+    width: 30%;
+    background: transparent
+}
+.err-password-login { 
+    position: absolute;
+    left: 100%;
+    top: 58%;
+    width: 40%;
+    height: 5%;
+    background: transparent
+}
+
+.visiblePassLogin{
+    position: absolute;
+    left: 92%;
+    top: 58%;
+    cursor: pointer;  
+}
+.visiblePassCreate{
+    position: absolute;
+    left: 92%;
+    top: 68%;
+    cursor: pointer; 
+}
+.err-name-create{
+    position: absolute;
+    left: 100%;
+    top: 18%;
+    width: 40%;
+    height: 5%;
+    background: transparent
+}
+.err-email-recover{
+    position: absolute;
+    left: 100%;
+    top: 37%;
+    width: 40%;
+    height: 5%;
+    background: transparent;
+    text-align: left;
+}
+.err-email-create{
+    position: absolute;
+    left: 100%;
+    top: 43%;
+    width: 40%;
+    height: 5%;
+    background: transparent;
+    text-align: left;
+}
+.err-password-create{
+    position: absolute;
+    left: 100%;
+    top: 68%;
+    width: 88%;
+    height: 5%;
+    text-align: left;
+    background: transparent;
+}
+.err-password-createlong{
+    top: 66% !important ;
+}
+/* .errGlobal{
    position: absolute;
    width: 33%;
    top: -20%;
@@ -13,12 +80,7 @@
     top: 33%;
     cursor: pointer; 
 }
-.visiblePassCreate{
-    position: absolute;
-    left: 32%;
-    top: 59%;
-    cursor: pointer;  
-}
+
 .visiblePass1{
     position: absolute;
     left: 32%;
@@ -31,22 +93,22 @@
     top: 32%;
     cursor: pointer;
 }
-.maindiv{
-    background-color: #020e30;
+ .maindiv{
+    background-color: #fff;
     background-repeat: no-repeat;
     background-position: center; 
-    background-image: url('../../../../assets/bg_image.png');
+    background-image: url('../../../../assets/bg_image.png'); 
     width: 100vw;
     height: 100vh;  
- }  
- .erre { /*fol*/
+ }   
+ .erre { 
     position: absolute;
     left: 35%;
     top: 40%;
     height: 5%;
     background: transparent
 }
-.errre { /*fol*/
+.errre { 
     position: absolute;
     left: 35%;
     top: 30%;
@@ -57,7 +119,7 @@
 .errelong{
     top: 25% !important ;
 }
-.errp { /*fol*/
+.errp { 
     position: absolute;
     left: 35%;
     top: 30%;
@@ -65,7 +127,7 @@
     height: 5%;
     background: transparent
 }
-.errrp { /*fol*/
+.errrp { 
     position: absolute;
     left: 35%;
     top: 53%;
@@ -73,10 +135,10 @@
     height: 5%;
     background: transparent
 }
-.errrplong { /*fol*/
+.errrplong { 
     top: 49% !important  ;
 }
-.errcp { /*fol*/
+.errcp { 
     position: absolute;
     left: 35%;
     top: 58%;
@@ -84,10 +146,10 @@
     height: 5%;
     background: transparent
 }
-.errcplong { /*fol*/
+.errcplong {
     top: 55% !important ;
 }
-.errf { /*fol*/
+.errf { 
     position: absolute;
     left: 35%;
     top: 5%;
@@ -192,18 +254,7 @@ input {
 .ReserIt{
     cursor: pointer;
 }
-.forgot-password-res {
-	height: 19%;
-	width: 16,5%;
-	color: #F7F7F7;
-	font-family: Roboto;
-	font-size: 13px;
-    line-height: 19px;
-    position: relative;
-    left: 7%;
-    margin: 10px;
 
-}
 .don-t-have-an-accoun {
 	height: 4,8%;
     width: 2,5%;
@@ -292,4 +343,97 @@ input {
     width: 300px; 
     left: 950px;
     top: 545px;
+} */
+/* ////////// */
+/*intrebarea*/
+a.recover-password-txt{
+    font-size: 20px;
+    margin-top: 53px;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 77%;
+    left: 30%;
+}
+a.register-txt{
+    font-size: 20px;
+    margin-top: 53px;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 86%;
+    left: 40%;
+}
+a.account-txt{
+    font-size: 20px;
+    margin-top: 53px;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 83%;
+    left: 20%;
+}
+.tbox{
+    font-family: 'Open Sans', sans-serif;
+    width: 400px;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid #B3B3B3;
+    font-size: 25px;
+    text-align: left;
+}
+/* .aliniere{
+   
+    text-align-last: center ;
+} */
+.book_btn{
+    text-decoration:none;
+    font-size: 20px;
+    width: 405px;
+    height: 50px;
+    vertical-align: middle;
+    background-color: #c97ce5;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-top: 53px;
+}
+/* nume email si pass*/
+.date{
+    font-size:20px;
+    margin-top: 25px;
+    margin-bottom: 3px;
+    text-align: left;
+    height: 30px;
+}
+/*box*/
+
+/*divul mare*/
+.div{
+    font-family: 'Open Sans', sans-serif;
+    width: 405px;
+    /* margin: 0 auto; */
+    position: absolute;
+    left: 38%;
+    top: 48%;
+}
+.book_img{
+    height:270px;
+    width:500px;
+    /* margin: 0 auto; */
+    /* margin-top: 60px; */
+    position: absolute;
+    left: 35%;
+    top: 10%;
+
+
+}
+.submit_button {
+    cursor: pointer;
+}
+.display_eye{
+    display: flex;
+  }
+.content{
+    padding-top: 290px;
 }

@@ -1,476 +1,65 @@
-.nav-bar {
-    
-    height: 100%;
-    width: 1440px;
-    
-}
-.erre {
+
+.logo{
     position: absolute;
-    left: 35%;
-    top: 37%;
-    height: 5%;
-    background: transparent
-}
-.show {
-    display: block;
-    }
-.hide {
-    display: none;
-    }
-.errMyEmail{
-    position: absolute;
-    left: 155%;
-    top: 310%;
-    width: 120px;
-    background: transparent
-}
-.errMyname {
-    position: absolute;
-    left: 155%;
-    top: 260%;
+    top: 20%;
+    float: left;
     width: 50%;
-    background: transparent
 }
-.errMypas{
+.profile{
     position: absolute;
-    left: 155%;
-    top: 285%;
-    width: 50%;
-    background: transparent
+    top: 20%;
+    left: 50%;
+    float:right;
+    width: 20%;
 }
-.errMypaslong{
-    top: 281% !important ;
-}
-.account-text {
-    position: relative;
-	height: 38%;
-    width: 77,4%;
-    left: 23%;
-    top: 40px;
-	color: #06102B;
-	font-family: Roboto;
-	font-size: 24px;
-	font-weight: bold;
-    line-height: 38px;
-   
-}
-.account-text2{
-    position: relative;
-    height: 46px;
-    width: 77,4%;
-    left: 23%;
-    top: 150px;
-    color: #AEB5BB;
-    font-family: Roboto;
-    font-size: 14px;
-    line-height: 13px;
-     
-}
-.log-out{
-    position: relative;
-    border: none;
-    background-color: #006FFF;
-    height: 29px;
-    width: 77,4%;
-    top: 90px;
-    font-weight: bold;
-}
-
-.back-g{
-    position: absolute;
-    height: 550%;
-    width: 200%;
-    top: 175%;
-    background-color: #F6FAFC;
-    
-}
-.account-text3{
-    position: absolute;
-    height: 38px;
-    width: 77,4%;
-    left: 18%;
-    color: #4A4A4A;
-    font-family: Roboto;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 38px;
-    top: 10%;
-    
-}
-.account-img{
-    position: absolute;
-    height: 140px;
-    width: 138px;
-    border-radius: 5px;
-    left: 42%;
-    top: 260%;
-    background-color:transparent;   
-}
-.uploadimg{
-    border: none;
-
-}
-.upload-pic{
-    position: absolute;
-    height: 24px;
-    width: 93px;
-    left: 45%;
-    top: 320%;
-    border: 1px solid #006FFF;
-    color: #006FFF;
-    background-color: #006FFF;
-
-}
-.talk-user{
-    position: absolute;
-    height: 18%;
-    width: 37%;
-    left: 65%;
-    top: 270%;
-    color: #AEB5BB;
-    font-family: Roboto;
-    font-size: 14px;
-    line-height: 23px;
-    
-}
-
-.user-name{
-    position: absolute;
-    height: 18%;
-    width: 42%;
-    left: 112.5%;
-    top: 255%;
-    border: 1px solid #AEB5BB;
-    border-radius: 5px;
-    background-color: #FFFFFF;
-    color: gray;
-    padding-inline-start: 1%;
-    
-}
-.user-pass{
-    position: absolute;
-    height: 18%;
-    width: 42%;
-    left: 112.5%;
-    top: 280%;
-    border: 1px solid #AEB5BB;
-    border-radius: 5px;
-    background-color: #FFFFFF;
-    color: gray;
-    padding-inline-start: 1%;
-
-}
-.user-email{
-    position: absolute;
-    height: 18%;
-    width: 42%;
-    left: 112.5%;
-    top: 305%;
-    border: 1px solid #AEB5BB;
-    border-radius: 5px;
-    background-color: #FFFFFF;
-    color: gray;
-    padding-inline-start: 1%;
-
-}
-.visiblePass1{
-    position: absolute;
-    left: 150%;
-    top: 285%;
-    cursor: pointer;  
-}
-.save-user{
-    position: absolute;
-    height: 29px;
-    width: 58px;
-    left: 135%;
-    top: 342.5%;
-    background-color:#006FFF;
-    border: none;
-    font-weight: bold;
-}
-
-.cancel-user{
-    position: absolute;
-    height: 29px;
-    width: 72px;
-    left: 145%;
-    top: 342.5%;
-    border: 1px solid #006FFF;
-    color: #006FFF;
-  
-}
-
-hr{
-    position: absolute;
-    box-sizing: border-box;
-    left: 45%;
-    top: 370%;
-    height: 2px;
-    width: 780px;
-    border: 1px solid #EBECED;
-    
-}
-
-.start-courses{
-    position: absolute;
-    height: 38px;
-    width: 774px;
-    left: 46%;
-    top: 400%;
-    color: #06102B;
-    font-family: Roboto;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 38px;
-}
-
-.course1{
-    position: absolute;
-    height: 174px;
-    width: 780px;
-    left: 46%;
-    top: 430%;
-    border: 1px solid #EFF1F4;
-    border-radius: 5px;
-    background-color: #FFFFFF;
-
-}
-.course-img1{
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    left: 5%;
-    top: 16%;
-    border-radius: 5px;
-    background-color: black;
-    
-}
-.first-p1{
-    position: absolute;
-    height: 16px;
-    width: 460px;
-    left: 20%;
-    top: 28%;
-    color: #06102B;
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 16px;
-    
-}
-
-.first-p2{
-    position: absolute;
-    height: 32px;
-    width: 431px;
-    left: 20%;
-    top: 43%;
-    color: #AEB5BB;
-    font-family: Roboto;
-    font-size: 10px;
-    line-height: 16px;      
-}
-.first-points1{
-    position: absolute;
-    height: 42px;
-    width: 50px;
-    left: 85%;
-    top: 33%;
-    color: #006FFF;
-    font-family: Roboto;
-    font-size: 18px;
-    line-height: 21px;
-    text-align: center;
-}
-.first-bar1{
-    position: absolute;
-    left: 0%;
-    top: 87%;
-    height: 2px;
-    width: 607.01px;
+.date{
+    font-size:140%;
+    margin-bottom: 3px;
+    text-align: left;
     display: block;
-    border-color: rgb(138, 3, 138);
 }
-
-.course2{
-    position: absolute;
-    height: 174px;
-    width: 780px;
-    left: 46%;
-    top: 510%;
-    border: 1px solid #EFF1F4;
-    border-radius: 5px;
-    background-color: #FFFFFF;
+textarea{
+    width: 100%;
+    height: 115px;
 }
-
-.course3{
-    position: absolute;
-    height: 174px;
-    width: 780px;
-    left: 46%;
-    top: 595%;
-    border: 1px solid #EFF1F4;
-    border-radius: 5px;
-    background-color: #FFFFFF;
+.tbox{
+    font-family: Open Sans, sans-serif;
+    width: 100%;
+    height: 45px;
+    border-radius: 3px;
+    border: 1px solid #B3B3B3;
+    font-size: 25px;
 }
-
-.first-bar2{
-    position: absolute;
-    left: 0%;
-    top: 87%;
-    height: 2px;
-    width: 229px;
-    display: block;
-    border-color: rgb(8, 153, 68);
-}
-
-.first-bar3{
-    position: absolute;
-    left: 0%;
-    top: 87%;
-    height: 2px;
-    width: 229px;
-    display: block;
-    border-color: rgb(221, 85, 6);
-}
-.closed{
-    position: absolute;
-    height: 19px;
-    width: 19px;
-    left: 93%;
-    top: 10%;
-    border-radius: 5px;
-    background: #FA3466;
-  
-
-}
-.shape-x{
-    position: relative;
-    height: 10px;
-    width: 10px;
-    left: -5px;
-    top: -9px;
+.book_btn{
+    font-size: 20px;
+    width: 45%;
+    height: 55px;
+    background-color: #c97ce5;
     color: white;
-
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
 }
-
-.footer{
+.logo img {
+    width: 26%;
+    border-radius: 50%;
+}
+.choosefile{
     position: absolute;
-    left: 4.1%;
-    top: 725%;
-    height: 59px;
-    width: 1440px;
-    background-color: #F7F7F7;
-    
+    /* padding: 4%; */
+    top: 116%;
+    left: 4%;
+    margin: 0 auto;
+    /* height: 50px; */
 }
-
-.copyright{
-    position: absolute;
-    height: 14px;
-    width: 250px;
-    left: 15%;
-    top: 50%;
-    color: #AEB5BB;
-    font-family: Roboto;
-    font-size: 12px;
-    line-height: 14px;  
+.choosefile input[type="file"]{
+    background: #ff0000;
+} 
+.section{
+    width: 42%;
+    margin: 0 auto;
+    margin-top: 50px;
 }
-
-.alexa-terms{
-    position: absolute;
-    height: 14px;
-    width: 105px;
-    top: 50%;
-    left: 65%;
-    color: #AEB5BB;
-    font-family: Roboto;
-    font-size: 12px;
-    line-height: 14px;
-    
-}
-.alexa-privacy{
-    position: absolute;
-    height: 14px;
-    width: 105px;
-    top: 50%;
-    left: 75%;
-    color: #AEB5BB;
-    font-family: Roboto;
-    font-size: 12px;
-    line-height: 14px;
-
-}
-.alexa-supp{
-    position: absolute;
-    height: 14px;
-    width: 105px;
-    top: 50%;
-    left: 80%;
-    color: #AEB5BB;
-    font-family: Roboto;
-    font-size: 12px;
-    line-height: 14px;
-}
-
-.back-g2{
-    position: absolute;
-    height: 404px;
-    width: 1440px;
-    top: -20px;
-    background-color: #F6FAFC;
-}
-.footer2{
-    position: absolute;
-    left: 0%;
-    top: 100%;
-    height: 59px;
-    width: 1440px;
-    background-color: #F7F7F7;
-
-}
-
-.congrats{
-    position: absolute;
-    height: 23px;
-    width: 78px;
-    color: #AEB5BB;
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 23px;
-    left: 44%;
-    top: 38%;  
-}
-.finished-course{
-    position: absolute;
-    height: 38px;
-    width: 774px;
-    color: #06102B;
-    font-family: Roboto;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 38px;
-    text-align: center;
-    left: 20%;
-    top: 45%;
-    
-}
-
-.cancel-user2{
-    position: absolute;
-    height: 29px;
-    width: 190px;
-    left: 40%;
-    top: 60%;
-    border: 1px solid #006FFF;
-    color: #006FFF;
-  
-
-}
-.show {
-    display: block;
-}
-.hide {
-    display: none;
+.submit_button {
+   cursor: pointer;
 }

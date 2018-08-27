@@ -5,7 +5,7 @@
   used for the admin - this component displays all the courses and offers the ability
   to create a new course, edit or remove an existing course.
 -->
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="container nav-bar">
         <div class="row">
             <app-page-header></app-page-header>
@@ -31,7 +31,7 @@
                 <span class="glyphicon glyphicon-plus-sign plus"></span>
               </button> -->
               
-        <ul *ngFor="let course of courseList ; let i=index" class="btn-group">
+        <!-- <ul *ngFor="let course of courseList ; let i=index" class="btn-group">
 
             <div *ngIf="i<limit" (click)="courseid(course.id)"  class="card card-position">
                     <img height="60%" [src]="courseList[i].images" alt="Avatar " style="width:100% ">
@@ -56,4 +56,49 @@
             </div>
         </footer>
     </div>
-</div>
+</div> --> 
+<app-page-header></app-page-header>
+<div class="bookings">
+        <select class="mb-3">
+            <option value="prima">prima</option>
+            <option value="adoua">secund</option>
+        </select>
+         
+       <!-- BOOKINGS -->
+        <section class="panel">
+            <div id="bookings">
+                <table class="table" id="table">
+    
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone No</th>
+                        <th>Availability</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="todo in todos">
+                        <td>Maria
+                          <!-- {{todo.name}} -->
+                        </td>
+                        <td>
+                            marnhhjgjhgfhfkghkjhgfmhgfia@assist.ro
+                          <!-- {{todo.email}} -->
+                        </td>
+                        <td>
+                           <!--{{todo.phone}} -->
+                           0745984563
+                        </td>
+                        <td>
+                          <!-- {{todo.availability}} -->
+                          dfhfgjh
+                        </td>
+                      </tr>
+                    </tbody>
+    
+                </table>
+            </div>
+        </section>
+         <!-- /END BOOKINGS -->
+      </div>
